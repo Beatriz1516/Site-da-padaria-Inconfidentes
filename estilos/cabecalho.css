@@ -1,0 +1,50 @@
+.cabecalho{
+    background-color: var(--marrom-medio);
+    color: var(--marrom-ouro);
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: (var(--marrom-medio));
+    color: var(--marrom-ouro);
+    padding: 1rem 2rem;
+    position: relative;
+}
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Jacques Francois Shadow;
+}
+.burger{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+.bar{
+    height: 2px;
+    width: 100%;
+    background-color: var(--marrom-ouro);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+.nav-menu{
+    display: flex;
+    list-style: none;
+}
+.nav-item{
+    margin-left: 2rem;
+}
+.nav-link{
+    color:var(--branco);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.nav-link:hover{
+    color: var(--marrom-ouro);
+}
+
+
