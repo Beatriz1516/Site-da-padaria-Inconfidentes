@@ -10,8 +10,14 @@
     <header class="cabecalho"> 
         <!-- Menu Hamburguer -->    
         <nav class="navbar">
-            <div class="logo">INCONFIDENTE</div>
-           
+
+            <!-- Logo da padaria -->
+            <div class="logo-container">
+                <p class="logo">INCONFIDENTE</p>
+                <h3 class="subtitulo">Pão de Queijo<br> & <br> Café</h3>
+            </div>
+            
+           <!-- Menu Hamburguer  -->
             <div class="burger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -24,10 +30,6 @@
                 <li class="nav-item"><a href="./paginas/pedidos.html" class="nav-link">Pedidos</a></li>
             </ul>
         </nav>
-        <!-- Logo da padaria -->
-        <div class="Título">
-            <h3 class="subtitulo">Pão de Queijo<br> & <br> Café</h3>
-        </div>
     </header>
 
     <!-- Barra de pesquisa -->
@@ -35,12 +37,19 @@
         <input type="text" class="search-bar" placeholder="🔍 Buscar produtos...">
     </div>
 
+    <!-- Imagem principal da página inicial -->
+    <div class="imagemPrincipal">
+        <h1 class="tituloPrincipal">Bem-vindo à Padaria Inconfidentes!</h1>
+        <h3 class="subtituloPrincipal">Na nossa padaria, trazemos o coração de Minas Gerais para cada detalhe do nosso espaço. </h3>
+        <button class="saibaMais">Saiba Mais</button>
+    </div>
+
 
     <!-- Carrosel das categorias de produtos -->
     <div class="container-slider">
         <button id="prevButton" alt="Anterior">&#10094;</button>
         <div class="container-images">
-            <img src="./imagens/pao_de_queijo_slider.png" alt="Pão de Queijo" class="slider-image on">
+            <img src="./imagens/pão_de_queijo_slider.jfif" alt="Pão de Queijo" class="slider-image on">
             <img src="./imagens/cafe_coado_slider.jfif" alt="Café coado" class="slider-image">
             <img src="./imagens/doces_mineiros_slider.jfif" alt="Doces Mineiros" class="slider-image">
             <img src="./imagens/salgados_mineiros_slider.jfif" alt="Salgados Mineiros" class="slider-image">

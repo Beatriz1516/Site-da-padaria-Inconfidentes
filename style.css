@@ -1,12 +1,15 @@
 @import url('./estilos/cabecalho.css');
 @import url('./estilos/barra_de_pesquisa.css');
+@import url('./estilos/imagem_principal_landpage.css');
 @import url('./estilos/carrossel_imagens.css');
 
 /* Configurações Gerais e Cores */
 :root {
+    --marrom-dark:#3d1503;
     --marrom-escuro: #5c3a21;
     --marrom-medio: #9e5627;
     --marrom-ouro: #e9b465;
+    --marrom-vermelho:#A33010;
     --bege-claro: #e5c7a6;
     --bege-fundo: #fff6ed;
     --branco: #fff;
@@ -60,4 +63,5 @@ body{
     .burger.active .bar:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
     }
+
 }

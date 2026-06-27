@@ -1,0 +1,33 @@
+.imagemPrincipal{
+    background: linear-gradient(#ffb06275, #f0af9134),
+    url('../imagens/pao_de_queijo_slider.png');
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    width: 100%;
+    color: var(--marrom-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+.tituloPrincipal{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.subtituloPrincipal{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.saibaMais{
+    color: var(--branco);
+    background-color: var(--marrom-vermelho);
+    border: none;
+    padding: 10px 50px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    font-family: 'Jacques Francois Shadow';
+}
