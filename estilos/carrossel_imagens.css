@@ -1,11 +1,11 @@
 .container-slider{
     display: flex;
     width: 100%;
-    min-height: 50vh;
+    min-height: 90vh;
     height: 100%;
     align-items: center;
     justify-content: center;
-    gap: 0.7rem;
+    gap: 1.5rem;
     background-color: var(--marrom-medio);
     margin: 10px 0 0 0;
 }
@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 300px
+    width: 600px;
 }
 .slider-image{
     opacity: 0;

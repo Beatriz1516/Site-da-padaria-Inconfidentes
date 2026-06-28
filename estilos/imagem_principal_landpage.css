@@ -1,3 +1,5 @@
+/* Código da imagem principal da landpage, com o botão "Saiba Mais" e o título e subtítulo centralizados. */
+
 .imagemPrincipal{
     background: linear-gradient(#ffb06275, #f0af9134),
     url('../imagens/pao_de_queijo_slider.png');
@@ -30,4 +32,12 @@
     cursor: pointer;
     font-size: 24px;
     font-family: 'Jacques Francois Shadow';
+}
+
+
+/* Código do horário de funcionamento */
+.horarioFuncionamento{
+    text-align: center;
+    font-size: 18px;
+    color: var(--marrom-dark);
 }

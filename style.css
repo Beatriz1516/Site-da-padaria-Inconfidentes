@@ -2,6 +2,9 @@
 @import url('./estilos/barra_de_pesquisa.css');
 @import url('./estilos/imagem_principal_landpage.css');
 @import url('./estilos/carrossel_imagens.css');
+@import url('./estilos/combos.css');
+@import url('./estilos/mensagemMotivadoraSobreOSite.css');
+@import url('./estilos/footer.css');
 
 /* Configurações Gerais e Cores */
 :root {
@@ -25,6 +28,9 @@ body{
     line-height: 1.5;
 }
 
+.espaço{
+    margin: 100px 0;
+}
 
 /* MOBILE FIRST */
 @media (max-width: 768px){
@@ -64,4 +70,68 @@ body{
         transform: translateY(-9px) rotate(-45deg);
     }
 
+
+
+    /* Carrossel de categorias */
+    .container-slider{
+    display: flex;
+    width: 100%;
+    min-height: 50vh;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    background-color: var(--marrom-medio);
+    margin: 10px 0 0 0;
+    }
+    .container-images{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px
+    }
+
+
+    /* Combos */
+    .imagensCombo{
+    width: 200px;
+    margin: 30px 0;
+    border-radius: 15px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    }
+    .tituloCombo{
+    color: var(--bege-fundo);
+    font-weight: bold;
+    font-size: 24px;
+    font-family: "Times New Roman";
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    text-align: center;
+    text-shadow: 2px 2px 4px var(--marrom-dark); 
+    }
+
+
+    /* Mensagem motivadora sobre o site */
+    .mensagemSobreOSite{
+    background-color: var(--bege-claro);
+    text-align: center;
+    width: 300px;
+    align-items: center;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 0 auto;
+    box-shadow: 1px 1px 10px var(--marrom-medio)
+}
+.tituloMensagem{
+    font-family: 'Jacques Francois Shadow';
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--marrom-escuro);
+}
 }

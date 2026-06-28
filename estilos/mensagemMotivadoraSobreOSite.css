@@ -1,0 +1,28 @@
+.mensagemSobreOSite{
+    background-color: var(--bege-claro);
+    text-align: center;
+    width: 700px;
+    align-items: center;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 0 auto;
+    box-shadow: 1px 1px 10px var(--marrom-medio)
+}
+.tituloMensagem{
+    font-family: 'Jacques Francois Shadow';
+    font-size: 27px;
+    font-weight: bold;
+    color: var(--marrom-escuro);
+}
+.mensagemMotivadora{
+    color: var(--marrom-dark);
+    font-size: 16px;
+}
+.CTAMensagem{
+    text-decoration: none;
+    color: var(--marrom-dark);
+    font-size: 16px;
+}
+.CTAMensagem:hover{
+    font-size: large;
+}

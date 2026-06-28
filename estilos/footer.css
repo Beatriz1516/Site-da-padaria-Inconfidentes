@@ -1,0 +1,12 @@
+.rodape{
+    background-color: var(--marrom-medio);
+    color: var(--marrom-ouro);
+    text-align: center;
+    padding: 10px;
+}
+.itemRodapetitulo{
+    font-size: 22px;
+}
+.itemRodape{
+    padding: 10px;
+}

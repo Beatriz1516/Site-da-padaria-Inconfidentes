@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Padaria Inconfidentes</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header class="cabecalho"> 
@@ -16,7 +20,7 @@
                 <p class="logo">INCONFIDENTE</p>
                 <h3 class="subtitulo">Pão de Queijo<br> & <br> Café</h3>
             </div>
-            
+
            <!-- Menu Hamburguer  -->
             <div class="burger" id="hamburger">
                 <span class="bar"></span>
@@ -44,6 +48,12 @@
         <button class="saibaMais">Saiba Mais</button>
     </div>
 
+    <!-- Barra de horário de funcionamento -->
+    <div class="horarioFuncionamento">
+        <p>Horário de funcionamento:<br>De segunda à sexta - 05h até as 19h<br>De sábado e domingo - 06h até as 15h </p>
+    </div>
+
+    <div class="espaço"></div>
 
     <!-- Carrosel das categorias de produtos -->
     <div class="container-slider">
@@ -58,8 +68,49 @@
         <button id="nextButton" alt="Próximo">&#10095;</button>
     </div>
     
+    <div class="espaço"></div>
+
+    <!-- Combos  -->
+    <div class="combos">
+        <img class="imagensCombo" src="./imagens/salgados_mineiros_slider.jfif" alt="Combo Mineiro - Combo de 3 Pães de queijo tradicionais + 1 Pedaço de broa + 1 Café coado grande.">
+        <p class="tituloCombo">Combo Mineiro</p>
+        <p class="oqVaiNoCombo"> 3 Pães de queijo tradicionais + 1 Pedaço de broa + 1 Café coado grande.</p>
+    </div>
+
+    <div class="espaço"></div>
+
+    <div class="combos comboDireita">
+        <img class="imagensCombo" src="./imagens/salgados_mineiros_slider.jfif" alt="Combo Romeu e Julieta - 1 Fatia de bolo de fubá cremoso + 1 Espresso + 1 Porção de goiabada com queijo.">
+        <p class="tituloCombo">Combo Romeu e Julieta</p>
+        <p class="oqVaiNoCombo">1 Fatia de bolo de fubá cremoso + 1 Espresso + 1 Porção de goiabada com queijo.</p>
+    </div>
+
+    <!-- Mensagem Mmotivadora CTA -->
+    <div class="espaço"></div>
+
+    <div class="mensagemSobreOSite">
+        <p class="tituloMensagem">Um pedacinho de Minas Gerais bem perto de você! 🌾✨</p>
+        <p class="mensagemMotivadora">Aqui na nossa padaria, cada receita tem formato de carinho. Venha provar o nosso pão de queijo artesanal, assado na hora, acompanhado de um café fresquinho com grãos selecionados.
+        <br><a href="./paginas/produtos.html" class="CTAMensagem">Deixe o aroma te guiar e venha desacelerar com a gente hoje mesmo! ☕🥖</a></p>
+    </div>
+    
+    <div class="espaço"></div>
+
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <p class="itemRodapetitulo">Padaria Inconfidente</p>
+        <p class="itemRodape">☕ O sabor que abraça a alma.</p>
+        <p class="itemRodape">📞 WhatsApp: (31) 98765-4321</p>
+        <p class="itemRodape">🕒 Horário:<br> Seg a Sex, das 05h às 19h <br>Sáb e Dom, das 06h às 15h</p>
+        <p class="itemRodape">📍 Endereço: Avenida Tiradentes, 1789 - Bairro Centro, Toledo - PR</p>
+        <p class="itemRodape">🌐 Siga-nos: @padariainconfidentes</p>
+        <p class="itemRodape">🛵 Fazemos entregas e aceitamos encomendas de fornadas.</p>
+    </footer>
+
 
     <script src="./src/main.js"></script>
     <script src="./src/carrossel.js" defer></script>
 </body>
 </html>
+
