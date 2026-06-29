@@ -1,4 +1,4 @@
-.container-slider{
+.caixaDeTestemunha{
     display: flex;
     width: 100%;
     min-height: 90vh;
@@ -9,25 +9,7 @@
     background-color: var(--marrom-medio);
     margin: 10px 0 0 0;
 }
-.container-images{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 600px;
-}
-.slider-image{
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    border-radius: 15px;
-    position: absolute;
-    box-shadow: 0px 0px 10px 4px var(--marrom-escuro);
-    width: 105%;
-}
-.on{
-    opacity: 1;
-}
-#prevButton, #nextButton{
+#botaoAnterior, #botaoProximo{
     height: 30px;
     width: 30px;
     border: none;
@@ -36,14 +18,30 @@
     font-size: 20px;
     opacity: 0.7;
 }
-#prevButton:hover, #nextButton:hover{
+#botaoAnterior:hover, #botaoProximo:hover{
     opacity: 1;
     cursor: pointer;
     color: var(--marrom-ouro);
 }
-
-/* Categorias de produtos da landpage */
-.CategoriaSlider{
+.containerOpinioes{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+}
+.sliderOpn{
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    border-radius: 15px;
+    position: absolute;
+    box-shadow: 0px 0px 10px 4px var(--marrom-escuro);
+    width: 105%;
+}
+.ativo{
+    opacity: 1;
+}
+.Opiniao{
     background-color: var(--bege-claro);
     padding: 90px;
     font-family: 'Jacques Francois Shadow';
