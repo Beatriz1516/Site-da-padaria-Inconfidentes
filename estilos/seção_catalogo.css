@@ -1,0 +1,64 @@
+.secaoCatalogo {
+    background-color: var(--bege-claro);
+    border: solid 0.5px var(--marrom-ouro);
+    padding: 2px 5px;
+    border-radius: 15px;
+    transition: all 0.3s ease; /* Suaviza a transição de cor do hover */
+}
+
+/* Ajuste no hover para o link também mudar de cor junto com o botão */
+.secaoCatalogo:hover {
+    background-color: var(--marrom-vermelho);
+    color: var(--bege-claro);
+    border-color: var(--marrom-vermelho);
+}
+/* Força o link a herdar a nova cor branca/bege quando a seção sofrer hover */
+.secaoCatalogo:hover a {
+    color: var(--bege-claro); 
+}
+
+
+/* Categoria Pão de Queijo */
+/* Removemos o flex daqui para o título não bugar */
+.paoDeQueijos {
+    width: 100%;
+}
+
+.tituloDaSecao {
+    width: 100%;
+    margin: 0 0 15px 15px;
+}
+
+/* Seção de categorias de Produtos */
+.grade-produtos {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.grade-produtos .paoQ {
+    width: calc(50% - 10px); 
+    box-sizing: border-box; 
+    box-shadow: 1px 1px 5px var(--marrom-escuro);
+    padding: 10px;
+    margin: 15px 5px;
+    border-radius: 15px;
+}
+.grade-produtos .paoQ img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.complementosCardapio{
+    display: flex;
+    justify-content: space-between;
+    margin: 3px;
+}
+.adiciona1AoCarrinho, .tempoDePreparo, .direcionaAoProduto {
+    background-color: var(--marrom-vermelho);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    color: var(--bege-claro);
+}

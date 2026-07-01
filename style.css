@@ -7,6 +7,7 @@
 @import url('./estilos/footer.css');
 @import url('./estilos/nosso_compromisso.css');
 @import url('./estilos/carrossel_de_testemunho.css');
+@import url('./estilos/seção_catalogo.css');
 
 /* Configurações Gerais e Cores */
 :root {
@@ -25,11 +26,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+.topoFixado{
+    position: fixed;     /* Fixa o elemento na tela */
+    top: 0;              /* Cola exatamente no topo */
+    left: 0;             /* Alinha na lateral esquerda */
+    width: 100%;         /* Força o cabeçalho a ocupar toda a largura da tela */
+    z-index: 9999;       /* Garante que ele fique por cima das imagens do catálogo */
+}
 body{
     background-color: var(--bege-fundo);
     line-height: 1.5;
 }
-
+a{
+    text-decoration: none;
+    color: inherit;
+}
 .espaço{
     margin: 100px 0;
 }
@@ -135,5 +146,15 @@ body{
     font-size: 22px;
     font-weight: bold;
     color: var(--marrom-escuro);
+}
+
+
+/* Complementos do cardápio (botões de adicionar ao carrinho, ver detalhes e tempo de preparo) */ 
+.adiciona1AoCarrinho, .tempoDePreparo, .direcionaAoProduto {
+    background-color: var(--marrom-vermelho);
+    border: none;
+    padding: 2px 8px;
+    border-radius: 15px;
+    color: var(--bege-claro);
 }
 }
