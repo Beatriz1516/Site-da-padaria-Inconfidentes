@@ -1,0 +1,95 @@
+SITE INCONFIDENTES 
+
+A logo é "INCONFIDENTE - Pão de Queijo & Café"
+O tamanho de tela é mobile para o cliente
+Será preciso ter as telas:
+	Landpage: Informações iniciais sobre o comércio, como foto de apresentação do local,
+lema do estabelecimento, categorias gerais vendidas, selos de qualidade e 
+comentários de consumidores, CTA para atrair clientes.
+	Catálogo de todos os produtos: Informações sobre cada categoria e amostra por foto e 
+descrição rápida de cada produto, preço de cada produto, tempo estimado para entrega, CTA que marca
+uma unidade do item que vai direto para o carrinho
+	Catálogo de cada produto: Nome completo do produto, foto chamativa, descrição do produto, 
+informações nutricionais, alergênicos, preço unitário, quantidade, preço total baseado na quantidade,
+tempo de entrega, botão de compra
+	Carrinho: Lista dos itens adicionados, valor total, CTA para forma de pagamento e finalização da 
+compra
+	Finalização de compra: Informações dos itens a serem comprados, informações do cliente para identificação,
+forma de pagamento, forma de retirada do produto.
+
+
+Cores da marca:
+1º Vermelho Inconfidência: #C92A2A | RGB(201, 42, 42)Cor da bandeira de Minas Gerais e do ideal libertário.
+1º Branco Linho Antigo: #F4F1EA | RGB(244, 241, 234)Remete ao fundo da bandeira e às paredes coloniais de Ouro Preto.
+2º Dourado Pão de Queijo: #DDA15E | RGB(221, 161, 94)Tom quente que lembra o pão assado saindo do forno.
+1º Marrom Café Coado: #603808 | RGB(96, 56, 8)Traz a sensação de acolhimento e a forte tradição mineira do café.
+2º Tijolo Queimado: #BC6C25 | RGB(188, 108, 37)Representa o forno a lenha, o fogão caipira e a terra roxa.
+
+
+
+
+
+
+
+
+
+
+roteiro de criação de protótipos (Figma).
+------------------------------
+## 📱 Documentação de Escopo: Web Mobile "Inconfidentes"
+Logotipo: INCONFIDENTE - Pão de Queijo & Café
+Foco: Navegação móvel e de alta conversão (Mobile-First)
+------------------------------
+## 🛠️ Diretrizes de UI (Aplicação da Paleta de Cores)
+
+* Fundo do App (Predominante): Branco Linho Antigo (#F4F1EA) para uma leitura confortável e estética colonial limpa.
+* Textos, Ícones e Títulos: Marrom Café Coado (#603808) para alto contraste e sofisticação.
+* Botões de Ação Principal (CTA): Vermelho Inconfidência (#C92A2A) para destacar cliques de compra.
+* Preços e Destaques Menores: Destaques em Dourado Pão de Queijo (#DDA15E) ou Tijolo Queimado (#BC6C25).
+
+------------------------------
+## 🗺️ Fluxo de Telas (Wireframe Conceitual)## 1. Landing Page (Home)
+
+* Topo: Header fixo com logotipo reduzido e ícone de Sacola de Compras com contador flutuante.
+* Banner Hero: Foto imersiva do pão de queijo quentinho com café coado.
+* Texto sobreposto: Lema do estabelecimento.
+   * Botão de Ação: "Ver Cardápio" (Vermelho).
+* Carrossel de Categorias: Atalhos visuais em círculos (Pães de Queijo, Cafés, Doces Mineiros, Combos).
+* Seção de Propósito (Selos): Três blocos horizontais rápidos: "Produtor Local", "Receita Tradicional de Minas", "Ingredientes Artesanais".
+* Prova Social: Carrossel de comentários curtos de clientes com estrelas douradas.
+* Rodapé: Horário de funcionamento, endereço (Ouro Preto/Tradicional) e redes sociais.
+
+## 2. Catálogo Geral de Produtos
+
+* Topo: Barra de pesquisa rápida ("Busque seu quitute...") + Filtros por tags de categoria.
+* Grid de Produtos (Foco Mobile): Duas colunas por linha (aproveitamento de tela).
+* Card do Produto: Foto quadrada, Nome, Preço em destaque, Tag com tempo estimado (Ex: "⏱️ 15 min").
+   * Botão Flutuante no Card: Ícone de + em círculo vermelho. Clicar adiciona 1 unidade direto no carrinho com feedback visual instantâneo.
+
+## 3. Catálogo de Cada Produto (Página de Detalhes)
+
+* Topo: Botão "Voltar" discreto e foto em alta definição ocupando 40% da altura da tela.
+* Informações Principais: Nome completo em fonte de destaque, descrição poética do sabor e preço unitário.
+* Ficha Técnica Expandível (Accordion): Informações Nutricionais e Alergênicos ("Contém glúten/lactose").
+* Seletor de Quantidade: Contador numérico [-] 1 [+] (Marrom).
+* Footer de Compra Fixo: Barra inferior colada na tela contendo:
+* Lado esquerdo: Preço Total atualizado conforme a quantidade.
+   * Lado direito: Botão "Adicionar à Sacola" (Vermelho, ocupando largura máxima disponível).
+
+## 4. Carrinho de Compras
+
+* Lista de Itens: Cards horizontais com foto pequena do item, nome, quantidade (ajustável no próprio carrinho) e botão de lixeira para remoção.
+* Resumo de Valores: Subtotal dos produtos + Campo para cupom de desconto.
+* Footer Fixo: Valor Total final em destaque + Botão "Avançar para o Pagamento" (Vermelho).
+
+## 5. Finalização de Compra (Checkout)
+
+* Passo 1: Identificação: Campos simples (Nome, WhatsApp, E-mail).
+* Passo 2: Entrega/Retirada: Duas abas selecionáveis: [🏠 Entrega em Casa] ou [🏪 Retirar na Loja]. Se entrega: campo de endereço.
+* Passo 3: Pagamento: Seleção por botões (Pix com cópia e cola automatizado, Cartão no App ou Pagar na Entrega).
+* Botão Final: "Confirmar e Enviar Pedido" (Gera tela de sucesso com o tempo final estimado e link direto para rastreio no WhatsApp).
+
+
+
+
+
