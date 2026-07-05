@@ -36,20 +36,27 @@
     width: 100%;
 }
 
+
 .grade-produtos .paoQ {
     width: calc(50% - 10px); 
     box-sizing: border-box; 
     box-shadow: 1px 1px 5px var(--marrom-escuro);
-    padding: 10px;
     margin: 15px 5px;
     border-radius: 15px;
 }
-.grade-produtos .paoQ img {
+.paoQ img {
     width: 100%;
-    height: auto;
+    height: 250px;
     object-fit: cover;
-    border-radius: 15px;
 }
+
+.paoQContent{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+}
+
 .complementosCardapio{
     display: flex;
     justify-content: space-between;
