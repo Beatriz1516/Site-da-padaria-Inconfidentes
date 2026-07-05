@@ -3,7 +3,7 @@
     border: solid 0.5px var(--marrom-ouro);
     padding: 2px 5px;
     border-radius: 15px;
-    transition: all 0.3s ease; /* Suaviza a transição de cor do hover */
+    transition: all 0.3s ease; 
 }
 
 /* Ajuste no hover para o link também mudar de cor junto com o botão */
