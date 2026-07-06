@@ -1,4 +1,4 @@
-// 1. ARRAY DE DADOS DOS PRODUTOS
+// Array de dados 
 export const itens = [
     { id: 1, categoria: "pao-de-queijo", imagem: "../imagens/pao_de_queijo_radicional.jfif", titulo: "Pão de queijo tradicional - médio", preco: "R$ 00,00", tempoDePreparo: "x min" },
     { id: 2, categoria: "pao-de-queijo", imagem: "../imagens/pão_de_queijo_slider.jfif", titulo: "Pão de queijo lanche - grande", preco: "R$ 00,00", tempoDePreparo: "x min" },
@@ -32,7 +32,7 @@ export const itens = [
     { id: 30, categoria: "quitutes-de-balcao", imagem: "../imagens/cocada.jfif", titulo: "Cocada", preco: "R$ 00,00", tempoDePreparo: "x min" }
 ];
 
-// 2. CONFIGURAÇÃO DAS SEÇÕES
+// Seções
 const mapeamentoCategorias = {
     "pao-de-queijo": { titulo: "Pão de Queijo", id: "secao-pao-de-queijo" },
     "cafes": { titulo: "Cafés", id: "secao-cafes" },
@@ -44,7 +44,7 @@ const mapeamentoCategorias = {
 
 const cardapioPrincipal = document.getElementById("cardapioPrincipal");
 
-// 3. FUNÇÃO DE RENDERIZAR OS CARDS
+// Cardápio completo na página
 export function renderizarCardapioCompleto() {
     cardapioPrincipal.innerHTML = ""; 
     
@@ -80,14 +80,10 @@ export function renderizarCardapioCompleto() {
                 </div>
             `;
 
-            // Configura o evento do clique de forma isolada e segura contra erros de escopo de módulo
-            // Altere apenas esta parte dentro do seu produtos.forEach:
-const botaoAdicionar = card.querySelector(".adiciona1AoCarrinho");
-botaoAdicionar.addEventListener("click", () => {
-    // Adicionamos o item.imagem no final do envio
-    enviarParaPlanilha(item.id, item.titulo, item.preco, item.imagem);
-});
-
+            const botaoAdicionar = card.querySelector(".adiciona1AoCarrinho");
+            botaoAdicionar.addEventListener("click", () => {
+                enviarParaPlanilha(item.id, item.titulo, item.preco, item.imagem);
+            });
 
             gradeProdutos.appendChild(card);
         });
@@ -96,35 +92,29 @@ botaoAdicionar.addEventListener("click", () => {
     });
 }
 
-// 4. FUNÇÃO QUE SALVA O PRODUTO NO CARRINHO LOCAL DO NAVEGADOR
+// Salva no carrinho temporário do navegador
 function enviarParaPlanilha(id, titulo, preco, imagem) {
     try {
-        // 1. Busca o carrinho que já está salvo no navegador ou cria um novo array vazio
         let carrinhoLocal = JSON.parse(localStorage.getItem('carrinhoTemporario')) || [];
-
-        // 2. Garante que o preço seja um número puro (limpa "R$", espaços, e troca vírgula por ponto)
         let precoNumerico = typeof preco === 'string' 
             ? parseFloat(preco.replace('R$', '').replace(/\./g, '').replace(',', '.').trim()) 
             : preco;
 
-        // 3. Verifica se o produto já existe no carrinho local
         let produtoExistente = carrinhoLocal.find(item => item.id === id);
 
         if (produtoExistente) {
-            // Se já existe, apenas soma a quantidade
             produtoExistente.quantidade += 1;
         } else {
-            // Se é um produto novo, adiciona o objeto completo incluindo a imagem
             carrinhoLocal.push({
                 id: id,
                 nome: titulo,
                 preco: precoNumerico,
-                imagem: imagem, // Salvando o caminho da imagem para renderizar depois
+                imagem: imagem,
                 quantidade: 1
             });
         }
 
-        // 4. Guarda a lista de volta no armazenamento local do navegador
+        // Guarda a lista de volta no armazenamento do navegador
         localStorage.setItem('carrinhoTemporario', JSON.stringify(carrinhoLocal));
         
         alert(`"${titulo}" adicionado ao carrinho temporário!`);
@@ -135,5 +125,5 @@ function enviarParaPlanilha(id, titulo, preco, imagem) {
     }
 }
 
-// 5. INICIALIZAÇÃO
+
 renderizarCardapioCompleto();
