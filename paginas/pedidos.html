@@ -8,15 +8,35 @@
     <link rel="stylesheet" href="C:\Users\USER\Desktop\SITE DA PADARIA INCONFIDENTES\style.css">
 </head>
 <body>
-    <!-- Botão para voltar -->
+    <!-- Topo da página do carrinho -->
+    <img class="voltar" src="../imagens/flecha_voltar.png" onclick="window.history.back()">
+
+    <!-- Lista de itens do pedido -->
+<div class="container-carrinho">
+    <h2 class="tituloPagina">Seu Carrinho</h2>
+
+    <!-- Onde os produtos salvos vão aparecer -->
+    <div id="lista-carrinho"></div>
+
+    <!-- Valores de resumo -->
+    <div class="valores-resumo">
+        <p>Subtotal: <span id="subtotal-valor">R$ 0,00</span></p>
+        <p>Entrega: <span id="entrega-valor">R$ 8,00</span></p>
+        <p>Desconto: <span id="desconto-valor">R$ 0,00</span></p>
+    </div>
+
+    <!-- Botão Vermelho de Pagamento -->
+    <button id="botao-pagamento-vermelho" onclick="avancarParaPagamento()" style="background-color: #c92121; color: white; width: 100%; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+        Avançar para o Pagamento <br>
+        <span id="total-botao">R$ 0,00</span>
+    </button>
+</div>
+
+
     
 
-    <!-- Botão de avançar  -->
-     <div class="rodapePedido">
-        <a href="../paginas/pagamento.html"><p>Avançar para pagamento</p></a>
-     </div>
-
     <script src="../src/main.js"></script>
+    <script src="../src/carrinho.js"></script>
     <script src="../src/itens_do_pedido.js"></script>
     <script src="C:\Users\USER\Desktop\SITE DA PADARIA INCONFIDENTES\src\main.js"></script>
 </body>

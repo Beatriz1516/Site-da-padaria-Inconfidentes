@@ -12,3 +12,9 @@
     z-index: 9999; 
     cursor: pointer;
 }
+.tituloPagina{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 30px;
+    color: var(--marrom-escuro);
+}
