@@ -1,0 +1,14 @@
+.rodapePedido{
+    background-color: var(--marrom-vermelho);
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: auto;
+    border-radius: 15px;
+    color: var(--branco);
+    position: fixed;  
+    z-index: 9999; 
+    cursor: pointer;
+}
