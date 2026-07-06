@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "@googleapis/sheets": "^13.0.2",
-    "cors": "^2.8.6",
-    "express": "^5.2.1",
-    "googleapis": "^173.0.0"
-  }
-}
