@@ -99,5 +99,7 @@ function avancarParaPagamento() {
     console.log("Avançando com os seguintes itens:", carrinho);
     alert("Indo para o fechamento do pedido!");
 
+    window.location.href = "./pagamento.html";
+
 }
 
