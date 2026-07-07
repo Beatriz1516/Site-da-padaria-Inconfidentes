@@ -4,7 +4,7 @@
     url('../imagens/pao_de_queijo_slider.png');
     background-size: cover;
     background-position: center;
-    height: 450px;
+    height: 550px;
     width: 90%;
     color: var(--marrom-dark);
     display: flex;
@@ -17,10 +17,12 @@
 }
 .tituloPrincipal{
     text-align: left;
+    font-size: 58px;
     margin-bottom: 10px;
 }
 .subtituloPrincipal{
     text-align: left;
+    font-size: 28px;
     margin-bottom: 10px;
 }
 .saibaMais{
@@ -33,4 +35,44 @@
     cursor: pointer;
     font-size: 24px;
     font-family: 'Jacques Francois Shadow';
+}
+
+@media (max-width: 768px) {
+.imagemPrincipal{
+    background: linear-gradient(#c7882a55, #5c3a2186),
+    url('../imagens/pao_de_queijo_slider.png');
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    width: 90%;
+    color: var(--marrom-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    padding: 20px;
+    margin-top: 20px;
+}
+.tituloPrincipal{
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+.subtituloPrincipal{
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.saibaMais{
+    color: var(--branco);
+    align-items: center;
+    background-color: var(--marrom-vermelho); 
+    border: none;
+    padding: 5px 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    font-family: 'Jacques Francois Shadow';
+}
 }
