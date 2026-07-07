@@ -87,3 +87,14 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    /* Complementos do cardápio (botões de adicionar ao carrinho, ver detalhes e tempo de preparo) */ 
+    .adiciona1AoCarrinho, .tempoDePreparo, .direcionaAoProduto {
+    background-color: var(--marrom-vermelho);
+    border: none;
+    padding: 2px 8px;
+    border-radius: 15px;
+    color: var(--bege-claro);
+}
+}

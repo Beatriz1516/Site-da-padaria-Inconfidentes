@@ -1,11 +1,10 @@
 /* Código da imagem principal da landpage, com o botão "Saiba Mais" e o título e subtítulo centralizados. */
-
 .imagemPrincipal{
     background: linear-gradient(#c7882a55, #5c3a2186),
     url('../imagens/pao_de_queijo_slider.png');
     background-size: cover;
     background-position: center;
-    height: 350px;
+    height: 450px;
     width: 90%;
     color: var(--marrom-dark);
     display: flex;
@@ -17,16 +16,17 @@
     margin-top: 20px;
 }
 .tituloPrincipal{
-    text-align: center;
+    text-align: left;
     margin-bottom: 10px;
 }
 .subtituloPrincipal{
-    text-align: center;
+    text-align: left;
     margin-bottom: 10px;
 }
 .saibaMais{
     color: var(--branco);
-    background-color: var(--marrom-vermelho);
+    align-items: left;
+    background-color: var(--marrom-vermelho); 
     border: none;
     padding: 10px 50px;
     border-radius: 15px;

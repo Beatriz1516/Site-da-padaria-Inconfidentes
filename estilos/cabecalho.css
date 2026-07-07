@@ -57,3 +57,40 @@
 }
 
 
+@media (max-width: 768px) {
+        /* Logo e Menu de Navegação  */
+        .burger{
+            display: flex;
+        }
+        .nav-menu{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: var(--marrom-medio);
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 0;
+            clip-path: circle(0px at 90% -10%);
+            transition: clip-path 0.5s ease-in-out;
+            pointer-events: none;
+        }
+        .nav-menu.active{
+            clip-path: circle(1000px at 90% -10%);
+            pointer-events: all;
+        }
+        .nav-item{
+            margin: 1rem 0;
+        }
+        .burger.active .bar:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+       
+        .burger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+       
+        .burger.active .bar:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+}

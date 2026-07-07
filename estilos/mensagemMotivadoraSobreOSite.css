@@ -26,3 +26,23 @@
 .CTAMensagem:hover{
     font-size: large;
 }
+
+@media (max-width: 768px) {
+    /* Mensagem motivadora sobre o site */
+    .mensagemSobreOSite{
+        background-color: var(--bege-claro);
+        text-align: center;
+        width: 300px;
+        align-items: center;
+        border-radius: 15px;
+        padding: 30px;
+        margin: 0 auto;
+        box-shadow: 1px 1px 10px var(--marrom-medio)
+    }
+    .tituloMensagem{
+        font-family: 'Jacques Francois Shadow';
+        font-size: 22px;
+        font-weight: bold;
+        color: var(--marrom-escuro);
+    }
+}
