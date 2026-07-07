@@ -76,7 +76,7 @@ function removerItemCompleto(id) {
 
 // Calcula os valores da entrega e faz a soma final do botão vermelho
 function atualizarTotais(subtotal) {
-    let taxaEntrega = subtotal > 0 ? 3.00 : 0.00; // Cobra 3 reais apenas se houver itens
+    let taxaEntrega = subtotal > 0 ? 5.00 : 0.00; // Cobra 5 reais apenas se houver itens
     let taxaDesconto = 0.00; 
     let totalGeral = subtotal + taxaEntrega - taxaDesconto;
 
