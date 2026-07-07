@@ -3,10 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Padaria Inconfidentes - Pagamento</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>Check-out - Padaria Inconfidentes</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    
+
+    <!-- Topo do Check-out -->
+    <header class="topo-checkout">
+        <button onclick="window.history.back()">~~ Check-out</button>
+        <div class="mini-carrinho-topo">🛒 <span id="topo-total">R$ 0,00</span> (<span id="topo-itens">0</span> itens)</div>
+    </header>
+
+    <main class="container-checkout">
+        <p class="breadcrumbs">Pedido > Entrega > <strong>PAGAMENTO</strong></p>
+
+        <!-- Step 1: Identificação -->
+        <section class="step">
+            <h3>Step 1: Identificação</h3>
+            <div class="campo-grupo">
+                <label>Nome Completo</label>
+                <input type="text" id="nome-cliente" placeholder="Ex: Ana Silva">
+            </div>
+            <div class="campo-grupo">
+                <label>WhatsApp</label>
+                <input type="tel" id="whatsapp-cliente" placeholder="+55 (31) 99876-5432">
+            </div>
+            <div class="campo-grupo">
+                <label>Email</label>
+                <input type="email" id="email-cliente" placeholder="ana.silva@email.com">
+            </div>
+        </section>
+
+        <!-- Step 2: Forma de Entrega -->
+        <section class="step">
+            <h3>Step 2: Forma de Entrega</h3>
+            <div class="botoes-alternadores">
+                <button type="button" id="btn-entrega" class="ativo" onclick="selecionarEntrega(true)">ENTREGA</button>
+                <button type="button" id="btn-retirada" onclick="selecionarEntrega(false)">RETIRADA</button>
+            </div>
+
+            <div id="campos-endereco">
+                <div class="campo-grupo">
+                    <label>Endereço de Entrega</label>
+                    <input type="text" id="endereco-rua" placeholder="Rua São Francisco, 120">
+                </div>
+                <div class="campo-grupo">
+                    <label>Bairro</label>
+                    <input type="text" id="endereco-bairro" placeholder="Centro">
+                </div>
+                <div class="campo-grupo">
+                    <label>Cidade/Estado</label>
+                    <input type="text" id="endereco-cidade" placeholder="Ouro Preto, MG">
+                </div>
+            </div>
+
+            <div class="info-frete-caixa">
+                <p>Frete: <strong id="frete-texto">R$ 5,00</strong></p>
+                <p>Tempo estimado: <span id="tempo-texto">35-50 min</span></p>
+            </div>
+        </section>
+
+        <!-- Step 3: Pagamento -->
+        <section class="step">
+            <h3>Step 3: Pagamento</h3>
+            <div class="metodos-pagamento">
+                <div class="opcao-pagamento" id="pay-pix" onclick="selecionarPagamento('Pix')">
+                    <strong>pix</strong><span>PIX</span>
+                </div>
+                <div class="opcao-pagamento" id="pay-cartao" onclick="selecionarPagamento('Cartão')">
+                    <strong>💳</strong><span>CARTÃO DE CRÉDITO/DÉBITO</span>
+                </div>
+                <div class="opcao-pagamento" id="pay-entrega" onclick="selecionarPagamento('Na Entrega')">
+                    <strong>💵</strong><span>PAGAR NA ENTREGA</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resumo do Pedido -->
+        <section class="step resumo-final">
+            <h3>Resumo do Pedido</h3>
+            <div id="lista-resumo-itens">
+                <!-- Injetado via JS -->
+            </div>
+            
+            <div class="linhas-totais">
+                <div class="linha-total"><span>Subtotal:</span> <span id="resumo-subtotal">R$ 0,00</span></div>
+                <div class="linha-total"><span>Frete:</span> <span id="resumo-frete">R$ 5,00</span></div>
+                <div class="linha-total cupom-linha"><span>cupom "BEMVINDO" Aplicado:</span> <span id="resumo-desconto">-R$ 2,00</span></div>
+                <div class="linha-total final"><span>Total:</span> <strong id="resumo-total">R$ 0,00</strong></div>
+            </div>
+        </section>
+
+        <!-- Botão Final Vermelho -->
+        <button id="btn-confirmar-pedido" onclick="finalizarCompra()">Confirmar e Enviar Pedido</button>
+    </main>
+
+    <!-- Script de controle -->
+    <script type="module" src="../src/pagamento_controle.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 @import url('./estilos/carrossel_de_testemunho.css');
 @import url('./estilos/seção_catalogo.css');
 @import url('./estilos/pagina_de_pedidos.css');
+@import url('./estilos/pagamento.css');
 
 /* Configurações Gerais e Cores */
 :root {
@@ -20,6 +21,7 @@
     --bege-claro: #e5c7a6;
     --bege-fundo: #fff6ed;
     --branco: #fff;
+    --cor-destaque: #c4b49e;
 }
 *{
     font-family: Arial;
