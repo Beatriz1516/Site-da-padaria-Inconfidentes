@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap" rel="stylesheet">
+    <script type="module" src="../src/itens_produto.js"></script>
 
 </head>
 <body>
@@ -24,7 +25,7 @@
            
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="./paginas/produtos.html" class="nav-link">Produtos</a></li>
+                <li class="nav-item"><a href="./paginas/sobre.html" class="nav-link">Sobre</a></li>
                 <li class="nav-item"><a href="./paginas/pedidos.html" class="nav-link">Pedidos</a></li>
             </ul>
 
@@ -53,67 +54,28 @@
         <button class="saibaMais"><a href="./paginas/produtos.html">Saiba Mais</a></button>
     </div>
 
+     <!-- Categorias de produtos -->
+     <div class="categoriasDoCatalogo">
+        <button class="secaoCatalogo"><a href="#topo-da-pagina">Tudo</a></button>
+        <button class="secaoCatalogo"><a href="#secao-pao-de-queijo">Pão de Queijo</a></button>
+        <button class="secaoCatalogo"><a href="#secao-cafes">Cafés</a></button>
+        <button class="secaoCatalogo"><a href="#secao-bebidas">Bebidas</a></button>
+        <button class="secaoCatalogo"><a href="#secao-doces">Doces</a></button>
+        <button class="secaoCatalogo"><a href="#secao-quitutes">Quitutes de Balcão</a></button>
+        <button class="secaoCatalogo"><a href="#secao-salgados">Salgados</a></button>
     </div>
 
     <div class="espaço"></div>
 
-    <!-- Carrosel das categorias de produtos -->
-    <div class="container-slider">
-        <button id="prevButton" alt="Anterior">&#10094;</button>
-        <div class="container-images">
-            <div class="slider-image on">
-                <p class="CategoriaSlider">Pão de Queijo</p>
-            </div>
-            <div class="slider-image">
-                <p class="CategoriaSlider">Café Quente</p>
-            </div>
-            <div class="slider-image">
-                <p class="CategoriaSlider">Doces Mineiros</p>
-            </div>
-            <div class="slider-image">
-                <p class="CategoriaSlider">Salgados Mineiros</p>
-            </div>
-            <div class="slider-image">
-                <p class="CategoriaSlider">Quitutes de Balcão</p>
-            </div>
-            <div class="slider-image">
-                <p class="CategoriaSlider">Bebidas Geladas</p>
-            </div>
-        </div>
-        <button id="nextButton" alt="Próximo">&#10095;</button>
-    </div>
-    
-    <div class="espaço"></div>
-
-    <!-- Combos  -->
-    <!-- <div class="combos">
-        <img class="imagensCombo" src="./imagens/salgados_mineiros_slider.jfif" alt="Combo Mineiro - Combo de 3 Pães de queijo tradicionais + 1 Pedaço de broa + 1 Café coado grande.">
-        <p class="tituloCombo">Combo Mineiro</p>
-        <p class="oqVaiNoCombo"> 3 Pães de queijo tradicionais + 1 Pedaço de broa + 1 Café coado grande.</p>
+    <!-- Lista de seção dos produtos -->
+    <div id="cardapioPrincipal">
     </div>
 
-    <div class="espaço"></div>
-
-    <div class="combos comboDireita">
-        <img class="imagensCombo" src="./imagens/salgados_mineiros_slider.jfif" alt="Combo Romeu e Julieta - 1 Fatia de bolo de fubá cremoso + 1 Espresso + 1 Porção de goiabada com queijo.">
-        <p class="tituloCombo">Combo Romeu e Julieta</p>
-        <p class="oqVaiNoCombo">1 Fatia de bolo de fubá cremoso + 1 Espresso + 1 Porção de goiabada com queijo.</p>
-    </div> -->
-
-    <!-- Mensagem Mmotivadora CTA -->
-    <div class="espaço"></div>
-
-    <div class="mensagemSobreOSite">
-        <p class="tituloMensagem">Um pedacinho de Minas Gerais bem perto de você! 🌾✨</p>
-        <p class="mensagemMotivadora">Aqui na nossa padaria, cada receita tem formato de carinho. Venha provar o nosso pão de queijo artesanal, assado na hora, acompanhado de um café fresquinho com grãos selecionados.
-        <br><a href="./paginas/produtos.html" class="CTAMensagem">Deixe o aroma te guiar e venha desacelerar com a gente hoje mesmo! ☕🥖</a></p>
-    </div>
-    
     <div class="espaço"></div>
 
 
     <!-- Nosso compromisso -->
-    <div class="selosCompromisso">
+    <!-- <div class="selosCompromisso">
         <p class="tituloCompromisso">Nossos Compromissos</p>
         <div class="nossoCompromisso">
             <div class="compromisso">
@@ -126,7 +88,7 @@
                 <p>Ingredientes Artesanais</p>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <!-- Testemunhas de Qualidade -->
