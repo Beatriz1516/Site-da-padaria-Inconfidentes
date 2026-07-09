@@ -33,7 +33,7 @@ function renderizarCarrinho() {
                 
                 <div class="cardQuantidadeLixeira">
                     <!-- Botão de Lixeira para remover tudo -->
-                    <button onclick="removerItemCompleto('${item.id}')">🗑️</button>
+                    <button onclick="removerItemCompleto('${item.id}')"><img src="/imagens/carrinho_de_remover.png"></button>
                     
                     <!-- Seletor de quantidade (- 1 +) -->
                     <div class="cardQuantidade">
