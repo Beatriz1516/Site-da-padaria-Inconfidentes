@@ -2,7 +2,6 @@
 @import url('./estilos/barra_de_pesquisa.css');
 @import url('./estilos/imagem_principal_landpage.css');
 @import url('./estilos/carrossel_imagens.css');
-@import url('./estilos/combos.css');
 @import url('./estilos/mensagemMotivadoraSobreOSite.css');
 @import url('./estilos/footer.css');
 @import url('./estilos/nosso_compromisso.css');
@@ -10,6 +9,7 @@
 @import url('./estilos/seção_catalogo.css');
 @import url('./estilos/pagina_de_pedidos.css');
 @import url('./estilos/pagamento.css');
+@import url('./estilos/pop_up_itens.css');
 
 /* Configurações Gerais e Cores */
 :root {

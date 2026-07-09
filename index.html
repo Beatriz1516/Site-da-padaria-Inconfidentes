@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap" rel="stylesheet">
-    <script type="module" src="./src/itens_produto.js"></script>
+    
 
 </head>
 <body>
@@ -45,7 +45,7 @@
 
     <!-- Barra de pesquisa -->
     <div class="search-container">
-        <input type="text" class="search-bar" placeholder="🔍 Buscar produtos...">
+        <input type="text" id="inputBusca" class="search-bar" placeholder="🔍 Buscar produtos...">
     </div>
 
     <!-- Imagem principal da página inicial -->
@@ -121,6 +121,16 @@
         <button id="botaoProximo" alt="Próximo">&#10095;</button>
     </div> -->
 
+    <div id="popup-detalhes" class="modal-overlay">
+        <div class="modal-content">
+            <button class="btn-fechar" id="fechar-popup">&times;</button>
+            <img id="popup-imagem" class="popup-img" src="" alt="Imagem do produto">
+            <h2 id="popup-titulo">Nome do Alimento</h2>
+            <p id="popup-descricao">Detalhes do produto...</p>
+            <h3 id="popup-preco">R$ 0,00</h3>
+        </div>
+    </div>
+
 
     <!-- Rodapé -->
     <footer class="rodape">
@@ -134,9 +144,11 @@
     </footer>
 
 
-    <script src="./src/main.js"></script>
-    <script src="./src/carrossel.js" defer></script>
-    <script src="./src/carrossel_de_opiniao.js" defer></script>
+    <script type="module"src="./src/main.js"></script>
+    <script type="module"src="./src/carrossel.js" defer></script>
+    <script type="module"src="./src/carrossel_de_opiniao.js" defer></script>
+    <script type="module" src="./src/itens_produto.js"></script>
+    <script type="module" src="./src/pop_up_intens.js" defer></script>
 </body>
 </html>
 

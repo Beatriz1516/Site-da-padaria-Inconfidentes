@@ -67,14 +67,19 @@ export function renderizarCardapioCompleto() {
             const card = document.createElement("div");
             card.classList.add("paoQ");
 
+            // MUDANÇA AQUI: Criamos a div '.paoQ-clicavel' com o seu 'data-id'. 
+            // Agora a imagem, o título e o preço abrem o popup se clicados.
             card.innerHTML = `
-                <img src="${item.imagem}" alt="${item.titulo}">
+                <div class="paoQ-clicavel" data-id="${item.id}">
+                    <img src="${item.imagem}" alt="${item.titulo}">
+                    <div class="paoQContent">
+                        <p class="NomeProdutoCardapio">${item.titulo}</p>
+                        <p class="precoProduto">${item.preco}</p>
+                    </div>
+                </div>
                 <div class="paoQContent">
-                    <p class="NomeProdutoCardapio">${item.titulo}</p>
-                    <p class="precoProduto">${item.preco}</p>
                     <div class="complementosCardapio">
                         <p class="tempoDePreparo">${item.tempoDePreparo}</p>
-                        <button class="direcionaAoProduto"><a href="">Veja melhor</a></button>
                         <button class="adiciona1AoCarrinho">+</button>
                     </div>
                 </div>
@@ -114,7 +119,6 @@ function enviarParaPlanilha(id, titulo, preco, imagem) {
             });
         }
 
-        // Guarda a lista de volta no armazenamento do navegador
         localStorage.setItem('carrinhoTemporario', JSON.stringify(carrinhoLocal));
         
         alert(`"${titulo}" adicionado ao carrinho!`);
@@ -127,3 +131,53 @@ function enviarParaPlanilha(id, titulo, preco, imagem) {
 
 
 renderizarCardapioCompleto();
+
+// Função que inicializa e controla a barra de pesquisa
+export function inicializarBarraPesquisa() {
+    const barraPesquisa = document.getElementById("input-busca") || document.querySelector(".search-bar");
+    
+    if (!barraPesquisa) return;
+
+    // Função auxiliar para remover acentos e deixar o texto limpo
+    const removerAcentos = (texto) => {
+        return texto
+            .normalize("NFD") // Separa as letras dos seus acentos
+            .replace(/[\u0300-\u036f]/g, ""); // Remove todos os acentos
+    };
+
+    barraPesquisa.addEventListener("input", () => {
+        // Pega o termo digitado, remove acentos e transforma em minúsculas
+        const termoBusca = removerAcentos(barraPesquisa.value.toLowerCase().trim());
+
+        const secoesCategorias = document.querySelectorAll(".paoDeQueijos");
+
+        secoesCategorias.forEach((secao) => {
+            const cardsProdutos = secao.querySelectorAll(".paoQ");
+            let temProdutoVisivelNaSecao = false;
+
+            cardsProdutos.forEach((card) => {
+                // Pega o nome do produto, remove acentos e transforma em minúsculas
+                const nomeProdutoOriginal = card.querySelector(".NomeProdutoCardapio").textContent;
+                const nomeProdutoLimpo = removerAcentos(nomeProdutoOriginal.toLowerCase());
+
+                // Compara os dois textos sem acentos
+                if (nomeProdutoLimpo.includes(termoBusca)) {
+                    card.style.display = ""; 
+                    temProdutoVisivelNaSecao = true; 
+                } else {
+                    card.style.display = "none"; 
+                }
+            });
+
+            if (temProdutoVisivelNaSecao) {
+                secao.style.display = "";
+            } else {
+                secao.style.display = "none";
+            }
+        });
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    inicializarBarraPesquisa();
+});
