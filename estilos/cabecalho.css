@@ -1,6 +1,7 @@
 .cabecalho{
     background-color: var(--marrom-medio);
     color: var(--marrom-ouro);
+    width: 90%;
 }
 .logo-container, .subtitulo, .logo{
     font-size: 30px;
@@ -20,7 +21,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: (var(--marrom-medio));
+    background-color: var(--marrom-medio);
     color: var(--marrom-ouro);
     padding: 1rem 2rem;
     position: relative;
@@ -58,32 +59,48 @@
 
 
 @media (max-width: 768px) {
-        /* Logo e Menu de Navegação  */
-        .burger{
+    @media (max-width: 768px) {
+        .burger {
             display: flex;
+            z-index: 1001; 
         }
-        .nav-menu{
-            position: absolute;
-            top: 100%;
+    
+        .nav-menu {
+            position: fixed;
+            top: 0;
             left: 0;
-            width: 100%;
+            bottom: 0;
+            width: 260px; 
+            height: 100vh;
             background-color: var(--marrom-medio);
             flex-direction: column;
-            align-items: center;
-            padding: 1rem 0;
-            clip-path: circle(0px at 90% -10%);
-            transition: clip-path 0.5s ease-in-out;
-            pointer-events: none;
+            align-items: flex-start; 
+            justify-content: flex-start;
+            padding: 5rem 2rem 2rem 2rem;
+            transform: translateX(-100%); 
+            transition: transform 0.4s ease-in-out;
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
         }
-        .nav-menu.active{
-            clip-path: circle(1000px at 90% -10%);
-            pointer-events: all;
+    
+        .nav-menu.active {
+            transform: translateX(0);
         }
-        .nav-item{
-            margin: 1rem 0;
+    
+        .nav-item {
+            margin: 1.5rem 0;
+            width: 100%;
         }
+    
+        .nav-link {
+            display: block;
+            font-size: 1.2rem;
+        }
+    
+        
         .burger.active .bar:nth-child(1) {
             transform: translateY(9px) rotate(45deg);
+            background-color: var(--marrom-ouro); 
         }
        
         .burger.active .bar:nth-child(2) {
@@ -92,5 +109,7 @@
        
         .burger.active .bar:nth-child(3) {
             transform: translateY(-9px) rotate(-45deg);
+            background-color: var(--marrom-ouro);
         }
+    }
 }
