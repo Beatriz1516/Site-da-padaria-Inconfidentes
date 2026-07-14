@@ -24,20 +24,16 @@
 .paoDeQueijos {
     width: 100%;
 }
-
 .tituloDaSecao {
     width: 100%;
     margin: 0 0 15px 15px;
 }
 
-/* Seção de categorias de Produtos */
 .grade-produtos {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 }
-
-
 .grade-produtos .paoQ {
     width: calc(50% - 10px); 
     box-sizing: border-box; 
@@ -66,9 +62,8 @@
     justify-content: space-between;
     margin: 3px;
     cursor: pointer;
-    
 }
-.adiciona1AoCarrinho, .tempoDePreparo, .direcionaAoProduto {
+.adiciona1AoCarrinho, .tempoDePreparo {
     background-color: var(--marrom-vermelho);
     border: none;
     padding: 10px 20px;

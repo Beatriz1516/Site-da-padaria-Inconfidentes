@@ -7,9 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!popup || !cardapioContainer) return;
 
-    // 1. Escuta cliques em qualquer parte da lista de produtos
     cardapioContainer.addEventListener('click', (evento) => {
-        // Encontra se o clique ocorreu dentro ou em cima da div clicável do produto
         const areaClicavel = evento.target.closest('.paoQ-clicavel');
         
         if (areaClicavel) {
@@ -18,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 2. Preenche e exibe o popup dinamicamente
     function abrirPopup(idDoProduto) {
         const produto = itens.find(p => p.id === idDoProduto);
         
@@ -28,19 +25,32 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('popup-preco').innerText = produto.preco;
             
             const categoriaLimpa = produto.categoria.replace(/-/g, ' ');
-            document.getElementById('popup-descricao').innerText = 
-                `Delicioso quitute artesanal da nossa categoria de ${categoriaLimpa}. Feito seguindo as receitas tradicionais com toda a qualidade mineira. Tempo estimado de preparo no balcão: ${produto.tempoDePreparo}.`;
+            
+            document.getElementById('popup-descricao').innerHTML = 
+                `<p>${produto.descricao}</p>
+                <p><strong>Categoria:</strong> ${categoriaLimpa}</p>
+                <p><strong>Tempo estimado de preparo:</strong> ${produto.tempoDePreparo}</p>
+                <p><strong>Ingredientes:</strong> ${produto.ingredientes}</p>
+                <p><strong>Alérgenos:</strong> ${produto.alergicos}</p>`;
+            
+            const campoIngredientes = document.getElementById('popup-ingredientes');
+            const campoAlergicos = document.getElementById('popup-alergicos');
+            
+            if (campoIngredientes) {
+                campoIngredientes.textContent = `Ingredientes: ${produto.ingredientes}`;
+            }
+            if (campoAlergicos) {
+                campoAlergicos.textContent = `Alérgenos: ${produto.alergicos}`;
+            }
             
             popup.classList.add('ativo');
         }
     }
 
-    // 3. Gerencia o fechamento ao clicar no "X"
     if (btnFechar) {
         btnFechar.addEventListener('click', () => popup.classList.remove('ativo'));
     }
     
-    // 4. Fecha ao clicar na área cinza escura de fora
     popup.addEventListener('click', (e) => {
         if (e.target === popup) popup.classList.remove('ativo');
     });
