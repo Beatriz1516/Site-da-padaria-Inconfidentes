@@ -100,11 +100,45 @@ function configurarBotoesModal() {
     }
 }
 
-// Auxiliar: Limpa o carrinho e envia o usuário de volta à página inicial
+// === NOVIÇO: Função para gerar um código de pedido único e aleatório ===
+function gerarCodigoPedido() {
+    const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const numeros = "0123456789";
+    let sufixo = "";
+    
+    // Cria um sufixo de 4 caracteres mistos (ex: A7K9)
+    for (let i = 0; i < 2; i++) {
+        sufixo += letras.charAt(Math.floor(Math.random() * letras.length));
+        sufixo += numeros.charAt(Math.floor(Math.random() * numeros.length));
+    }
+    
+    const anoAtual = new Date().getFullYear();
+    return `#PD-${anoAtual}-${sufixo}`;
+}
+
+// === ATUALIZADA: Modificada para salvar o código e o status do pedido antes de limpar o carrinho ===
 function finalizarFluxoTotal() {
+    const novoCodigo = gerarCodigoPedido();
+    
+    // Criamos o objeto do pedido para o histórico/rastreamento
+    const dadosPedido = {
+        codigo: novoCodigo,
+        status: "Preparando seu pedido... 🥖", // Status inicial
+        data: new Date().toLocaleDateString('pt-BR'),
+        formaPagamento: formaPagamentoSelecionada
+    };
+    
+    // Salva no localStorage para a página index.html conseguir ler depois
+    localStorage.setItem('ultimoPedidoRastreio', JSON.stringify(dadosPedido));
+    
+    // Avisa o usuário sobre o código gerado
+    alert(`Pedido confirmado!\nGuarde seu código de rastreamento: ${novoCodigo}`);
+
+    // Limpa o carrinho temporário e redireciona
     localStorage.removeItem('carrinhoTemporario');
     window.location.href = "../index.html";
 }
+
 
 // Disparado ao clicar no botão "Confirmar e Enviar Pedido"
 window.finalizarCompra = function() {

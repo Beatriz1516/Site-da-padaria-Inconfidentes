@@ -1,0 +1,73 @@
+.metodos-pagamento { 
+    display: flex; 
+    gap: 10px; 
+}
+.opcao-pagamento {
+    flex: 1; 
+    border: 1px solid var(--cor-destaque); 
+    border-radius: 8px;
+    padding: 10px; 
+    text-align: center; 
+    cursor: pointer; 
+    background: var(--branco); 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    height: 70px;
+}
+.opcao-pagamento span { 
+    font-size: 9px; 
+    font-weight: bold; 
+    margin-top: 5px; 
+    display: block; 
+}
+.opcao-pagamento.selecionado { 
+    border: 2px solid var(--marrom-vermelho); 
+    background-color: #fff0f0; 
+}
+.info-frete-caixa { 
+    background: var(--branco); 
+    padding: 10px; 
+    border-radius: 6px; 
+    border: 1px solid #e2d7c5; 
+    margin-top: 10px; 
+    font-size: 14px; 
+}
+.info-frete-caixa p { 
+    margin: 3px 0; 
+}
+.linhas-totais { 
+    margin-top: 15px; 
+    border-top: 1px dashed var(--cor-destaque); 
+    padding-top: 10px; 
+}
+.linha-total { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 5px; 
+    font-size: 14px; 
+}
+.linha-total.final { 
+    font-size: 18px; 
+    margin-top: 10px; 
+    border-top: 1px solid var(--cor-destaque); 
+    padding-top: 8px; 
+}
+.cupom-linha { 
+    color: green; 
+    font-style: italic; 
+}
+
+#btn-confirmar-pedido {
+    background-color: var(--marrom-vermelho); 
+    color: white; 
+    width: 100%; 
+    padding: 15px; 
+    border: none; 
+    border-radius: 30px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    margin-top: 10px; 
+}

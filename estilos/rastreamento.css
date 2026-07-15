@@ -1,0 +1,65 @@
+/* === ESTILOS DO PAINEL DE RASTREAMENTO (PADARIA INCONFIDENTES) === */
+.container-rastreio-home {
+    display: flex;
+    justify-content: center;
+    padding: 24px 20px;
+    background-color: var(--bege-fundo); /* Fundo suave da padaria */
+}
+
+.rastreio-card {
+    background: var(--branco);
+    border: 2px solid var(--bege-claro);
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(61, 21, 3, 0.08); /* Sombra sutil usando var(--marrom-dark) */
+}
+
+.rastreio-titulo {
+    margin-top: 0;
+    color: var(--marrom-dark); /* Título no marrom principal */
+    font-size: 18px;
+    border-bottom: 2px solid var(--bege-claro);
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.rastreio-info {
+    margin: 18px 0;
+    font-size: 16px;
+    color: var(--marrom-escuro); /* Texto descritivo */
+    text-align: left;
+    display: inline-block;
+    width: 100%;
+}
+
+.rastreio-info p {
+    margin: 8px 0;
+}
+
+#rastreio-status {
+    color: var(--marrom-vermelho); /* Destaque do status atual */
+    font-weight: bold;
+}
+
+.rastreio-btn-refresh {
+    background-color: var(--marrom-ouro); /* Botão em Tom Ouro */
+    color: var(--branco);
+    border: none;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.rastreio-btn-refresh:hover {
+    background-color: var(--marrom-medio); /* Escurece o botão ao passar o mouse */
+}
+
+.rastreio-btn-refresh:active {
+    transform: scale(0.98); /* Efeito de clique físico */
+}

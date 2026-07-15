@@ -8,7 +8,12 @@
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap" rel="stylesheet">
-    
+    <script type="module"src="./src/main.js"></script>
+    <script type="module"src="./src/carrossel.js" defer></script>
+    <script type="module"src="./src/carrossel_de_opiniao.js" defer></script>
+    <script type="module" src="./src/itens_produto.js"></script>
+    <script type="module" src="./src/pop_up_intens.js" defer></script>
+    <script type="module" src="./src/rastreio_controle.js" defer></script>
 </head>
 <body>
     <header class="cabecalho topoFixado"> 
@@ -23,7 +28,7 @@
             </div>
            
             <ul class="nav-menu" id="navMenu">
-                <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="./index.html" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="./paginas/sobre.html" class="nav-link">Sobre</a></li>
                 <li class="nav-item"><a href="./paginas/pedidos.html" class="nav-link">Pedidos</a></li>
                 <li class="nav-item"><a href="./paginas/cadastro.html" class="nav-link">Cadastros</a></li>
@@ -76,50 +81,6 @@
 
     <div class="espaço"></div>
 
-
-    <!-- Nosso compromisso -->
-    <!-- <div class="selosCompromisso">
-        <p class="tituloCompromisso">Nossos Compromissos</p>
-        <div class="nossoCompromisso">
-            <div class="compromisso">
-                <p>Receita Tradicional</p>
-            </div>
-            <div class="compromisso">
-                <p>Produtor Local</p>
-            </div>
-            <div class="compromisso">
-                <p>Ingredientes Artesanais</p>
-            </div>
-        </div>
-    </div> -->
-
-
-    <!-- Testemunhas de Qualidade -->
-    <!-- <div class="caixaDeTestemunha">
-        <button id="botaoAnterior" alt="Anterior">&#10094;</button>
-        <div class="containerOpinioes">
-            <div class="sliderOpn ativo">
-                <p class="Opiniao">Pão de Queijo</p>
-            </div>
-            <div class="sliderOpn">
-                <p class="Opiniao">Café Quente</p>
-            </div>
-            <div class="sliderOpn">
-                <p class="Opiniao">Doces Mineiros</p>
-            </div>
-            <div class="sliderOpn">
-                <p class="Opiniao">Salgados Mineiros</p>
-            </div>
-            <div class="sliderOpn">
-                <p class="Opiniao">Quitutes de Balcão</p>
-            </div>
-            <div class="sliderOpn">
-                <p class="Opiniao">Bebidas Geladas</p>
-            </div>
-        </div>
-        <button id="botaoProximo" alt="Próximo">&#10095;</button>
-    </div> -->
-
     <div id="popup-detalhes" class="modal-overlay">
         <div class="modal-content">
             <button class="btn-fechar" id="fechar-popup">&times;</button>
@@ -127,6 +88,19 @@
             <h2 id="popup-titulo">Nome do Alimento</h2>
             <p id="popup-descricao">Detalhes do produto...</p>
             <h3 id="popup-preco">R$ 0,00</h3>
+        </div>
+    </div>
+
+
+        <!-- Painel de Rastreamento de Pedidos -->
+    <div id="secao-rastreio" class="container-rastreio-home" style="display: none;">
+        <div class="rastreio-card">
+            <h3 class="rastreio-titulo">🛵 Rastrear meu Último Pedido</h3>
+            <div class="rastreio-info">
+                <p><strong>Código:</strong> <span id="rastreio-codigo">#PD-0000</span></p>
+                <p><strong>Status:</strong> <span id="rastreio-status">Carregando...</span></p>
+            </div>
+            <button id="btn-atualizar-rastreio" class="rastreio-btn-refresh">🔄 Verificar Atualizações</button>
         </div>
     </div>
 
@@ -141,13 +115,6 @@
         <p class="itemRodape">🌐 Siga-nos: @padariainconfidentes</p>
         <p class="itemRodape">🛵 Fazemos entregas e aceitamos encomendas de fornadas.</p>
     </footer>
-
-
-    <script type="module"src="./src/main.js"></script>
-    <script type="module"src="./src/carrossel.js" defer></script>
-    <script type="module"src="./src/carrossel_de_opiniao.js" defer></script>
-    <script type="module" src="./src/itens_produto.js"></script>
-    <script type="module" src="./src/pop_up_intens.js" defer></script>
 </body>
 </html>
 
