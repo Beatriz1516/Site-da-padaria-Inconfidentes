@@ -4,37 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Padaria Inconfidentes</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../src/carrinho.js"></script>
+    <script src="../src/itens_do_pedido.js"></script>
+    <script src="C:\Users\USER\Desktop\SITE DA PADARIA INCONFIDENTES\src\main.js"></script>
 </head>
 <body>
     <!-- Topo da página do carrinho -->
     <img class="voltar" src="../imagens/flecha_voltar.png" onclick="window.history.back()">
 
     <!-- Lista de itens do pedido -->
-<div class="container-carrinho">
-    <h2 class="tituloPagina">Seu Carrinho</h2>
+    <div class="container-carrinho">
+        <h2 class="tituloPagina">— Carrinho de produtos —</h2>
 
-    <!-- Onde os produtos salvos vão aparecer -->
-    <div id="lista-carrinho"></div>
+        <!-- Lista dos produtos -->
+        <div id="lista-carrinho"></div>
 
-    <!-- Valores de resumo -->
-    <div class="valores-resumo">
-        <p>Subtotal: <span id="subtotal-valor">R$ 0,00</span></p>
-        <p>Entrega: <span id="entrega-valor">R$ 5,00</span></p>
-        <p>Desconto: <span id="desconto-valor">R$ 0,00</span></p>
+        <!-- Resumo da compra -->
+        <div class="valores-resumo">
+            <p>Subtotal: <span id="subtotal-valor">R$ 0,00</span></p>
+            <p>Entrega: <span id="entrega-valor">R$ 5,00</span></p>
+            <p>Desconto: <span id="desconto-valor">R$ 0,00</span></p>
+        </div>
+
+        <!-- Botão de pagamento -->
+        <button id="botao-pagamento-vermelho" onclick="avancarParaPagamento()" >
+            Avançar para o Pagamento <br>
+            <span id="total-botao">R$ 0,00</span>
+        </button>
     </div>
-
-    <!-- Botão Vermelho de Pagamento -->
-    <button id="botao-pagamento-vermelho" onclick="avancarParaPagamento()" >
-        Avançar para o Pagamento <br>
-        <span id="total-botao">R$ 0,00</span>
-    </button>
-</div>
-
-
-    <script src="../src/main.js"></script>
-    <script src="../src/carrinho.js"></script>
-    <script src="../src/itens_do_pedido.js"></script>
-    <script src="C:\Users\USER\Desktop\SITE DA PADARIA INCONFIDENTES\src\main.js"></script>
 </body>
 </html>

@@ -331,6 +331,8 @@ export const itens = [
         alergicos: "Não contém alérgenos comuns. Não contém glúten."
     }
 ];
+
+
 // Seções
 const mapeamentoCategorias = {
     "pao-de-queijo": { titulo: "Pão de Queijo", id: "secao-pao-de-queijo" },
@@ -340,13 +342,14 @@ const mapeamentoCategorias = {
     "quitutes-de-balcao": { titulo: "Quitutes de Balcão", id: "secao-quitutes" },
     "salgados": { titulo: "Salgados", id: "secao-salgados" }
 };
-
 const cardapioPrincipal = document.getElementById("cardapioPrincipal");
 
-// Cardápio completo na página
+
+// Cardápio do site
 export function renderizarCardapioCompleto() {
     cardapioPrincipal.innerHTML = ""; 
     
+    // Igualando as categorias com as chaves
     Object.keys(mapeamentoCategorias).forEach((chaveCategoria) => {
         const produtosDaCategoria = itens.filter(item => item.categoria === chaveCategoria);
         if (produtosDaCategoria.length === 0) return;
@@ -360,8 +363,9 @@ export function renderizarCardapioCompleto() {
             <div class="grade-produtos"></div>
         `;
 
-        const gradeProdutos = secaoDivisao.querySelector(".grade-produtos");
 
+        // Criando o produto do cardápio
+        const gradeProdutos = secaoDivisao.querySelector(".grade-produtos");
         produtosDaCategoria.forEach((item) => {
             const card = document.createElement("div");
             card.classList.add("paoQ");
@@ -384,9 +388,8 @@ export function renderizarCardapioCompleto() {
 
             const botaoAdicionar = card.querySelector(".adiciona1AoCarrinho");
             botaoAdicionar.addEventListener("click", () => {
-                enviarParaPlanilha(item.id, item.titulo, item.preco, item.imagem);
+                enviarParaNavegador(item.id, item.titulo, item.preco, item.imagem);
             });
-
             gradeProdutos.appendChild(card);
         });
 
@@ -394,8 +397,9 @@ export function renderizarCardapioCompleto() {
     });
 }
 
-// Salva no carrinho temporário do navegador
-function enviarParaPlanilha(id, titulo, preco, imagem) {
+
+// Salva na memória temporária do navegador
+function enviarParaNavegador(id, titulo, preco, imagem) {
     try {
         let carrinhoLocal = JSON.parse(localStorage.getItem('carrinhoTemporario')) || [];
         let precoNumerico = typeof preco === 'string' 
@@ -403,7 +407,6 @@ function enviarParaPlanilha(id, titulo, preco, imagem) {
             : preco;
 
         let produtoExistente = carrinhoLocal.find(item => item.id === id);
-
         if (produtoExistente) {
             produtoExistente.quantidade += 1;
         } else {
@@ -426,8 +429,8 @@ function enviarParaPlanilha(id, titulo, preco, imagem) {
     }
 }
 
-
 renderizarCardapioCompleto();
+
 
 // Função que inicializa e controla a barra de pesquisa
 export function inicializarBarraPesquisa() {
@@ -443,9 +446,7 @@ export function inicializarBarraPesquisa() {
     };
 
     barraPesquisa.addEventListener("input", () => {
-        // Pega o termo digitado, remove acentos e transforma em minúsculas
         const termoBusca = removerAcentos(barraPesquisa.value.toLowerCase().trim());
-
         const secoesCategorias = document.querySelectorAll(".paoDeQueijos");
 
         secoesCategorias.forEach((secao) => {
@@ -453,7 +454,6 @@ export function inicializarBarraPesquisa() {
             let temProdutoVisivelNaSecao = false;
 
             cardsProdutos.forEach((card) => {
-                // Pega o nome do produto, remove acentos e transforma em minúsculas
                 const nomeProdutoOriginal = card.querySelector(".NomeProdutoCardapio").textContent;
                 const nomeProdutoLimpo = removerAcentos(nomeProdutoOriginal.toLowerCase());
 

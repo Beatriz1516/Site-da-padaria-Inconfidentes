@@ -1,14 +1,16 @@
 @import url('./estilos/cabecalho.css');
 @import url('./estilos/barra_de_pesquisa.css');
-@import url('./estilos/imagem_principal_landpage.css');
-@import url('./estilos/carrossel_imagens.css');
-@import url('./estilos/mensagemMotivadoraSobreOSite.css');
 @import url('./estilos/footer.css');
+
+@import url('./estilos/imagem_principal_landpage.css');
 @import url('./estilos/seção_catalogo.css');
-@import url('./estilos/area_de_pedidos.css');
-@import url('./estilos/pagamento.css');
 @import url('./estilos/pop_up_itens.css');
 @import url('./estilos/rastreamento.css');
+
+@import url('./estilos/mensagemMotivadoraSobreOSite.css');
+
+@import url('./estilos/area_de_pedidos.css');
+@import url('./estilos/pagamento.css');
 @import url('./estilos/pop_up_pix.css');
 @import url('./estilos/metodos_de_pagamento.css');
 
@@ -31,7 +33,7 @@
     box-sizing: border-box;
 }
 .topoFixado{
-    position: fixed;     /* Fixa o elemento na tela */
+    position: fixed;
     top: 0;             
     left: 0;             
     width: 100%;        

@@ -4,23 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Padaria Inconfidentes</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap" rel="stylesheet">
-    <script type="module"src="./src/main.js"></script>
-    <script type="module"src="./src/carrossel.js" defer></script>
-    <script type="module"src="./src/carrossel_de_opiniao.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="./src/carrossel.js" defer></script>
     <script type="module" src="./src/itens_produto.js"></script>
     <script type="module" src="./src/pop_up_intens.js" defer></script>
     <script type="module" src="./src/rastreio_controle.js" defer></script>
 </head>
 <body>
     <header class="cabecalho topoFixado"> 
-        <!-- Menu Hamburguer -->    
+        <!-- Menu -->    
         <nav class="navbar">
 
-           <!-- Menu Hamburguer  -->
+           <!-- Menu Lateral-->
             <div class="burger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -59,8 +56,8 @@
         <button class="saibaMais"><a href="./paginas/sobre.html">Saiba Mais</a></button>
     </div>
 
+
     <h2 class="nossosProdutos">Nossos Produtos</h2>
-    
 
      <!-- Categorias de produtos -->
      <div class="categoriasDoCatalogo">
@@ -75,12 +72,11 @@
 
     <div class="espaço"></div>
 
+
     <!-- Lista de seção dos produtos -->
     <div id="cardapioPrincipal">
     </div>
-
-    <div class="espaço"></div>
-
+    <!-- Descrição de cada produto -->
     <div id="popup-detalhes" class="modal-overlay">
         <div class="modal-content">
             <button class="btn-fechar" id="fechar-popup">&times;</button>
@@ -92,7 +88,9 @@
     </div>
 
 
-        <!-- Painel de Rastreamento de Pedidos -->
+    <div class="espaço"></div>
+
+    <!-- Painel de Rastreamento de Pedidos -->
     <div id="secao-rastreio" class="container-rastreio-home" style="display: none;">
         <div class="rastreio-card">
             <h3 class="rastreio-titulo">🛵 Rastrear meu Último Pedido</h3>
@@ -100,7 +98,7 @@
                 <p><strong>Código:</strong> <span id="rastreio-codigo">#PD-0000</span></p>
                 <p><strong>Status:</strong> <span id="rastreio-status">Carregando...</span></p>
             </div>
-            <button id="btn-atualizar-rastreio" class="rastreio-btn-refresh">🔄 Verificar Atualizações</button>
+            <button id="btn-atualizar-rastreio" class="rastreio-btn-reload">🔄 Verificar Atualizações</button>
         </div>
     </div>
 
@@ -117,4 +115,3 @@
     </footer>
 </body>
 </html>
-

@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    
+    // Abrir produto
     function abrirPopup(idDoProduto) {
         const produto = itens.find(p => p.id === idDoProduto);
         

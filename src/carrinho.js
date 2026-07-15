@@ -2,6 +2,7 @@ window.onload = function() {
     renderizarCarrinho();
 };
 
+// Renderizar carrinho
 function renderizarCarrinho() {
     let carrinho = JSON.parse(localStorage.getItem('carrinhoTemporario')) || [];
     let container = document.getElementById('lista-carrinho');
