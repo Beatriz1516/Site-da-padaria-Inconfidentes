@@ -42,6 +42,7 @@ Preços e Destaques Menores: Cores da paleta de tons médios para ser legível, 
 
 FLUXOS DE TELA
 
+TELA INDEX
 Topo: Header fixo com logotipo reduzido e ícone de carrinho de Compras com menu flutuante.
 Barra de pesquisa.
 Banner Hero: Foto imersiva do pão de queijo quentinho com café coado.
@@ -54,37 +55,40 @@ Prova Social: Carrossel de comentários curtos de clientes com estrelas douradas
 Rodapé: Horário de funcionamento, endereço e redes sociais.
 
 
+PÁGINA DE CADASTRO
+Inicio na página de cadastro, na qual temos duas opções de escolha: se já tenho cadastro e se não tenho 
+cadastro.
+Se já tenho cadastro é aberto um pop-up no qual informo meu nome e minha senha, se não tenho cadastro abre um pop-up no qual informo
+meu nome, meu telefone e criar uma senha, check box de "Li e aceito os termos de uso", e o botão de criar uma senha.
 
+Se o cadastro for de um cliente (tanto o já cadastrado, quanto o que acabou de se cadastrar) a tela de compra inicial vai ser criada. 
+Porém, se o cadastro for do funcionário (já informado previamente no sistema) abre uma aba no qual o funcionário pode:
+    -Alterar o preço, nome, deescrição, ingredientes e alérgenos do produto;
+    -Adicionar e excluir produtos;
+    -Pode ver os cadastros em andamento e mudar o status.
 
-
-
+Se estiver com login ativo é mostrada um ícone de usuário na parte inferir do menu (com o nome do usuário e botão de logout), mas se 
+estiver sem login ativo o ícone será de "sem conta" e o botão de login.
 
 
 POP UP DE CADA PRODUTO
-
 Topo: Botão "X" discreto para sair e foto em alta definição ocupando 80% do topo da tela e metade da altura.
 Informações Principais: Nome completo em fonte de destaque, descrição poética do sabor, tempo estimado e preço unitário.
 Ficha Técnica Expansível (Accordion): Informações Nutricionais e Alergênicos ("Contém glúten/lactose").
 Footer de Compra Fixo: Barra inferior colada na tela contendo:
 Botão "Adicionar à Sacola" (Vermelho, ocupando a largura máxima disponível).
 
-CARRINHO DE COMPRAS
 
+CARRINHO DE COMPRAS
 Botão de volta para a última página acessada.
 Título do carrinho.
 Lista de Itens: Cards horizontais com foto pequena do item, nome, quantidade (ajustável no próprio carrinho) e botão de carrinho de remoção.
 Resumo de Valores: Subtotal dos produtos + Taxa de entrega ajustável + Campo para cupom de desconto.
 Footer Fixo: Valor Total final em destaque + Botão "Avançar para o Pagamento" (Vermelho).
 
-CHECKOUT
 
+CHECKOUT
 Passo 1: Identificação: Campos simples (Nome, WhatsApp, E-mail).
 Passo 2: Entrega/Retirada: Duas abas selecionáveis: [🏠 Entrega em Casa] ou [🏪 Retirar na Loja]. Se entrega: campo de endereço.
 Passo 3: Pagamento: Seleção por botões (Pix com cópia e cola automatizado, Cartão no App ou Pagar na Entrega).
 Botão Final: "Confirmar e Enviar Pedido" (Gera tela de sucesso com o tempo final estimado e link direto para rastreio no WhatsApp).
-
-
-
-
-
-

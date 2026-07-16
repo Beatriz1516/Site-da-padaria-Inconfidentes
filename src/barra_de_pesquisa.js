@@ -39,3 +39,21 @@ export function inicializarBarraPesquisa() {
         });
     });
 }
+
+
+// Botão de voltar ao topo da página
+const botao = document.getElementById("btnTopo");
+
+window.onscroll = function() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    botao.style.display = "block";
+  } else {
+    botao.style.display = "none";
+  }
+};
+botao.addEventListener("click", function() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
