@@ -5,7 +5,7 @@ const VALOR_FRETE = 5.00;
 
 window.onload = function() {
     carregarResumoPedido();
-    configurarBotoesModal(); // Ativa os cliques do pop-up ao carregar
+    configurarBotoesModal();
 };
 
 function carregarResumoPedido() {
@@ -100,6 +100,9 @@ function configurarBotoesModal() {
     }
 }
 
+
+
+
 // === NOVIÇO: Função para gerar um código de pedido único e aleatório ===
 function gerarCodigoPedido() {
     const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -123,7 +126,7 @@ function finalizarFluxoTotal() {
     // Criamos o objeto do pedido para o histórico/rastreamento
     const dadosPedido = {
         codigo: novoCodigo,
-        status: "Preparando seu pedido... 🥖", // Status inicial
+        status: "Preparando seu pedido... ", // Status inicial
         data: new Date().toLocaleDateString('pt-BR'),
         formaPagamento: formaPagamentoSelecionada
     };

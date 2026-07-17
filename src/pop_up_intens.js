@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p><strong>Categoria:</strong> ${categoriaLimpa}</p>
                 <p><strong>Tempo estimado de preparo:</strong> ${produto.tempoDePreparo}</p>
                 <p><strong>Ingredientes:</strong> ${produto.ingredientes}</p>
-                <p><strong>Alérgenos:</strong> ${produto.alergicos}</p>`;
+                <p><strong>Alérgenos:</strong> ${produto.alergicos}</p>
+                <a class="adiciona1AoCarrinho">Adicionar ao carrinho</a>`;
             
             const campoIngredientes = document.getElementById('popup-ingredientes');
             const campoAlergicos = document.getElementById('popup-alergicos');

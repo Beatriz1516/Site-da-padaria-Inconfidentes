@@ -31,7 +31,7 @@ export function renderizarCardapioCompleto(cardapioPrincipal, mapeamentoCategori
                 <div class="paoQContent">
                     <div class="complementosCardapio">
                         <p class="tempoDePreparo">${item.tempoDePreparo}</p>
-                        <button class="adiciona1AoCarrinho">+</button>
+                        <button class="adiciona1AoCarrinho">Adicionar</button>
                     </div>
                 </div>
             `;

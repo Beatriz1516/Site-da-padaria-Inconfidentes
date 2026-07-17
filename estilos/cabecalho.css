@@ -1,7 +1,7 @@
 .cabecalho{
     background-color: var(--marrom-medio);
     color: var(--marrom-ouro);
-    width: 90%;
+    width: 100%;
 }
 .logo-container, .subtitulo, .logo{
     font-size: 30px;
@@ -11,6 +11,7 @@
     font-weight: bold;
     font-family: 'Jacques Francois Shadow';
     color: var(--marrom-ouro);
+    cursor: pointer;
 }
 .subtitulo{
     font-size: 20px;
@@ -59,7 +60,6 @@
 
 
 @media (max-width: 768px) {
-    @media (max-width: 768px) {
         .burger {
             display: flex;
             z-index: 1001; 
@@ -71,7 +71,7 @@
             left: 0;
             bottom: 0;
             width: 260px; 
-            height: 100vh;
+            height: 560px;
             background-color: var(--marrom-medio);
             flex-direction: column;
             align-items: flex-start; 
@@ -112,4 +112,3 @@
             background-color: var(--marrom-ouro);
         }
     }
-}

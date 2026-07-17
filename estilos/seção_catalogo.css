@@ -1,10 +1,11 @@
 .categoriasDoCatalogo{
     display: flex;
     justify-content: space-between;
+    margin: 3px;
 }
 .secaoCatalogo {
     background-color: var(--bege-claro);
-    border: solid 0.5px var(--marrom-ouro);
+    border: none;
     padding: 2px 5px;
     border-radius: 15px;
     transition: all 0.3s ease; 
@@ -25,8 +26,7 @@
     width: 100%;
 }
 .tituloDaSecao {
-    width: 100%;
-    margin: 0 0 15px 15px;
+    margin: 0 0 0 15px;
 }
 
 .grade-produtos {
@@ -40,7 +40,6 @@
     box-shadow: 1px 1px 5px var(--marrom-escuro);
     margin: 15px 5px;
     border-radius: 15px;
-    border-radius: 15px;
 }
 .paoQ img {
     width: 100%;
@@ -49,14 +48,12 @@
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
-
 .paoQContent{
     display: flex;
     flex-direction: column;
     gap: 8px;
     padding: 8px;
 }
-
 .complementosCardapio{
     display: flex;
     justify-content: space-between;
@@ -80,12 +77,11 @@
 @media (max-width: 768px) {
     .secaoCatalogo {
     background-color: var(--bege-claro);
-    border: solid 0.5px var(--marrom-ouro);
     padding: 3px 7px;
     border-radius: 15px;
     transition: all 0.3s ease; 
-    font-size: 12px;
-    margin: 0 2px;
+    font-size: 11px;
+    margin: 0 3px;
 }
 .paoQ img {
     width: 100%;
