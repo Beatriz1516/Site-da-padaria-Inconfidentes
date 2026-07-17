@@ -1,5 +1,5 @@
 .cabecalho{
-    background-color: var(--marrom-medio);
+    background-color: var(--marrom-escuro);
     color: var(--marrom-ouro);
     width: 100%;
 }
@@ -22,7 +22,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--marrom-medio);
+    background-color: var(--marrom-escuro);
     color: var(--marrom-ouro);
     padding: 1rem 2rem;
     position: relative;
@@ -61,54 +61,47 @@
 
 @media (max-width: 768px) {
         .burger {
-            display: flex;
-            z-index: 1001; 
-        }
+    display: none; 
+}
+
+.nav-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: auto;
     
-        .nav-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: 260px; 
-            height: 560px;
-            background-color: var(--marrom-medio);
-            flex-direction: column;
-            align-items: flex-start; 
-            justify-content: flex-start;
-            padding: 5rem 2rem 2rem 2rem;
-            transform: translateX(-100%); 
-            transition: transform 0.4s ease-in-out;
-            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-        }
+    width: 100%; 
+    height: auto;
+    background-color: var(--marrom-escuro);
     
-        .nav-menu.active {
-            transform: translateX(0);
-        }
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: space-around; 
     
-        .nav-item {
-            margin: 1.5rem 0;
-            width: 100%;
-        }
+    padding: 1rem 0; 
     
-        .nav-link {
-            display: block;
-            font-size: 1.2rem;
-        }
-    
-        
-        .burger.active .bar:nth-child(1) {
-            transform: translateY(9px) rotate(45deg);
-            background-color: var(--marrom-ouro); 
-        }
-       
-        .burger.active .bar:nth-child(2) {
-            opacity: 0;
-        }
-       
-        .burger.active .bar:nth-child(3) {
-            transform: translateY(-9px) rotate(-45deg);
-            background-color: var(--marrom-ouro);
-        }
+    transform: translateX(0); 
+    transition: none;
+
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.nav-menu.active {
+    transform: translateX(0);
+}
+
+.nav-item {
+    margin: 0;
+    width: auto;
+    text-align: center;
+}
+
+.nav-link {
+    display: inline-block;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
     }

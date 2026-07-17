@@ -37,7 +37,7 @@
 .grade-produtos .paoQ {
     width: calc(50% - 10px); 
     box-sizing: border-box; 
-    box-shadow: 1px 1px 5px var(--marrom-escuro);
+    box-shadow: 1px 1px 5px var(--marrom-medio);
     margin: 15px 5px;
     border-radius: 15px;
 }

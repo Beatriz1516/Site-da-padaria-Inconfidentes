@@ -16,7 +16,7 @@
     text-align: center;
     margin-top: 20px;
     font-size: 30px;
-    color: var(--marrom-escuro);
+    color: var(--marrom-medio);
 }
 .card-item-carrinho{
     display: flex; 
@@ -89,7 +89,6 @@
 }
 
 @media (max-width: 768px) {
-    /* Complementos do cardápio (botões de adicionar ao carrinho, ver detalhes e tempo de preparo) */ 
     .adiciona1AoCarrinho, .tempoDePreparo, .direcionaAoProduto {
     background-color: var(--marrom-vermelho);
     border: none;

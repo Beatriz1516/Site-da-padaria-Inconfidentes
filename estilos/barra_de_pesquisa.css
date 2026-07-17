@@ -5,7 +5,7 @@
 .search-bar {
     width: 100%;
     padding: 8px 15px;
-    border: 1px solid var(--marrom-escuro);
+    border: 0.1px solid var(--marrom-medio);
     border-radius: 20px;
     background-color: var(--branco);
     font-size: 14px;

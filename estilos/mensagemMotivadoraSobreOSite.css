@@ -6,13 +6,13 @@
     border-radius: 15px;
     padding: 30px;
     margin: 0 auto;
-    box-shadow: 1px 1px 10px var(--marrom-medio)
+    box-shadow: 1px 1px 10px var(--marrom-escuro)
 }
 .tituloMensagem{
     font-family: 'Jacques Francois Shadow';
     font-size: 27px;
     font-weight: bold;
-    color: var(--marrom-escuro);
+    color: var(--marrom-medio);
 }
 .mensagemMotivadora{
     color: var(--marrom-dark);
@@ -37,12 +37,12 @@
         border-radius: 15px;
         padding: 30px;
         margin: 0 auto;
-        box-shadow: 1px 1px 10px var(--marrom-medio)
+        box-shadow: 1px 1px 10px var(--marrom-escuro)
     }
     .tituloMensagem{
         font-family: 'Jacques Francois Shadow';
         font-size: 22px;
         font-weight: bold;
-        color: var(--marrom-escuro);
+        color: var(--marrom-medio);
     }
 }

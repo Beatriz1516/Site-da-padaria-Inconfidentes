@@ -38,7 +38,7 @@
 
 .modal-pix-sub {
     font-size: 14px;
-    color: var(--marrom-escuro);
+    color: var(--marrom-medio);
     margin-bottom: 20px;
 }
 
@@ -50,7 +50,7 @@
     border-radius: 8px;
     font-size: 12px;
     background: var(--bege-fundo);
-    color: var(--marrom-medio);
+    color: var(--marrom-escuro);
     resize: none;
     box-sizing: border-box;
     font-family: monospace;
@@ -72,7 +72,7 @@
 }
 
 .modal-pix-btn-copiar:hover {
-    background: var(--marrom-escuro);
+    background: var(--marrom-medio);
 }
 
 .modal-pix-btn-fechar {

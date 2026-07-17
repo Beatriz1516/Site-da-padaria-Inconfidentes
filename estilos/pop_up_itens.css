@@ -62,7 +62,7 @@
 }
 
 .paoQ-clicavel:hover {
-    transform: translateY(-2px); /* Dá um efeito sutil de flutuação */
+    transform: translateY(2px); 
 }
 
 @keyframes surgimentoSuave {

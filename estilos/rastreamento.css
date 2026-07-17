@@ -49,7 +49,7 @@
     width: 100%;
 }
 .rastreio-btn-reload:hover {
-    background-color: var(--marrom-medio); 
+    background-color: var(--marrom-escuro); 
 }
 .rastreio-btn-reload:active {
     transform: scale(0.98); 

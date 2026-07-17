@@ -6,7 +6,7 @@ body {
     padding: 0;
 }
 .topo-checkout {
-    background-color: var(--marrom-medio);
+    background-color: var(--marrom-escuro);
     color: var(--bege-claro);
     padding: 15px;
     display: flex;
@@ -42,7 +42,7 @@ body {
 .step h3 { 
     font-size: 18px; 
     margin-bottom: 15px; 
-    color: var(--marrom-medio); 
+    color: var(--marrom-escuro); 
 }
 .campo-grupo {
     margin-bottom: 12px;
@@ -50,7 +50,7 @@ body {
 .campo-grupo label {
     display: block; 
     font-size: 12px; 
-    color: var(--marrom-escuro); 
+    color: var(--marrom-medio); 
     margin-bottom: 2px;
 }
 .campo-grupo input {
