@@ -310,7 +310,52 @@ export const itens = [
     },
     {
         id: 29,
-        categoria: "quitutes-de-balcao",
+        categoria: "doces",
+        imagem: "../imagens/bolo_fuba_cremoso.jfif",
+        titulo: "Bolo de Fubá Cremoso",
+        preco: "R$ 5,00",
+        tempoDePreparo: "50 min",
+        descricao: "Clássico bolo mineiro de fubá, extremamente úmido e com aquela camada cremosa irresistível no meio que lembra um pudim.",
+        ingredientes: "Fubá, leite, açúcar, ovos, queijo minas ralado, manteiga e fermento em pó.",
+        alergicos: "Contém ovos e derivados de leite. Contém glúten (pode conter traços)."
+
+    },
+    {
+        id: 30,
+        categoria: "doces",
+        imagem: "../imagens/queijadinha_bombocado.jfif",
+        titulo: "Queijadinha e Bombocado",
+        preco: "R$ 5,00",
+        tempoDePreparo: "40 min",
+        descricao: "Tradicional doce de balcão assado, feito com queijo minas curado e coco, resultando em uma textura cremosa por dentro e dourada por fora.",
+        ingredientes: "Queijo minas padrão ralado, coco ralado, ovos, açúcar, leite condensado e manteiga.",
+        alergicos: "Contém ovos e derivados de leite. Contém lactose. Não contém glúten."
+    },
+    {
+        id: 31,
+        categoria: "doces",
+        imagem: "../imagens/biscoito_de_polvilho.jfif",
+        titulo: "Biscoito de Polvilho",
+        preco: "R$ 5,00",
+        tempoDePreparo: "45 min",
+        descricao: "Clássico biscoito mineiro de polvilho assado, extremamente leve, crocante e aerado, perfeito para acompanhar o café.",
+        ingredientes: "Polvilho azedo, água, óleo vegetal, ovos e sal.",
+        alergicos: "Contém ovos. Não contém glúten."
+    },
+    {
+        id: 32,
+        categoria: "doces",
+        imagem: "../imagens/rabanada_mineira.jfif",
+        titulo: "Rabanada Mineira",
+        preco: "R$ 5,00",
+        tempoDePreparo: "25 min",
+        descricao: "Fatias de pão amanhecido passadas em uma rica calda de leite e ovos, fritas até dourarem e finalizadas com açúcar e canela.",
+        ingredientes: "Pão de sal amanhecido, leite, ovos, açúcar, canela em pó e óleo para fritar.",
+        alergicos: "Contém ovos e derivados de leite. Contém glúten e lactose."
+    },
+    {
+        id: 33,
+        categoria: "salgados",
         imagem: "../imagens/torresmo_de_estufa.jfif",
         titulo: "Torresmo de estufa",
         preco: "R$ 16,00",
@@ -320,14 +365,47 @@ export const itens = [
         alergicos: "Não contém alérgenos comuns. Não contém glúten."
     },
     {
-        id: 30,
-        categoria: "quitutes-de-balcao",
-        imagem: "../imagens/cocada.jfif",
-        titulo: "Cocada Queimada",
-        preco: "R$ 5,00",
-        tempoDePreparo: "1 min",
-        descricao: "Variação deliciosa feita com o coco caramelizado no tacho antes do cozimento.",
-        ingredientes: "Coco ralado, açúcar caramelizado e água.",
+        id: 34,
+        categoria: "salgados",
+        imagem: "../imagens/pastel_de_angu.jfif",
+        titulo: "Pastel de Angu",
+        preco: "R$ 16,00",
+        tempoDePreparo: "30 min",
+        descricao: "Autêntico pastel mineiro com massa feita 100% de fubá de milho, frito na hora e recheado com carne moída bem temperada.",
+        ingredientes: "Fubá de milho, água, carne moída bovina, alho, cebola, cheiro-verde e sal.",
         alergicos: "Não contém alérgenos comuns. Não contém glúten."
+    },
+    {
+        id: 35,
+        categoria: "quitutes-de-balcao",
+        imagem: "../imagens/broa_de_milho.jfif",
+        titulo: "Broa de Milho",
+        preco: "R$ 5,00",
+        tempoDePreparo: "45 min",
+        descricao: "Tradicional broa caxambu de fubá mimoso com textura densa por fora e miolo macio, perfumada com sementes de erva-doce.",
+        ingredientes: "Fubá de milho, farinha de trigo, açúcar, leite, ovos, manteiga, fermento em pó e erva-doce.",
+        alergicos: "Contém ovos e derivados de leite. Contém trigo e glúten."
+    },
+    {
+        id: 36,
+        categoria: "quitutes-de-balcao",
+        imagem: "../imagens/pao_com_torresmo.jfif",
+        titulo: "Pão com Torresmo",
+        preco: "R$ 5,00",
+        tempoDePreparo: "60 min",
+        descricao: "Pão caseiro de massa fofinha e artesanal, recheado com pedaços generosos de torresmo crocante embutidos diretamente na massa antes de assar.",
+        ingredientes: "Farinha de trigo, água, torresmo suíno frito, banha de porco, açúcar, fermento biológico e sal.",
+        alergicos: "Contém trigo e derivados. Contém glúten."
+    },
+    {
+        id: 37,
+        categoria: "quitutes-de-balcao",
+        imagem: "../imagens/pao_de_de_forma_sovadinho.jfif",
+        titulo: "Pão Sovadinho",
+        preco: "R$ 5,00",
+        tempoDePreparo: "90 min",
+        descricao: "Pãozinho de balcão de massa sovada densa, extremamente macia e com um toque levemente adocicado.",
+        ingredientes: "Farinha de trigo, leite, açúcar, ovos, manteiga, fermento biológico e sal.",
+        alergicos: "Contém ovos e derivados de leite. Contém trigo e glúten."
     }
 ];

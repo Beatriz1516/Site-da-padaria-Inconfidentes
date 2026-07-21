@@ -24,11 +24,6 @@ body {
     margin: 0 auto;
     padding: 15px;
 }
-.breadcrumbs { 
-    font-size: 13px; 
-    color: var(--marrom-ouro); 
-    letter-spacing: 1px; 
-}
 .mini-carrinho-topo{
     display: flex; 
     align-items: center; 

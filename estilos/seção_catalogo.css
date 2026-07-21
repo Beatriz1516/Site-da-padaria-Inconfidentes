@@ -6,9 +6,10 @@
 .secaoCatalogo {
     background-color: var(--bege-claro);
     border: none;
-    padding: 2px 5px;
+    padding: 25px 25px;
     border-radius: 15px;
     transition: all 0.3s ease; 
+    margin: 0 10px;
 }
 
 .secaoCatalogo:hover {
@@ -19,23 +20,38 @@
 .secaoCatalogo:hover a {
     color: var(--bege-claro); 
 }
+.nossosProdutos{
+    font-size: 32px;
+    padding: 15px;
+    font-family: 'times new roman';
+    color: var(--marrom-escuro);
+}
 
-
+/* width: calc((100% - (12px * 2)) / 3); */
 /* Categoria Pão de Queijo */
 .paoDeQueijos {
     width: 100%;
 }
 .tituloDaSecao {
-    margin: 0 0 0 15px;
+    color: var(--marrom-escuro);
+    text-shadow: 1px 1px 2px var(--marrom-ouro);
+    font-weight: bold;
+    font-size: 28px;
+    margin: 40px 0 0 15px;
 }
-
+.cardapioPrincipal {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
 .grade-produtos {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 }
 .grade-produtos .paoQ {
-    width: calc(50% - 10px); 
+    width: calc(25% - 10px); 
     box-sizing: border-box; 
     box-shadow: 1px 1px 5px var(--marrom-medio);
     margin: 15px 5px;
@@ -76,18 +92,70 @@
 
 @media (max-width: 768px) {
     .secaoCatalogo {
-    background-color: var(--bege-claro);
-    padding: 3px 7px;
-    border-radius: 15px;
-    transition: all 0.3s ease; 
-    font-size: 11px;
-    margin: 0 3px;
-}
-.paoQ img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
+        background-color: var(--bege-claro);
+        padding: 3px 7px;
+        border-radius: 15px;
+        transition: all 0.3s ease; 
+        font-size: 11px;
+        margin: 0 3px;
+    }
+    .grade-produtos {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .grade-produtos .paoQ {
+        width: calc(50% - 10px); 
+        box-sizing: border-box; 
+        box-shadow: 1px 1px 5px var(--marrom-medio);
+        margin: 15px 5px;
+        border-radius: 15px;
+    }
+    .paoQ img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .paoQContent{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 8px;
+    }
+    .complementosCardapio{
+        display: flex;
+        justify-content: space-between;
+        margin: 3px;
+        cursor: pointer;
+    }
+    .adiciona1AoCarrinho, .tempoDePreparo {
+        background-color: var(--marrom-vermelho);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 15px;
+        color: var(--bege-claro);
+    }
+    .adiciona1AoCarrinho:hover{
+        background-color: var(--marrom-ouro);
+        color: var(--marrom-dark);
+        border-radius: 5px;
+    }
+    .secaoCatalogo {
+        background-color: var(--bege-claro);
+        border: none;
+        padding: 2px 5px;
+        border-radius: 15px;
+        transition: all 0.3s ease; 
+    }
+
+    .secaoCatalogo:hover {
+        background-color: var(--marrom-vermelho);
+        color: var(--bege-claro);
+        border-color: var(--marrom-vermelho);
+    }
+    .secaoCatalogo:hover a {
+        color: var(--bege-claro); 
+    }
 }

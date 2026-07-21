@@ -3,6 +3,7 @@
     color: var(--marrom-ouro);
     text-align: center;
     padding: 10px;
+    padding-bottom: 80px;
 }
 .itemRodapetitulo{
     font-size: 22px;

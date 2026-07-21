@@ -92,3 +92,70 @@ Passo 1: Identificação: Campos simples (Nome, WhatsApp, E-mail).
 Passo 2: Entrega/Retirada: Duas abas selecionáveis: [🏠 Entrega em Casa] ou [🏪 Retirar na Loja]. Se entrega: campo de endereço.
 Passo 3: Pagamento: Seleção por botões (Pix com cópia e cola automatizado, Cartão no App ou Pagar na Entrega).
 Botão Final: "Confirmar e Enviar Pedido" (Gera tela de sucesso com o tempo final estimado e link direto para rastreio no WhatsApp).
+
+
+VERSÃO MOBILE -
+	PÁGINA INICIAL
+	Na página inicial, o cabeçalho contém a logo da padaria na parte esquerda e o carrinho de pedidos na parte direita.
+	A cor de fundo do cabeçalho é marrom escuro (#2b1405), a cor da logo é marrom ouro (#c7882a) e o carrinho de compras é marrom ouro.
+	Se clicar na logo o site volta à página inicial.
+	O menu fica fixo na parte inferior da tela, com os itens: Home, Sobre e Cadastro (Todos em branco).
+	Se clicarmos no carrinho o usuário será direcionada para a página de carrinho de produtos.
+	
+	Após o cabeçalho temos uma imagem principal do produto da marca (pão de queijo), um título (Bem-Vindo à Padaria Inconfidentes!), uma mensagem para trazer uma breve explicação (Na nossa padaria, trazemos o coração de Minas Gerais para cada detalhe do nosso espaço.) e um botão de saiba mais. 
+	O título e a mensagem tem a cor de marrom dark (#2f0e00), e o botão tema cor de fundo de marrom vermelho (#A33010) com as letras em branco. Tudo está centralizado no meio da imagem.
+	
+	Seguindo temos uma barra de pesquisa, está irá apenas filtrar os nomes dos produtos.
+
+	Temos um seletor de categorias dos produtos, que quando um é clicado a página leva direto ao título da seção correspondente (sendo que o tudo nos leva ao cabeçalho).
+	As categorias presentes são: Tudo, Pão de Queijo, Cafés, Bebidas, Quitutes doces, Quitutes salgados, Quitutes de Balcão.
+	Acompanhado desse item temos um botão de voltar ao topo que após rolarmos um pouco a página este botão aparecerá, nos levando ao topo da página.
+
+
+	Temos a seguir um cardápio com 37 produtos, sendo 10 da categoria "pão de queijo", 6 da categoria "cafés", 7 da categoria "bebidas", 9 da categoria "quitutes doces", 2 da categoria "quitutes salgados" e 3 da categoria "quitutes de balcão".
+	Os produtos são organizados em duas colunas, em que cada linha tem até dois itens.
+	Cada card do produto tem uma borda esfumada, cor de fundo igual ao backgroud da página, nome do produto, preço unitário e seus complementos (tempo de prepado e o botão de adicionar).
+
+	O rodapé ao fim da página tem o fundo igual a cor do cabeçalho, e as letras tem a cor marrom ouro.
+	As informações do rodapé são: Padaria Inconfidentes, O sabor que abraça a alma; WhatsApp: (31) 98765-4321; Horário: Seg a Sáb, das 06:30 às 19:30, Dom, das 07h às 12h; Endereço: Avenida Tiradentes, 1789 - Bairro Centro, Toledo PR; Siga-nos: @padariainconfidentes; Fazemos entregas e aceitamos encomendas de fornadas.
+
+	INFORMAÇÕES ADICIONAIS DOS PRODUTOS
+	As informações adicionais dos produtos serão mostradas quando o usuário clicar na foto ou no card do produto, abrindo um pop-up com: o nome completo do produto, uma descrição completa e detalhada do produto, de forma comercial e de sabor, a qual categoria o produto pertence, o tempo de preparo do produto, os ingredientes que são usados e quais os alérgenos, e por fim o preço unitário do produto.
+
+	CARRINHO DOS PRODUTOS
+	No cabeçalho da página inicial temos o ícone do carrinho, que ao ser clicado leva para a tela do carrinho de produtos, onde o cliente pode escolher quantos de cada produto quer levar, quanto seria o total da compra, a taxa de entrega e para excluir itens que não o agradam mais.
+	Nesse carrinho temos uma pequena foto do produto, o nome do produto, o seu preço unitário, um símbolo de retirar do carrinho em cada item e um quantificador do produto. Também ao fim da página teremos uma lista de quanto será pago ao todo e um botão marrom vermelho de avançar para o pagamento, onde o cliente finaliza o pedido.
+
+
+
+VERSÃO DESKTOP - 
+	PÁGINA INICIAL
+	Na página inicial, o cabeçalho contém uma barra de menu na parte esquerda, a logo após o menu e o carrinho de pedidos.
+	A cor de fundo do cabeçalho é marrom escuro (#2b1405), a cor do menu é branco (quando o mouse passa por cima fica marrom ouro(#c7882a), a cor da logo é marrom ouro (#c7882a) e o carrinho de compras é marrom ouro.
+	Se clicar na logo o site volta à página inicial.
+	O menu é composto pelos itens: Home, Sobre e Cadastros.
+	Se clicarmos no carrinho o usuário será direcionada para a página de carrinho de produtos.
+	
+	Após o cabeçalho temos uma imagem principal do produto da marca (pão de queijo), um título (Bem-Vindo à Padaria Inconfidentes!), uma mensagem para trazer uma breve explicação (Na nossa padaria, trazemos o coração de Minas Gerais para cada detalhe do nosso espaço.) e um botão de saiba mais. 
+	O título e a mensagem tem a cor de marrom dark (#2f0e00), e o botão tema cor de fundo de marrom vermelho (#A33010) com as letras em branco. Tudo está centralizado no meio da imagem.
+
+	Seguindo temos uma barra de pesquisa, está irá apenas filtrar os nomes dos produtos.
+
+	Temos um seletor de categorias dos produtos, que quando um é clicado a página leva direto ao título da seção correspondente (sendo que o tudo nos leva ao cabeçalho).
+	As categorias presentes são: Tudo, Pão de Queijo, Cafés, Bebidas, Quitutes doces, Quitutes salgados, Quitutes de Balcão.
+	Acompanhado desse item temos um botão de voltar ao topo que após rolarmos um pouco a página este botão aparecerá, nos levando ao topo da página.
+
+
+	Temos a seguir um cardápio com 37 produtos, sendo 10 da categoria "pão de queijo", 6 da categoria "cafés", 7 da categoria "bebidas", 9 da categoria "quitutes doces", 2 da categoria "quitutes salgados" e 3 da categoria "quitutes de balcão".
+	Os produtos são organizados em quatro colunas, sendo que cada linha possui até quatro produtos.
+	Cada card do produto tem uma borda esfumada, cor de fundo igual ao backgroud da página, nome do produto, preço unitário e seus complementos (tempo de prepado e o botão de adicionar).
+
+	O rodapé ao fim da página tem o fundo igual a cor do cabeçalho, e as letras tem a cor marrom ouro.
+	As informações do rodapé são: Padaria Inconfidentes, O sabor que abraça a alma; WhatsApp: (31) 98765-4321; Horário: Seg a Sáb, das 06:30 às 19:30, Dom, das 07h às 12h; Endereço: Avenida Tiradentes, 1789 - Bairro Centro, Toledo PR; Siga-nos: @padariainconfidentes; Fazemos entregas e aceitamos encomendas de fornadas.
+
+	INFORMAÇÕES ADICIONAIS DOS PRODUTOS
+	As informações adicionais dos produtos serão mostradas quando o usuário clicar na foto ou no card do produto, abrindo um pop-up com: o nome completo do produto, uma descrição completa e detalhada do produto, de forma comercial e de sabor, a qual categoria o produto pertence, o tempo de preparo do produto, os ingredientes que são usados e quais os alérgenos, e por fim o preço unitário do produto.
+
+	CARRINHO DOS PRODUTOS
+	No cabeçalho da página inicial temos o ícone do carrinho, que ao ser clicado leva para a tela do carrinho de produtos, onde o cliente pode escolher quantos de cada produto quer levar, quanto seria o total da compra, a taxa de entrega e para excluir itens que não o agradam mais.
+	Nesse carrinho temos uma pequena foto do produto, o nome do produto, o seu preço unitário, um símbolo de retirar do carrinho em cada item e um quantificador do produto. Também ao fim da página teremos uma lista de quanto será pago ao todo e um botão marrom vermelho de avançar para o pagamento, onde o cliente finaliza o pedido.

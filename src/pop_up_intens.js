@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!popup || !cardapioContainer) return;
 
     cardapioContainer.addEventListener('click', (evento) => {
-        const areaClicavel = evento.target.closest('.paoQ-clicavel');
+        const areaClicavel = evento.target.closest('.paoQClicavel');
         
         if (areaClicavel) {
             const idDoProduto = parseInt(areaClicavel.dataset.id);

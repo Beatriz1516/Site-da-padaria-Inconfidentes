@@ -9,7 +9,7 @@
     flex-direction: column;
     justify-content: space-between; 
     font-weight: bold;
-    font-family: 'Jacques Francois Shadow';
+    font-family: 'Times New Roman';
     color: var(--marrom-ouro);
     cursor: pointer;
 }
@@ -48,6 +48,7 @@
 }
 .nav-item{
     margin-left: 2rem;
+    font-size: 24px;
 }
 .nav-link{
     color:var(--branco);

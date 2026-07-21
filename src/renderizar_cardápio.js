@@ -9,9 +9,9 @@ const mapeamentoCategorias = {
     "pao-de-queijo": { titulo: "Pão de Queijo", id: "secao-pao-de-queijo" },
     "cafes": { titulo: "Cafés", id: "secao-cafes" },
     "bebidas": { titulo: "Bebidas", id: "secao-bebidas" },
-    "doces": { titulo: "Doces", id: "secao-doces" },
-    "quitutes-de-balcao": { titulo: "Quitutes de Balcão", id: "secao-quitutes" },
-    "salgados": { titulo: "Salgados", id: "secao-salgados" }
+    "doces": { titulo: "Quitutes Doces", id: "secao-doces" },
+    "salgados": { titulo: "Quitutes Salgados", id: "secao-salgados" },
+    "quitutes-de-balcao": { titulo: "Quitutes de Balcão", id: "secao-quitutes" }
 };
 const cardapioPrincipal = document.getElementById("cardapioPrincipal");
 

@@ -21,7 +21,8 @@ export function renderizarCardapioCompleto(cardapioPrincipal, mapeamentoCategori
             card.classList.add("paoQ");
 
             card.innerHTML = `
-                <div class="paoQ-clicavel" data-id="${item.id}">
+            <div class= "cardapioPrincipal">
+                <div class="paoQClicavel" data-id="${item.id}">
                     <img src="${item.imagem}" alt="${item.titulo}">
                     <div class="paoQContent">
                         <p class="NomeProdutoCardapio">${item.titulo}</p>
@@ -34,6 +35,7 @@ export function renderizarCardapioCompleto(cardapioPrincipal, mapeamentoCategori
                         <button class="adiciona1AoCarrinho">Adicionar</button>
                     </div>
                 </div>
+            </div>
             `;
 
             const botaoAdicionar = card.querySelector(".adiciona1AoCarrinho");
