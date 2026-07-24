@@ -1,51 +1,62 @@
-let temFrete = true;
-let formaPagamentoSelecionada = "";
-const VALOR_CUPOM = 2.00;
-const VALOR_FRETE = 5.00;
+let temFrete = true; 
+let formaPagamentoSelecionada = ""; 
+const VALOR_FRETE = 5.00; 
 
-window.onload = function() {
-    carregarResumoPedido();
-    configurarBotoesModal();
-};
+window.onload = function() { 
+    carregarResumoPedido(); 
+    configurarBotoesModal(); 
+}; 
 
-function carregarResumoPedido() {
-    let carrinho = JSON.parse(localStorage.getItem('carrinhoTemporario')) || [];
-    let container = document.getElementById('lista-resumo-itens');
-    let totalItensContador = 0;
-    let subtotal = 0;
-
-    if (!container) return;
-    container.innerHTML = "";
-
-    carrinho.forEach(item => {
-        subtotal += item.preco * item.quantidade;
-        totalItensContador += item.quantidade;
-        container.innerHTML += `
-        <div style="display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 6px;">
-            <span>${item.nome} ${item.quantidade > 1 ? `(${item.quantidade} unid.)` : ''}</span>
-            <span>R$ ${(item.preco * item.quantidade).toFixed(2).replace('.', ',')}</span>
-        </div>
-        `;
-    });
-
-    if (temFrete && carrinho.length > 0) {
-        container.innerHTML += `
-        <div style="display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 6px;">
-            <span>Entrega</span>
-            <span>R$ ${VALOR_FRETE.toFixed(2).replace('.', ',')}</span>
-        </div>
-        `;
+function carregarResumoPedido() { 
+    let carrinho = JSON.parse(localStorage.getItem('carrinhoTemporario')) || []; 
+    let container = document.getElementById('lista-resumo-itens'); 
+    let totalItensContador = 0; 
+    let subtotal = 0; 
+    
+    // 1. Renderiza os itens caso o container de resumo exista (Tela de Checkout)
+    if (container) {
+        container.innerHTML = ""; 
+        carrinho.forEach(item => { 
+            subtotal += item.preco * item.quantidade; 
+            totalItensContador += item.quantidade; 
+            container.innerHTML += ` 
+            <div style="display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 6px;"> 
+                <span>${item.nome} ${item.quantidade > 1 ? `(${item.quantidade} unid.)` : ''}</span> 
+                <span>R$ ${(item.preco * item.quantidade).toFixed(2).replace('.', ',')}</span> 
+            </div> `; 
+        }); 
+        
+        if (temFrete && carrinho.length > 0) { 
+            container.innerHTML += ` 
+            <div style="display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 6px;"> 
+                <span>Entrega</span> 
+                <span>R$ ${VALOR_FRETE.toFixed(2).replace('.', ',')}</span> 
+            </div> `; 
+        } 
+    } else {
+        // Fallback para calcular valores mesmo sem o container visual na árvore DOM
+        carrinho.forEach(item => { 
+            subtotal += item.preco * item.quantidade; 
+            totalItensContador += item.quantidade; 
+        });
     }
+    
+    let freteAtual = temFrete ? VALOR_FRETE : 0.00; 
+    let totalGeral = subtotal + freteAtual; 
+    
+    if (totalGeral < 0) totalGeral = 0; 
+    
+    // 2. Atualiza elementos da Tela de Checkout (Se existirem)
+    if (document.getElementById('topo-itens')) document.getElementById('topo-itens').innerText = totalItensContador; 
+    if (document.getElementById('topo-total')) document.getElementById('topo-total').innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`; 
+    if (document.getElementById('resumo-subtotal')) document.getElementById('resumo-subtotal').innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`; 
+    if (document.getElementById('resumo-frete')) document.getElementById('resumo-frete').innerText = `R$ ${freteAtual.toFixed(2).replace('.', ',')}`; 
+    if (document.getElementById('resumo-total')) document.getElementById('resumo-total').innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`; 
 
-    let freteAtual = temFrete ? VALOR_FRETE : 0.00;
-    let totalGeral = (subtotal + freteAtual) - VALOR_CUPOM;
-    if (totalGeral < 0) totalGeral = 0;
-
-    document.getElementById('topo-itens').innerText = totalItensContador;
-    document.getElementById('topo-total').innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
-    document.getElementById('resumo-subtotal').innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
-    document.getElementById('resumo-frete').innerText = `R$ ${freteAtual.toFixed(2).replace('.', ',')}`;
-    document.getElementById('resumo-total').innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
+    // 3. Atualiza elementos da Tela do Carrinho (Se existirem)
+    if (document.getElementById('subtotal-valor')) document.getElementById('subtotal-valor').innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+    if (document.getElementById('entrega-valor')) document.getElementById('entrega-valor').innerText = `R$ ${freteAtual.toFixed(2).replace('.', ',')}`;
+    if (document.getElementById('total-botao')) document.getElementById('total-botao').innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
 }
 
 window.selecionarEntrega = function(opcao) {
@@ -102,14 +113,11 @@ function configurarBotoesModal() {
 
 
 
-
-// === NOVIÇO: Função para gerar um código de pedido único e aleatório ===
 function gerarCodigoPedido() {
     const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const numeros = "0123456789";
     let sufixo = "";
     
-    // Cria um sufixo de 4 caracteres mistos (ex: A7K9)
     for (let i = 0; i < 2; i++) {
         sufixo += letras.charAt(Math.floor(Math.random() * letras.length));
         sufixo += numeros.charAt(Math.floor(Math.random() * numeros.length));
@@ -119,11 +127,9 @@ function gerarCodigoPedido() {
     return `#PD-${anoAtual}-${sufixo}`;
 }
 
-// === ATUALIZADA: Modificada para salvar o código e o status do pedido antes de limpar o carrinho ===
 function finalizarFluxoTotal() {
     const novoCodigo = gerarCodigoPedido();
     
-    // Criamos o objeto do pedido para o histórico/rastreamento
     const dadosPedido = {
         codigo: novoCodigo,
         status: "Preparando seu pedido... ", // Status inicial
@@ -131,7 +137,6 @@ function finalizarFluxoTotal() {
         formaPagamento: formaPagamentoSelecionada
     };
     
-    // Salva no localStorage para a página index.html conseguir ler depois
     localStorage.setItem('ultimoPedidoRastreio', JSON.stringify(dadosPedido));
     
     // Avisa o usuário sobre o código gerado
