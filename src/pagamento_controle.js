@@ -13,7 +13,6 @@ function carregarResumoPedido() {
     let totalItensContador = 0; 
     let subtotal = 0; 
     
-    // 1. Renderiza os itens caso o container de resumo exista (Tela de Checkout)
     if (container) {
         container.innerHTML = ""; 
         carrinho.forEach(item => { 
@@ -34,7 +33,6 @@ function carregarResumoPedido() {
             </div> `; 
         } 
     } else {
-        // Fallback para calcular valores mesmo sem o container visual na árvore DOM
         carrinho.forEach(item => { 
             subtotal += item.preco * item.quantidade; 
             totalItensContador += item.quantidade; 
@@ -46,14 +44,12 @@ function carregarResumoPedido() {
     
     if (totalGeral < 0) totalGeral = 0; 
     
-    // 2. Atualiza elementos da Tela de Checkout (Se existirem)
     if (document.getElementById('topo-itens')) document.getElementById('topo-itens').innerText = totalItensContador; 
     if (document.getElementById('topo-total')) document.getElementById('topo-total').innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`; 
     if (document.getElementById('resumo-subtotal')) document.getElementById('resumo-subtotal').innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`; 
     if (document.getElementById('resumo-frete')) document.getElementById('resumo-frete').innerText = `R$ ${freteAtual.toFixed(2).replace('.', ',')}`; 
     if (document.getElementById('resumo-total')) document.getElementById('resumo-total').innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`; 
 
-    // 3. Atualiza elementos da Tela do Carrinho (Se existirem)
     if (document.getElementById('subtotal-valor')) document.getElementById('subtotal-valor').innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
     if (document.getElementById('entrega-valor')) document.getElementById('entrega-valor').innerText = `R$ ${freteAtual.toFixed(2).replace('.', ',')}`;
     if (document.getElementById('total-botao')) document.getElementById('total-botao').innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
@@ -98,7 +94,7 @@ function configurarBotoesModal() {
             this.style.background = "#218838";
             setTimeout(() => {
                 this.innerText = "Copiar Código";
-                this.style.background = "#32bcad";
+                this.style.background = "var(--marrom-vermelho)";
             }, 2000);
         };
     }
@@ -139,45 +135,39 @@ function finalizarFluxoTotal() {
     
     localStorage.setItem('ultimoPedidoRastreio', JSON.stringify(dadosPedido));
     
-    // Avisa o usuário sobre o código gerado
     alert(`Pedido confirmado!\nGuarde seu código de rastreamento: ${novoCodigo}`);
 
-    // Limpa o carrinho temporário e redireciona
     localStorage.removeItem('carrinhoTemporario');
     window.location.href = "../index.html";
 }
 
 
-// Disparado ao clicar no botão "Confirmar e Enviar Pedido"
-window.finalizarCompra = function() {
-    let nome = document.getElementById('nome-cliente').value;
-    let whats = document.getElementById('whatsapp-cliente').value;
-
-    if (!nome || !whats) {
-        alert("Por favor, preencha pelo menos Nome e WhatsApp para contato!");
-        return;
-    }
-
-    if (!formaPagamentoSelecionada) {
-        alert("Por favor, escolha uma Forma de Pagamento!");
-        return;
-    }
-
-    // DIRECIONAMENTO DE ACORDO COM A OPÇÃO ESCOLHIDA
-    if (formaPagamentoSelecionada === 'Pix') {
-        let totalTexto = document.getElementById('resumo-total').innerText;
-        let totalValor = totalTexto.replace('R$ ', '').replace(',', '.').trim();
+window.finalizarCompra = function() { 
+    let nome = document.getElementById("nome-cliente").value; 
+    let whats = document.getElementById("whatsapp-cliente").value; 
+    
+    if (!nome || !whats) { 
+        alert("Por favor, preencha pelo menos Nome e WhatsApp para contato!"); 
+        return; 
+    } 
+    if (!formaPagamentoSelecionada) { 
+        alert("Por favor, escolha uma Forma de Pagamento!"); 
+        return; 
+    } 
+    
+    if (formaPagamentoSelecionada === "Pix") { 
+        let totalTexto = document.getElementById("resumo-total").innerText; 
+        let totalValor = totalTexto.replace("R$", "").replace(",", ".").trim(); 
         
-        // Alimenta e exibe o pop-up HTML
-        document.getElementById('inputChavePix').value = gerarPixCopiaECola(nome, totalValor);
-        document.getElementById('meuModalPix').style.display = 'flex';
-    } 
-    else if (formaPagamentoSelecionada === 'Cartão') {
-        alert(`Obrigado ${nome}!\nA padaria o aguarda com a maquininha para realizar o pagamento.`);
+        document.getElementById("inputChavePix").value = gerarPixCopiaECola(nome, totalValor); 
+        document.getElementById("meuModalPix").style.display = "flex"; 
+        
         finalizarFluxoTotal();
+    } else if (formaPagamentoSelecionada === "Cartão") { 
+        alert(`Obrigado ${nome}!\nA padaria o aguarda com a maquininha para realizar o pagamento.`); 
+        finalizarFluxoTotal(); 
+    } else if (formaPagamentoSelecionada === "Na Entrega") { 
+        alert(`Obrigado ${nome}!\nSeu pedido em dinheiro foi finalizado e está sendo preparado.`); 
+        finalizarFluxoTotal(); 
     } 
-    else if (formaPagamentoSelecionada === 'Na Entrega') {
-        alert(`Obrigado ${nome}!\nSeu pedido em dinheiro foi finalizado e está sendo preparado.`);
-        finalizarFluxoTotal();
-    }
-}
+};

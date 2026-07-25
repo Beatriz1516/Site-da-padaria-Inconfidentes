@@ -102,3 +102,26 @@ function configurarBotaoRastreio() {
         }
     };
 }
+
+
+function finalizarFluxoTotal() {
+    const agora = Date.now();
+    const codigoAleatorio = "#" + Math.floor(1000 + Math.random() * 9000); // Cria um código tipo #5482
+
+    const novoPedido = {
+        codigo: codigoAleatorio,
+        status: ETAPAS_RASTREIO[0],
+        ultimoStatusTimestamp: agora,
+        historicoHorarios: {
+            0: agora
+        }
+    };
+
+    // Salva no localStorage e ativa a tela imediatamente
+    localStorage.setItem("ultimoPedidoRastreio", JSON.stringify(novoPedido));
+    verificarRastreamento();
+    
+    // Opcional: Rolar a página até a seção de rastreio para o cliente ver
+    const secao = document.getElementById("secao-rastreio");
+    if (secao) secao.scrollIntoView({ behavior: 'smooth' });
+}

@@ -1,0 +1,67 @@
+.apresentacaoCadastro{
+    text-align: center;
+    padding: 20px 0;
+}
+.contaDeUsuario{
+    display: flex;
+    justify-content:space-around;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+}
+.contaDeUsuario p{
+    border: solid 1px;
+    padding: 4px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.aba-opcao.ativa {
+    color: var(--bege-fundo);
+    border-bottom: 2px solid var(--bege-fundo);
+    background-color: var(--marrom-vermelho);
+}
+#meuFormulario {
+    background: var(--branco);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px var(--bege-claro);
+    width: 320px;
+    margin: auto;
+}
+.aba-opcao {
+    cursor: pointer;
+    padding-bottom: 8px;
+    margin: 0;
+    color: var(--marrom-medio);
+    font-weight: bold;
+}
+.instrucaoFormulario {
+    margin: 10px 0 5px 0;
+    font-size: 14px;
+    color: var(--marrom-escuro)
+    
+}
+.formularioCadastro {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+}
+#btnAcao {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--marrom-vermelho);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px; 
+}
+#btnAcao:hover {
+    background-color:var(--marrom-ouro);
+    color: var(--marrom-escuro);
+}

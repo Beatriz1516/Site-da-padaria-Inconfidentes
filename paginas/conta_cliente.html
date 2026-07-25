@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta - Inconfidente</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <header class="cabecalho"> 
+        <nav class="navbar">
+            <div class="burger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+           
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="./cadastro.html" class="nav-link">Cadastro</a></li>
+                <li class="nav-item"><a href="../index.html#secao-rastreio" class="nav-link">Rastreio</a></li>
+                <li class="nav-item"><a href="./conta_cliente.html" class="nav-link">Conta</a></li>
+            </ul>
+
+            <a href="../index.html">
+                <div class="logo-container">
+                    <p class="logo">INCONFIDENTE</p>
+                    <h3 class="subtitulo">Pão de Queijo<br> & <br> Café</h3>
+                </div>
+            </a>
+
+            <div class="carrinho">
+                <a href="./pedidos.html"><img src="../imagens/carrinho.png" alt="Carrinho"></a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="conteudo-conta">
+        <h2>Minha Conta</h2>
+        
+        <div id="painelCliente" class="cartao-cliente">
+            <p><strong>Nome:</strong> <span id="exibirNome">Carregando...</span></p>
+            <p><strong>E-mail:</strong> <span id="exibirEmail">Carregando...</span></p>
+            
+            <button id="btnSair" class="botao-sair">Sair da Conta</button>
+        </div>
+    </main>
+
+    <script src="../src/conta_cliente.js"></script> 
+</body>
+</html>

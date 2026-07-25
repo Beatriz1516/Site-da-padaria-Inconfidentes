@@ -1,6 +1,8 @@
 @import url('./estilos/cabecalho.css');
 @import url('./estilos/barra_de_pesquisa.css');
 @import url('./estilos/footer.css');
+@import url('./estilos/cadastros.css');
+@import url('./estilos/conta_cliente.css');
 
 @import url('./estilos/imagem_principal_landpage.css');
 @import url('./estilos/seção_catalogo.css');

@@ -1,0 +1,39 @@
+/* Estilização da Página de Conta */
+.conteudo-conta {
+    padding: 40px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.cartao-cliente {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    min-width: 280px;
+}
+
+.cartao-cliente p {
+    margin: 12px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.botao-sair {
+    width: 100%;
+    padding: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background 0.2s ease;
+}
+
+.botao-sair:hover {
+    background-color: #c82333;
+}
