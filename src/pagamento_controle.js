@@ -2,10 +2,36 @@ let temFrete = true;
 let formaPagamentoSelecionada = ""; 
 const VALOR_FRETE = 5.00; 
 
-window.onload = function() { 
+// Garante o carregamento correto mapeando os eventos de clique modernos (pelo type="module")
+window.addEventListener("DOMContentLoaded", () => {
+    carregarDadosClienteLogado(); 
     carregarResumoPedido(); 
-    configurarBotoesModal(); 
-}; 
+    configurarEventosBotoes(); 
+}); 
+
+// Busca e preenche TODOS os dados da planilha salvos no navegador do cliente
+function carregarDadosClienteLogado() {
+    const token = localStorage.getItem("login_token");
+
+    // Seletores ajustados rigorosamente de acordo com os IDs do seu novo HTML
+    const inputNome = document.getElementById("nome-cliente");
+    const inputWhats = document.getElementById("whatsapp-cliente");
+    const inputEmail = document.getElementById("email-cliente");
+    const inputRua = document.getElementById("endereco-rua");
+    const inputBairro = document.getElementById("endereco-bairro");
+    const inputCidade = document.getElementById("endereco-cidade");
+
+    if (token === "usuario_autenticado") {
+        if (inputNome) inputNome.value = localStorage.getItem("cliente_nome") || "";
+        if (inputWhats) inputWhats.value = localStorage.getItem("cliente_whats") || "";
+        if (inputEmail) inputEmail.value = localStorage.getItem("cliente_email") || "";
+        if (inputRua) inputRua.value = localStorage.getItem("cliente_end") || "";
+        if (inputBairro) inputBairro.value = localStorage.getItem("cliente_bairro") || "";
+        if (inputCidade) inputCidade.value = localStorage.getItem("cliente_cidade") || "";
+        
+        console.log("Todos os dados do cliente foram vinculados ao checkout.");
+    }
+}
 
 function carregarResumoPedido() { 
     let carrinho = JSON.parse(localStorage.getItem('carrinhoTemporario')) || []; 
@@ -49,13 +75,53 @@ function carregarResumoPedido() {
     if (document.getElementById('resumo-subtotal')) document.getElementById('resumo-subtotal').innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`; 
     if (document.getElementById('resumo-frete')) document.getElementById('resumo-frete').innerText = `R$ ${freteAtual.toFixed(2).replace('.', ',')}`; 
     if (document.getElementById('resumo-total')) document.getElementById('resumo-total').innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`; 
-
-    if (document.getElementById('subtotal-valor')) document.getElementById('subtotal-valor').innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
-    if (document.getElementById('entrega-valor')) document.getElementById('entrega-valor').innerText = `R$ ${freteAtual.toFixed(2).replace('.', ',')}`;
-    if (document.getElementById('total-botao')) document.getElementById('total-botao').innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
 }
 
-window.selecionarEntrega = function(opcao) {
+// Vincula as funções de controle de abas de forma segura usando EventListeners (Modo Type Module)
+function configurarEventosBotoes() {
+    const btnEntrega = document.getElementById('btn-entrega');
+    const btnRetirada = document.getElementById('btn-retirada');
+    const payPix = document.getElementById('pay-pix');
+    const payCartao = document.getElementById('pay-cartao');
+    const payEntrega = document.getElementById('pay-entrega');
+    const btnConfirmar = document.getElementById('btn-confirmar-pedido');
+    const btnCopiar = document.getElementById('btnCopiarPix');
+    const btnFechar = document.getElementById('btnFecharPix');
+
+    if (btnEntrega) btnEntrega.addEventListener('click', () => alternarFormatoEntrega(true));
+    if (btnRetirada) btnRetirada.addEventListener('click', () => alternarFormatoEntrega(false));
+    
+    if (payPix) payPix.addEventListener('click', () => alternarMetodoPagamento('Pix'));
+    if (payCartao) payCartao.addEventListener('click', () => alternarMetodoPagamento('Cartão'));
+    if (payEntrega) payEntrega.addEventListener('click', () => alternarMetodoPagamento('Na Entrega'));
+
+    if (btnConfirmar) btnConfirmar.addEventListener('click', processarCompraFinal);
+
+    if (btnCopiar) {
+        btnCopiar.addEventListener('click', function() {
+            const textarea = document.getElementById('inputChavePix');
+            textarea.select();
+            textarea.setSelectionRange(0, 99999); 
+            navigator.clipboard.writeText(textarea.value);
+            
+            this.innerText = "✓ Copiado!";
+            this.style.background = "#218838";
+            setTimeout(() => {
+                this.innerText = "Copiar Código";
+                this.style.background = ""; // Restaura a cor original do CSS
+            }, 2000);
+        });
+    }
+
+    if (btnFechar) {
+        btnFechar.addEventListener('click', () => {
+            document.getElementById('meuModalPix').style.display = 'none';
+            finalizarFluxoTotal();
+        });
+    }
+}
+
+function alternarFormatoEntrega(opcao) {
     temFrete = opcao;
     document.getElementById('btn-entrega').classList.toggle('ativo', opcao);
     document.getElementById('btn-retirada').classList.toggle('ativo', !opcao);
@@ -65,49 +131,17 @@ window.selecionarEntrega = function(opcao) {
     carregarResumoPedido();
 }
 
-window.selecionarPagamento = function(metodo) {
+function alternarMetodoPagamento(metodo) {
     formaPagamentoSelecionada = metodo;
     document.getElementById('pay-pix').classList.toggle('selecionado', metodo === 'Pix');
     document.getElementById('pay-cartao').classList.toggle('selecionado', metodo === 'Cartão');
     document.getElementById('pay-entrega').classList.toggle('selecionado', metodo === 'Na Entrega');
 }
 
-// Auxiliar: Cria a string estruturada no padrão oficial do Pix
 function gerarPixCopiaECola(nomeCliente, totalPedido) {
     let valorFormatado = parseFloat(totalPedido).toFixed(2);
     return `00020101021226580014br.gov.bcb.pix0114suachave@pix.com0215Pedido ${nomeCliente.substring(0, 7)}5204000053039865406${valorFormatado}5802BR5916Padaria Gourmet6009Origem62070503***6304A1B2`;
 }
-
-// Auxiliar: Gerencia as ações internas do Pop-up (Copiar e Fechar)
-function configurarBotoesModal() {
-    const btnCopiar = document.getElementById('btnCopiarPix');
-    const btnFechar = document.getElementById('btnFecharPix');
-
-    if (btnCopiar) {
-        btnCopiar.onclick = function() {
-            const textarea = document.getElementById('inputChavePix');
-            textarea.select();
-            textarea.setSelectionRange(0, 99999); // Mobile
-            navigator.clipboard.writeText(textarea.value);
-            
-            this.innerText = "✓ Copiado!";
-            this.style.background = "#218838";
-            setTimeout(() => {
-                this.innerText = "Copiar Código";
-                this.style.background = "var(--marrom-vermelho)";
-            }, 2000);
-        };
-    }
-
-    if (btnFechar) {
-        btnFechar.onclick = function() {
-            document.getElementById('meuModalPix').style.display = 'none';
-            finalizarFluxoTotal();
-        };
-    }
-}
-
-
 
 function gerarCodigoPedido() {
     const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -128,7 +162,7 @@ function finalizarFluxoTotal() {
     
     const dadosPedido = {
         codigo: novoCodigo,
-        status: "Preparando seu pedido... ", // Status inicial
+        status: "Preparando seu pedido... ", 
         data: new Date().toLocaleDateString('pt-BR'),
         formaPagamento: formaPagamentoSelecionada
     };
@@ -141,8 +175,7 @@ function finalizarFluxoTotal() {
     window.location.href = "../index.html";
 }
 
-
-window.finalizarCompra = function() { 
+function processarCompraFinal() { 
     let nome = document.getElementById("nome-cliente").value; 
     let whats = document.getElementById("whatsapp-cliente").value; 
     
@@ -155,19 +188,27 @@ window.finalizarCompra = function() {
         return; 
     } 
     
+    // Sincroniza edições feitas diretamente na tela do checkout com o LocalStorage do cliente logado
+    if (localStorage.getItem("login_token") === "usuario_autenticado") {
+        localStorage.setItem("cliente_nome", nome);
+        localStorage.setItem("cliente_whats", whats);
+        localStorage.setItem("cliente_email", document.getElementById("email-cliente").value);
+        localStorage.setItem("cliente_end", document.getElementById("endereco-rua").value);
+        localStorage.setItem("cliente_bairro", document.getElementById("endereco-bairro").value);
+        localStorage.setItem("cliente_cidade", document.getElementById("endereco-cidade").value);
+    }
+
     if (formaPagamentoSelecionada === "Pix") { 
         let totalTexto = document.getElementById("resumo-total").innerText; 
         let totalValor = totalTexto.replace("R$", "").replace(",", ".").trim(); 
         
         document.getElementById("inputChavePix").value = gerarPixCopiaECola(nome, totalValor); 
         document.getElementById("meuModalPix").style.display = "flex"; 
-        
-        finalizarFluxoTotal();
     } else if (formaPagamentoSelecionada === "Cartão") { 
         alert(`Obrigado ${nome}!\nA padaria o aguarda com a maquininha para realizar o pagamento.`); 
         finalizarFluxoTotal(); 
-    } else if (formaPagamentoSelecionada === "Na Entrega") { 
-        alert(`Obrigado ${nome}!\nSeu pedido em dinheiro foi finalizado e está sendo preparado.`); 
-        finalizarFluxoTotal(); 
-    } 
-};
+     } else if (formaPagamentoSelecionada === "Na Entrega") { 
+        alert(`Obrigado ${nome}!\nSeu pedido em dinheiro foi finalizado e está sendo preparado.`);
+        finalizarFluxoTotal();
+    }
+}

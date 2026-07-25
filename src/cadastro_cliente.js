@@ -33,19 +33,16 @@ btnNaoTenho.addEventListener("click", () => {
   btnAcao.textContent = "Criar conta";
 });
 
-// Envio do formulário com trava de segurança para funcionários
+// Envio do formulário com correções de estrutura e chaves
 formulario.addEventListener("submit", async (e) => {
-  e.preventDefault();
+  e.preventDefault(); // Garante que a página não recarregue e evite o erro de doGet
   
   btnAcao.disabled = true;
   btnAcao.textContent = "Processando...";
 
-  // Captura o select de perfil apenas se ele existir na página
   const selectPerfil = document.getElementById("tipoPerfil");
   let tipoSelecionado = selectPerfil ? selectPerfil.value : "usuario";
 
-  // TRAVA DE SEGURANÇA: Se o usuário estiver tentando criar uma conta,
-  // o sistema ignora qualquer seleção e força o tipo "usuario"
   if (acaoAtual === "criar") {
     tipoSelecionado = "usuario";
   }
@@ -59,7 +56,7 @@ formulario.addEventListener("submit", async (e) => {
 
   try {
     const resposta = await fetch(URL_APPS_SCRIPT, {
-      method: "POST",
+      method: "POST", // Força o uso estrito de POST para bater corretamente no doPost
       body: dadosFormulario
     });
 
@@ -67,9 +64,13 @@ formulario.addEventListener("submit", async (e) => {
 
     if (acaoAtual === "criar") {
       if (textoResposta.includes("Sucesso")) {
-        localStorage.setItem("cliente_nome", inputNome.value);
-        localStorage.setItem("cliente_email", document.getElementById("email").value);
         localStorage.setItem("login_token", "usuario_autenticado");
+        localStorage.setItem("cliente_email", document.getElementById("email").value);
+        localStorage.setItem("cliente_nome", inputNome.value);
+        localStorage.setItem("cliente_whats", "");
+        localStorage.setItem("cliente_end", "");
+        localStorage.setItem("cliente_bairro", "");
+        localStorage.setItem("cliente_cidade", "");
 
         alert("Conta criada com sucesso! Redirecionando para sua conta...");
         window.location.href = "./conta_cliente.html"; 
@@ -77,29 +78,35 @@ formulario.addEventListener("submit", async (e) => {
         alert(textoResposta); 
       }
     } else {
-      // Cenário de Login (Ler)
+      // CENÁRIO DE LOGIN (LER)
       if (textoResposta.startsWith("Sucesso:")) {
-        const partes = textoResposta.split(":");
-        const perfilLogado = partes[1] ? partes[1].trim() : ""; 
+        const blocoDados = textoResposta.replace("Sucesso:", ""); 
+        const dadosPerfil = blocoDados.split("||");
+        
+        const perfilLogado = dadosPerfil[0] ? dadosPerfil[0].trim() : "usuario";
         
         if (perfilLogado === "funcionario") {
           localStorage.setItem("login_token", "funcionario_autenticado");
-          alert("Acesso administrativo liberado!");
+          alert("Bem-vindo! Acesso administrativo liberado.");
           window.location.href = "./dashboard_funcionario.html"; 
         } else {
           const emailDigitado = document.getElementById("email").value;
           
-          localStorage.setItem("cliente_nome", "Cliente Cadastrado"); 
-          localStorage.setItem("cliente_email", emailDigitado);
           localStorage.setItem("login_token", "usuario_autenticado");
+          localStorage.setItem("cliente_email", emailDigitado);
+          localStorage.setItem("cliente_nome", dadosPerfil[1] || "Cliente"); 
+          localStorage.setItem("cliente_whats", dadosPerfil[2] || "");
+          localStorage.setItem("cliente_end", dadosPerfil[3] || "");
+          localStorage.setItem("cliente_bairro", dadosPerfil[4] || "");
+          localStorage.setItem("cliente_cidade", dadosPerfil[5] || "");
 
           alert("Login efetuado com sucesso!");
           window.location.href = "./conta_cliente.html"; 
         }
       } else {
-        alert(textoResposta); 
+        alert(textoResposta);
       }
-    }
+    } 
 
   } catch (erro) {
     console.error("Erro na requisição:", erro);

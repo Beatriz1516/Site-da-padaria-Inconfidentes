@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Conta - Inconfidente</title>
+    <title>Minha Conta - Inconfidentes</title>
     <link rel="stylesheet" href="../style.css">
+    <script src="../src/conta_cliente.js" defer></script>
 </head>
 <body>
 
@@ -36,17 +37,45 @@
         </nav>
     </header>
 
-    <main class="conteudo-conta">
-        <h2>Minha Conta</h2>
-        
-        <div id="painelCliente" class="cartao-cliente">
-            <p><strong>Nome:</strong> <span id="exibirNome">Carregando...</span></p>
-            <p><strong>E-mail:</strong> <span id="exibirEmail">Carregando...</span></p>
+    <main>
+        <div class="conteudo-conta" id="painelCliente">
+            <h2>Bem-vindo de volta...</h2>
+            <p class="infPessoal">— Suas informações pessoais —</p>
             
+            <!-- Modo de Visualização dos Dados -->
+            <div id="modoVisualizacao">
+                <p><img src="../imagens/conta.png" alt=""><strong>Nome:</strong> <span id="exibirNome">Carregando...</span></p>
+                <p><img src="../imagens/email.png" alt=""><strong>E-mail:</strong> <span id="exibirEmail">Carregando...</span></p>
+                <p><img src="../imagens/telefone.png" alt=""><strong>Whatsapp:</strong> <span id="exibirWhats">Carregando...</span></p>
+                <p><img src="../imagens/numero.png" alt=""><strong>Endereço:</strong> <span id="exibirEndereco">Carregando...</span></p>
+                <p><img src="../imagens/bairro.png" alt=""><strong>Bairro:</strong> <span id="exibirBairro">Carregando...</span></p>
+                <p><img src="../imagens/rua.png" alt=""><strong>Cidade/Estado:</strong> <span id="exibirCidade">Carregando...</span></p>
+                
+                <!-- CORREÇÃO: O botão de alterar agora reside dentro do bloco de leitura -->
+                <button id="btnAlterar" class="botao-sair">Alterar dados</button>
+            </div>
+
+            <!-- Modo de edição de dados -->
+            <form id="formEditarDados" style="display: none;">
+                <p><img src="../imagens/conta.png" alt="">Nome:</p>
+                <input type="text" id="editarNome" class="alterarDadosInput" placeholder="Luciana Del'Valle" required>
+                <p><img src="../imagens/telefone.png" alt="">Whatsapp:</p>
+                <input type="text" id="editarWhats" class="alterarDadosInput" placeholder="(00) 00000-0000">
+                <p><img src="../imagens/numero.png" alt="">Endereço:</p>
+                <input type="text" id="editarEndereco" class="alterarDadosInput" placeholder="Rua, Número">
+                <p><img src="../imagens/bairro.png" alt="">Bairro:</p>
+                <input type="text" class="alterarDadosInput" id="editarBairro" placeholder="Centro">
+                <p><img src="../imagens/rua.png" alt="">Cidade/Estado:</p>
+                <input type="text" class="alterarDadosInput" id="editarCidade" placeholder="Cidade - Estado">
+                
+                <button type="submit" id="btnSalvarDados" class="botao-sair">Salvar Alterações</button>
+                <button type="button" id="btnCancelar" class="botao-cancelar">Cancelar</button>
+            </form>
+
+            <!-- O botão de sair de forma independente no rodapé da página -->
             <button id="btnSair" class="botao-sair">Sair da Conta</button>
         </div>
-    </main>
 
-    <script src="../src/conta_cliente.js"></script> 
+    </main>
 </body>
 </html>
