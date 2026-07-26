@@ -22,7 +22,7 @@ export function inicializarBarraPesquisa() {
                 const nomeProdutoOriginal = card.querySelector(".NomeProdutoCardapio").textContent;
                 const nomeProdutoLimpo = removerAcentos(nomeProdutoOriginal.toLowerCase());
 
-                // Compara os dois textos sem acentos
+                // Compara os dois textos sem acentos (compatível com os dados vindos do Sheets)
                 if (nomeProdutoLimpo.includes(termoBusca)) {
                     card.style.display = ""; 
                     temProdutoVisivelNaSecao = true; 
@@ -31,6 +31,7 @@ export function inicializarBarraPesquisa() {
                 }
             });
 
+            // Se a seção contiver algum produto correspondente à busca, ela continua na tela
             if (temProdutoVisivelNaSecao) {
                 secao.style.display = "";
             } else {
@@ -40,20 +41,25 @@ export function inicializarBarraPesquisa() {
     });
 }
 
-
-// Botão de voltar ao topo da página
+// =======================================================
+// CONTROLE DO BOTÃO VOLTAR AO TOPO (AJUSTE DE SEGURANÇA)
+// =======================================================
 const botao = document.getElementById("btnTopo");
 
-window.onscroll = function() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    botao.style.display = "block";
-  } else {
-    botao.style.display = "none";
-  }
-};
-botao.addEventListener("click", function() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
+// CORREÇÃO: Executa a lógica de rolagem apenas se o botão de fato existir no HTML atual
+if (botao) {
+    window.addEventListener("scroll", () => {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            botao.style.display = "block";
+        } else {
+            botao.style.display = "none";
+        }
+    });
+
+    botao.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+}

@@ -21,7 +21,7 @@
 }
 .botao-sair {
     width: 100%;
-    padding: 10px;
+    padding: 7px;
     background-color: var(--marrom-vermelho);
     color: var(--bege-fundo);
     border: none;

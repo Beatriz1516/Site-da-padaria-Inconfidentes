@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Produto</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../src/cadastro_produtos.js" defer></script>
+    <script>
+        if (localStorage.getItem("login_token") !== "funcionario_autenticado") {
+            alert("Acesso negado!");
+            window.location.href = "./cadastro.html";
+        }
+    </script>
+</head>
+<body>
+    <header class="cabecalho"> 
+        <!-- Menu -->    
+        <nav class="navbar">
+
+           <!-- Menu Lateral-->
+            <div class="burger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+           
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="./dashboard_funcionario.html" class="nav-link">Início</a></li>
+                <li class="nav-item"><a href="./painel_visualizacao_cadastro.html" class="nav-link">Cadastros</a></li>
+                <li class="nav-item"><a href="./cadastro_produtos.html" class="nav-link">Novo Produto</a></li>
+                <li class="nav-item"><a href="./lista_produtos.html" class="nav-link">Produtos</a></li>
+            </ul>
+
+        </nav>
+    </header>
+    <main class="painel-admin">
+        <div class="topo-fluxo">
+            <h2><img src="../imagens/add.png"> Cadastrar Produto</h2>
+            <a href="./lista_produtos.html" class="link-navegacao">📦 Ver Produtos Cadastrados</a>
+        </div>
+        <p class="subtitulo-painel">Insira as informações do novo item para enviar direto para a planilha.</p>
+
+        <form id="formAdminProduto" class="formulario-produto-admin">
+            <p class="rotulo-campo">Título do Produto</p>
+            <input type="text" id="prodTitulo" class="alterarDadosInput" required placeholder="Ex: Pão de Queijo Tradicional - Médio">
+            
+            <p class="rotulo-campo">Categoria</p>
+            <select id="prodCategoria" class="select-produto-admin">
+                <option value="pao-de-queijo">Pão de Queijo</option>
+                <option value="cafes">Cafés</option>
+                <option value="bebidas">Bebidas</option>
+                <option value="doces">Quitutes Doces</option>
+                <option value="salgados">Quitutes Salgados</option>
+                <option value="quitutes-de-balcao">Quitutes de Balcão</option>
+            </select>
+
+            <p class="rotulo-campo">Preço (Apenas números separados por ponto)</p>
+            <input type="number" id="prodPreco" step="0.01" class="alterarDadosInput" required placeholder="5.00">
+
+            <p class="rotulo-campo">Caminho da Imagem</p>
+            <input type="text" id="prodImagem" class="alterarDadosInput" required placeholder="../imagens/pao_de_queijo_tradicional.jfif">
+
+            <p class="rotulo-campo">Tempo de Preparo</p>
+            <input type="text" id="prodTempo" class="alterarDadosInput" placeholder="5 min">
+
+            <p class="rotulo-campo">Descrição</p>
+            <textarea id="prodDescricao" class="textarea-produto-admin" rows="2" placeholder="O clássico mineiro, crocante por fora..."></textarea>
+
+            <p class="rotulo-campo">Ingredientes</p>
+            <textarea id="prodIngredientes" class="textarea-produto-admin" rows="2" placeholder="Polvilho azedo, queijo minas curado..."></textarea>
+
+            <p class="rotulo-campo">Alérgicos</p>
+            <input type="text" id="prodAlergicos" class="alterarDadosInput" placeholder="Contém derivados de leite.">
+
+            <button type="submit" id="btnSalvarProd" class="botao-sair botao-sucesso-admin">Salvar e Concluir</button>
+        </form>
+    </main>
+
+</body>
+</html>

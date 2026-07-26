@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Painel Administrativo</title>
     <script src="../src/cadastro_funcionario.js" defer></script>
     <link rel="stylesheet" href="../style.css">
 </head>
@@ -22,21 +22,36 @@
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-item"><a href="./dashboard_funcionario.html" class="nav-link">Início</a></li>
                 <li class="nav-item"><a href="./painel_visualizacao_cadastro.html" class="nav-link">Cadastros</a></li>
+                <li class="nav-item"><a href="./cadastro_produtos.html" class="nav-link">Novo Produto</a></li>
+                <li class="nav-item"><a href="./lista_produtos.html" class="nav-link">Produtos</a></li>
             </ul>
 
-            <!-- Logo da padaria -->
-            <a href="./dashboard_funcionario.html"><div class="logo-container">
-                <p class="logo">INCONFIDENTE</p>
-                <h3 class="subtitulo">Pão de Queijo<br> & <br> Café</h3>
+            <!-- Logo da página adm -->
+            <a href="./dashboard_funcionario.html"><div>
+                <h2>Área Restrita da Empresa</h2>
             </div></a>
 
         </nav>
     </header>
+    <section>
+        <div class="informativoAdm">
+            <p>Bem-vindo ao centro de operações e gestão da<strong> Padaria Inconfidente</strong>.</p>
+            <p>Este ambiente foi desenvolvido exclusivamente para a equipe administrativa gerenciar, monitorar e otimizar toda a experiência digital dos nossos clientes em tempo real.</p>
+        </div>
 
-  <h1>Área Restrita da Empresa</h1>
-  <p>Bem-vindo ao painel interno. <br>Apenas contas administrativas autorizadas visualizam este conteúdo.</p>
-
-  <button onclick="fazerLogout()">Sair do Painel</button>
+        <div class="informativoOpr">
+            <div class="opcoesAdm">
+                <h2>Gestão de Produtos & Estoque:</h2><br>
+                <p>Cadastre novas delícias saídas direto do forno, atualize valores de cafés e pães de queijo instantaneamente ou remova itens.<br> Tenha o controle absoluto sobre descrições, ingredientes e alertas de alérgenos para garantir a segurança dos nossos clientes.</p>
+            </div>
+            <div class="opcoesAdm">
+                <h2>Monitoramento de Clientes:</h2><br>
+                <p>Visualize a lista completa de usuários cadastrados na plataforma. </p>
+            </div>
+        </div>
+    </section>
+  
+    <button onclick="fazerLogout()" class="logout_adm">Sair do Painel</button>
 
 </body>
 </html>

@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clientes Cadastrados - Inconfidentes</title>
+    <title>Lista Produto</title>
     <link rel="stylesheet" href="../style.css">
-    <script src="../src/cadastro_funcionario.js" defer></script>
-    <script src="../src/menu.js" defer></script>
+    <script src="../src/estoque_produtos.js" defer></script>
+    <script>
+        if (localStorage.getItem("login_token") !== "funcionario_autenticado") {
+            alert("Acesso negado!");
+            window.location.href = "./cadastro.html";
+        }
+    </script>
 </head>
 <body>
-    <header>
-    <!-- Menu -->    
+    <header class="cabecalho"> 
+        <!-- Menu -->    
         <nav class="navbar">
+
            <!-- Menu Lateral-->
             <div class="burger" id="hamburger">
                 <span class="bar"></span>
@@ -26,20 +32,22 @@
                 <li class="nav-item"><a href="./lista_produtos.html" class="nav-link">Produtos</a></li>
             </ul>
 
-            <div class="topo-lista">
-                <h2><img src="../imagens/conta.png"> Clientes Cadastrados</h2>
-                <p>Lista em tempo real dos usuários que criaram conta.</p>
-            </div>
-
         </nav>
     </header>
+    <main class="painel-admin">
+        <div class="topo-fluxo">
+            <h2>📦 Produtos no Estoque</h2>
+            <a href="./cadastro_produtos.html" class="link-navegacao botao-novo-link">+ Novo Produto</a>
+        </div>
+        <p class="subtitulo-painel">Abaixo estão os itens atualmente sincronizados no banco de dados e visíveis para o cliente.</p>
 
-    <div class="container-lista">
+        <div id="listaAdminProdutos" class="grid-produtos-admin">
+            <!-- Entrada de dados via JavaScript -->
+        </div>
+        
+        <button id="btnSairAdmin" class="botao-voltar-inicio">Voltar ao Início</button>
+    </main>
 
-        <div id="carregando" class="status-mensagem">Carregando usuários da planilha...</div>
-            <ul id="lista-usuarios-conteiner" class="lista-usuarios">
-            </ul>
-    </div>
-
+    
 </body>
 </html>
