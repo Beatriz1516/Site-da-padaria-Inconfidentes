@@ -1,0 +1,67 @@
+.container-lista {
+    background: #ffffff;
+    width: 90%;
+    max-width: 550px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin: 25px;
+}
+
+.topo-lista h2 {
+    margin: 0 0 5px 0;
+    color: var(--marrom-escuro);
+}
+
+.topo-lista p {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+    color: var(--marrom-medio);
+}
+
+.status-mensagem {
+    text-align: center;
+    color: var(--marrom-medio);
+    font-style: italic;
+    padding: 20px 0;
+}
+
+.lista-usuarios {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item-usuario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid var(--cor-destaque);
+    transition: background 0.2s ease;
+}
+
+.item-usuario:last-child {
+    border-bottom: none;
+}
+
+.item-usuario:hover {
+    background-color: #efeeee;
+}
+
+.info-esquerda {
+    display: flex;
+    flex-direction: column;
+}
+
+.usuario-nome {
+    font-weight: bold;
+    color: var(--marrom-medio);
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.usuario-email {
+    font-size: 13px;
+    color: var(--cor-destaque);
+}

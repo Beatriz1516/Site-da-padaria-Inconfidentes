@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="../src/cadastro_funcionario.js" defer></script>
+    <title>Clientes Cadastrados - Inconfidentes</title>
     <link rel="stylesheet" href="../style.css">
+    <script src="../src/cadastro_funcionario.js" defer></script>
+    <script src="../src/menu.js" defer></script>
 </head>
 <body>
-  <header class="cabecalho"> 
-        <!-- Menu -->    
+    <header>
+    <!-- Menu -->    
         <nav class="navbar">
-
            <!-- Menu Lateral-->
             <div class="burger" id="hamburger">
                 <span class="bar"></span>
@@ -22,6 +22,7 @@
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-item"><a href="./dashboard_funcionario.html" class="nav-link">Início</a></li>
                 <li class="nav-item"><a href="./painel_visualizacao_cadastro.html" class="nav-link">Cadastros</a></li>
+                <li class="nav-item"><a href="./painel_visualizacao_produtos.html" class="nav-link">Produtos</a></li>
             </ul>
 
             <!-- Logo da padaria -->
@@ -33,10 +34,16 @@
         </nav>
     </header>
 
-  <h1>Área Restrita da Empresa</h1>
-  <p>Bem-vindo ao painel interno. <br>Apenas contas administrativas autorizadas visualizam este conteúdo.</p>
+    <div class="container-lista">
+        <div class="topo-lista">
+            <h2>👥 Clientes Cadastrados</h2>
+            <p>Lista em tempo real dos usuários que criaram conta.</p>
+        </div>
 
-  <button onclick="fazerLogout()">Sair do Painel</button>
+        <div id="carregando" class="status-mensagem">Carregando usuários da planilha...</div>
+            <ul id="lista-usuarios-conteiner" class="lista-usuarios">
+            </ul>
+    </div>
 
 </body>
 </html>
