@@ -1,3 +1,6 @@
+// =======================================================
+// BARRA DE PESQUISA
+// =======================================================
 export function inicializarBarraPesquisa() {
     const barraPesquisa = document.getElementById("input-busca") || document.querySelector(".search-bar");
     
@@ -22,7 +25,7 @@ export function inicializarBarraPesquisa() {
                 const nomeProdutoOriginal = card.querySelector(".NomeProdutoCardapio").textContent;
                 const nomeProdutoLimpo = removerAcentos(nomeProdutoOriginal.toLowerCase());
 
-                // Compara os dois textos sem acentos (compatível com os dados vindos do Sheets)
+                // Compara os dois textos sem acentos (compatível com os dados vindos da planilha)
                 if (nomeProdutoLimpo.includes(termoBusca)) {
                     card.style.display = ""; 
                     temProdutoVisivelNaSecao = true; 
@@ -42,11 +45,10 @@ export function inicializarBarraPesquisa() {
 }
 
 // =======================================================
-// CONTROLE DO BOTÃO VOLTAR AO TOPO (AJUSTE DE SEGURANÇA)
+// CONTROLE DO BOTÃO VOLTAR AO TOPO 
 // =======================================================
 const botao = document.getElementById("btnTopo");
 
-// CORREÇÃO: Executa a lógica de rolagem apenas se o botão de fato existir no HTML atual
 if (botao) {
     window.addEventListener("scroll", () => {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {

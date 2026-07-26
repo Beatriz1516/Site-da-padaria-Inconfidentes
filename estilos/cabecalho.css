@@ -1,3 +1,6 @@
+/* ============================================ */
+/* CABEÇALHO GERAL - CLIENTE E FUNCIONÁRIOS */
+/* ============================================ */
 .cabecalho{
     background-color: var(--marrom-escuro);
     color: var(--marrom-ouro);
@@ -59,50 +62,48 @@
     color: var(--marrom-ouro);
 }
 
-
+/* ============================================ */
+/* MOBILE FIRST */
+/* ============================================ */
 @media (max-width: 768px) {
-        .burger {
-    display: none; 
-}
-
-.nav-menu {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    top: auto;
-    
-    width: 100%; 
-    height: auto;
-    background-color: var(--marrom-escuro);
-    
-    display: flex;
-    flex-direction: row;
-    align-items: center; 
-    justify-content: space-around; 
-    
-    padding: 1rem 0; 
-    
-    transform: translateX(0); 
-    transition: none;
-
-    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-}
-
-.nav-menu.active {
-    transform: translateX(0);
-}
-
-.nav-item {
-    margin: 0;
-    width: auto;
-    text-align: center;
-}
-
-.nav-link {
-    display: inline-block;
-    font-size: 1rem;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-}
+    .burger {
+        display: none; 
     }
+    .nav-menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        top: auto;
+        
+        width: 100%; 
+        height: auto;
+        background-color: var(--marrom-escuro);
+        
+        display: flex;
+        flex-direction: row;
+        align-items: center; 
+        justify-content: space-around; 
+        
+        padding: 1rem 0; 
+        
+        transform: translateX(0); 
+        transition: none;
+
+        box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+    .nav-menu.active {
+        transform: translateX(0);
+    }
+    .nav-item {
+        margin: 0;
+        width: auto;
+        text-align: center;
+    }
+    .nav-link {
+        display: inline-block;
+        font-size: 1rem;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+    }
+}

@@ -1,3 +1,6 @@
+/* ==================================================== */
+/* CATEGORIA DO CARDÁPIO DE PRODUTOS - CLIENTE */
+/* ==================================================== */
 .categoriasDoCatalogo{
     display: flex;
     justify-content: space-between;
@@ -11,7 +14,6 @@
     transition: all 0.3s ease; 
     margin: 0 10px;
 }
-
 .secaoCatalogo:hover {
     background-color: var(--marrom-vermelho);
     color: var(--bege-claro);
@@ -26,9 +28,6 @@
     font-family: 'times new roman';
     color: var(--marrom-escuro);
 }
-
-/* width: calc((100% - (12px * 2)) / 3); */
-/* Categoria Pão de Queijo */
 .paoDeQueijos {
     width: 100%;
 }
@@ -89,7 +88,9 @@
     border-radius: 5px;
 }
 
-
+/* ==================================================== */
+/* MOBILE FIRST */
+/* ==================================================== */
 @media (max-width: 768px) {
     .secaoCatalogo {
         background-color: var(--bege-claro);

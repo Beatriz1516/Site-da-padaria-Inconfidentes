@@ -1,19 +1,19 @@
+// =================================================
+// CONTROLE DO PAGAMENTO
+// =================================================
 let temFrete = true; 
 let formaPagamentoSelecionada = ""; 
 const VALOR_FRETE = 5.00; 
 
-// Garante o carregamento correto mapeando os eventos de clique modernos (pelo type="module")
 window.addEventListener("DOMContentLoaded", () => {
     carregarDadosClienteLogado(); 
     carregarResumoPedido(); 
     configurarEventosBotoes(); 
 }); 
 
-// Busca e preenche TODOS os dados da planilha salvos no navegador do cliente
+// Carrega os dados salvos do cliente que fez um cadastro antes de comprar
 function carregarDadosClienteLogado() {
     const token = localStorage.getItem("login_token");
-
-    // Seletores ajustados rigorosamente de acordo com os IDs do seu novo HTML
     const inputNome = document.getElementById("nome-cliente");
     const inputWhats = document.getElementById("whatsapp-cliente");
     const inputEmail = document.getElementById("email-cliente");
@@ -33,6 +33,7 @@ function carregarDadosClienteLogado() {
     }
 }
 
+// Carrega produtos do carrinho
 function carregarResumoPedido() { 
     let carrinho = JSON.parse(localStorage.getItem('carrinhoTemporario')) || []; 
     let container = document.getElementById('lista-resumo-itens'); 
@@ -77,7 +78,7 @@ function carregarResumoPedido() {
     if (document.getElementById('resumo-total')) document.getElementById('resumo-total').innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`; 
 }
 
-// Vincula as funções de controle de abas de forma segura usando EventListeners (Modo Type Module)
+
 function configurarEventosBotoes() {
     const btnEntrega = document.getElementById('btn-entrega');
     const btnRetirada = document.getElementById('btn-retirada');
@@ -88,15 +89,19 @@ function configurarEventosBotoes() {
     const btnCopiar = document.getElementById('btnCopiarPix');
     const btnFechar = document.getElementById('btnFecharPix');
 
+    // Modo de retirada do pedido
     if (btnEntrega) btnEntrega.addEventListener('click', () => alternarFormatoEntrega(true));
     if (btnRetirada) btnRetirada.addEventListener('click', () => alternarFormatoEntrega(false));
     
+    // Modo de pagamento do pedido
     if (payPix) payPix.addEventListener('click', () => alternarMetodoPagamento('Pix'));
     if (payCartao) payCartao.addEventListener('click', () => alternarMetodoPagamento('Cartão'));
     if (payEntrega) payEntrega.addEventListener('click', () => alternarMetodoPagamento('Na Entrega'));
 
+    // Confirmar compra
     if (btnConfirmar) btnConfirmar.addEventListener('click', processarCompraFinal);
 
+    // Copiar código do pix
     if (btnCopiar) {
         btnCopiar.addEventListener('click', function() {
             const textarea = document.getElementById('inputChavePix');
@@ -108,11 +113,10 @@ function configurarEventosBotoes() {
             this.style.background = "#218838";
             setTimeout(() => {
                 this.innerText = "Copiar Código";
-                this.style.background = ""; // Restaura a cor original do CSS
+                this.style.background = ""; 
             }, 2000);
         });
     }
-
     if (btnFechar) {
         btnFechar.addEventListener('click', () => {
             document.getElementById('meuModalPix').style.display = 'none';
@@ -121,6 +125,9 @@ function configurarEventosBotoes() {
     }
 }
 
+// =================================================
+// MODO DA ENTREGA
+// =================================================
 function alternarFormatoEntrega(opcao) {
     temFrete = opcao;
     document.getElementById('btn-entrega').classList.toggle('ativo', opcao);
@@ -131,6 +138,9 @@ function alternarFormatoEntrega(opcao) {
     carregarResumoPedido();
 }
 
+// =================================================
+// MODO DE PAGAMENTO
+// =================================================
 function alternarMetodoPagamento(metodo) {
     formaPagamentoSelecionada = metodo;
     document.getElementById('pay-pix').classList.toggle('selecionado', metodo === 'Pix');
@@ -138,16 +148,22 @@ function alternarMetodoPagamento(metodo) {
     document.getElementById('pay-entrega').classList.toggle('selecionado', metodo === 'Na Entrega');
 }
 
+// =================================================
+// GERADOR DO CÓDIGO DO PIX
+// =================================================
 function gerarPixCopiaECola(nomeCliente, totalPedido) {
     let valorFormatado = parseFloat(totalPedido).toFixed(2);
     return `00020101021226580014br.gov.bcb.pix0114suachave@pix.com0215Pedido ${nomeCliente.substring(0, 7)}5204000053039865406${valorFormatado}5802BR5916Padaria Gourmet6009Origem62070503***6304A1B2`;
 }
 
+// =================================================
+// GERADOR DO CÓDIGO DO PEDIDO
+// =================================================
 function gerarCodigoPedido() {
     const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const numeros = "0123456789";
     let sufixo = "";
-    
+
     for (let i = 0; i < 2; i++) {
         sufixo += letras.charAt(Math.floor(Math.random() * letras.length));
         sufixo += numeros.charAt(Math.floor(Math.random() * numeros.length));
@@ -157,6 +173,9 @@ function gerarCodigoPedido() {
     return `#PD-${anoAtual}-${sufixo}`;
 }
 
+// =================================================
+// FINALIZAR O PEDIDO E COMPRA
+// =================================================
 function finalizarFluxoTotal() {
     const novoCodigo = gerarCodigoPedido();
     
@@ -188,7 +207,6 @@ function processarCompraFinal() {
         return; 
     } 
     
-    // Sincroniza edições feitas diretamente na tela do checkout com o LocalStorage do cliente logado
     if (localStorage.getItem("login_token") === "usuario_autenticado") {
         localStorage.setItem("cliente_nome", nome);
         localStorage.setItem("cliente_whats", whats);
@@ -198,6 +216,7 @@ function processarCompraFinal() {
         localStorage.setItem("cliente_cidade", document.getElementById("endereco-cidade").value);
     }
 
+    // Mensagem produzida ao fim da compra (Pix, dinheiro ou cartão)
     if (formaPagamentoSelecionada === "Pix") { 
         let totalTexto = document.getElementById("resumo-total").innerText; 
         let totalValor = totalTexto.replace("R$", "").replace(",", ".").trim(); 

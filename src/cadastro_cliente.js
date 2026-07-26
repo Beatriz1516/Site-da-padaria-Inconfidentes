@@ -11,6 +11,7 @@ const inputSenha = document.getElementById("senha");
 const btnAcao = document.getElementById("btnAcao");
 const formulario = document.getElementById("meuFormulario");
 
+// Botão tenho conta
 btnJaTenho.addEventListener("click", () => {
   acaoAtual = "ler";
   btnJaTenho.classList.add("ativa");
@@ -22,6 +23,7 @@ btnJaTenho.addEventListener("click", () => {
   btnAcao.textContent = "Entrar";
 });
 
+// Botão não tenho conta
 btnNaoTenho.addEventListener("click", () => {
   acaoAtual = "criar";
   btnNaoTenho.classList.add("ativa");
@@ -33,9 +35,10 @@ btnNaoTenho.addEventListener("click", () => {
   btnAcao.textContent = "Criar conta";
 });
 
-// Envio do formulário com correções de estrutura e chaves
+
+
 formulario.addEventListener("submit", async (e) => {
-  e.preventDefault(); // Garante que a página não recarregue e evite o erro de doGet
+  e.preventDefault(); 
   
   btnAcao.disabled = true;
   btnAcao.textContent = "Processando...";
@@ -78,7 +81,9 @@ formulario.addEventListener("submit", async (e) => {
         alert(textoResposta); 
       }
     } else {
+      // =======================================
       // CENÁRIO DE LOGIN (LER)
+      // =======================================
       if (textoResposta.startsWith("Sucesso:")) {
         const blocoDados = textoResposta.replace("Sucesso:", ""); 
         const dadosPerfil = blocoDados.split("||");

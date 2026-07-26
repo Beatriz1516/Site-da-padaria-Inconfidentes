@@ -1,3 +1,6 @@
+// =================================================
+// RENDERIZAR CARDÁPIO NA PÁGINA INICIAL DO USUÁRIO
+// =================================================
 export function renderizarCardapioCompleto(cardapioPrincipal, mapeamentoCategorias, itens, callbackAdicionarCarrinho) {
     if (!cardapioPrincipal) return;
     cardapioPrincipal.innerHTML = ""; 

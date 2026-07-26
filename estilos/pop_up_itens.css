@@ -1,3 +1,6 @@
+/* ========================================== */
+/* POP UP DE INFORMAÇÕES GERAIS DOS PRODUTOS */
+/* ========================================== */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -13,13 +16,11 @@
     transition: opacity 0.3s ease;
     z-index: 10000;
 }
-
 .modal-overlay.ativo {
     display: flex;
     opacity: 1;
     pointer-events: auto;
 }
-
 .modal-content {
     background: #ffffff;
     padding: 30px;
@@ -31,7 +32,6 @@
     margin-top: 20px; 
     animation: surgimentoSuave 0.3s ease;
 }
-
 .btn-fechar {
     position: absolute;
     top: 15px;
@@ -43,11 +43,9 @@
     color: #888888;
     line-height: 1;
 }
-
 .btn-fechar:hover {
     color: #333333;
 }
-
 .popup-img {
     width: 100%;
     max-height: 220px;
@@ -55,16 +53,15 @@
     border-radius: 8px;
     margin-bottom: 15px;
 }
-
 .paoQ-clicavel {
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .paoQ-clicavel:hover {
     transform: translateY(2px); 
 }
 
+/* Surgimento do pop up*/
 @keyframes surgimentoSuave {
     from {
         transform: scale(0.9);

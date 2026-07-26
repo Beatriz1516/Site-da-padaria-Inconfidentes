@@ -1,3 +1,30 @@
+/* ============================================ */
+/* PAINEL DO FUNCIONÁRIO */
+/* ============================================ */
+.informativoAdm{
+    text-align: center;
+    margin: 15px 0 ;
+}
+.informativoOpr{
+    display: flex;
+    justify-content: space-around;
+}
+.opcoesAdm{
+    background-color: var(--branco);
+    width: 180px;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px var(--bege-claro);
+}
+.opcoesAdm h2{
+    font-size: 18px;
+    text-align: center;
+}
+
+/* ============================================ */
+/* ABA DA LISTA DOS USUÁRIOS - FUNCIONÁRIO */
+/* ============================================ */
 .container-lista {
     background: #ffffff;
     width: 90%;
@@ -64,26 +91,4 @@
     border: none;
     border-radius: 15px;
     font-weight: bold;
-}
-
-
-.informativoAdm{
-    text-align: center;
-    margin: 15px 0 ;
-}
-.informativoOpr{
-    display: flex;
-    justify-content: space-around;
-}
-.opcoesAdm{
-    background-color: var(--branco);
-    width: 180px;
-    margin: 15px 0;
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px var(--bege-claro);
-}
-.opcoesAdm h2{
-    font-size: 18px;
-    text-align: center;
 }

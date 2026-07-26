@@ -1,4 +1,6 @@
-
+// =======================================================
+// FUNCIONAMENTO DO MENU (TANTO O LATERAL, QUANTO O FIXO)
+// =======================================================
 document.addEventListener("DOMContentLoaded", function() {
 
     const hamburger = document.getElementById('hamburger');

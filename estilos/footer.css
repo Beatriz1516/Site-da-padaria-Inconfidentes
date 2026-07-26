@@ -1,3 +1,6 @@
+/* ========================================== */
+/* RODAPÉ DA ABA DOS CLIENTES */
+/* ========================================== */
 .rodape{
     background-color: var(--marrom-escuro);
     color: var(--marrom-ouro);
@@ -11,4 +14,3 @@
 .itemRodape{
     padding: 10px;
 }
-

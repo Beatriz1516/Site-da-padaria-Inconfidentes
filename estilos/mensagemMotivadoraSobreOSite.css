@@ -1,3 +1,6 @@
+/* ========================================== */
+/* PÁGINA SOBRE NÓS */
+/* ========================================== */
 .mensagemSobreOSite{
     background-color: var(--bege-claro);
     text-align: center;
@@ -27,6 +30,9 @@
     font-size: large;
 }
 
+/* ========================================== */
+/* MOBILE FIRST */
+/* ========================================== */
 @media (max-width: 768px) {
     /* Mensagem motivadora sobre o site */
     .mensagemSobreOSite{

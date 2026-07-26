@@ -1,3 +1,6 @@
+// =================================================
+// PÁGINA DA CONTA DO USUÁRIO, EXIBIÇÃO E EDIÇÃO
+// =================================================
 const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbzVzIuiR3-Lj1Fcyf38d23GtpZ-gTsa0oo9nQVfLaG4HCFYNun-05mkpmOx2R4rSGPd/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -45,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     atualizarPainelVisual();
 
-    // Evento: Clicar em "Alterar Dados" (Oculta texto, exibe Inputs)
+    // Clicar em "Alterar Dados" (Oculta texto, exibe Inputs)
     if (btnAlterar) {
         btnAlterar.addEventListener("click", () => {
             modoVis.style.display = "none";
@@ -61,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Evento: Clicar em "Cancelar" (Reverte a tela para o modo leitura)
+    // Clicar em "Cancelar" (Reverte a tela para o modo leitura)
     if (btnCancelar) {
         btnCancelar.addEventListener("click", () => {
             formEditar.style.display = "none";
@@ -70,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Evento: Submeter as alterações para a Planilha do Google Sheets
+    // Submeter as alterações para a Planilha do Google Sheets
     if (formEditar) {
         formEditar.addEventListener("submit", async (e) => {
             e.preventDefault();
@@ -80,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const parametros = new URLSearchParams();
             parametros.append("acao", "editar");
-            parametros.append("email", emailSalvo); // Identificador da linha na planilha
+            parametros.append("email", emailSalvo);
             parametros.append("nome", inpNome.value);
             parametros.append("whatsapp", inpWhats.value);
             parametros.append("endereco", inpEnd.value);
@@ -95,14 +98,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 const respostaServidor = await conexao.text();
 
                 if (respostaServidor.includes("Sucesso")) {
-                    // Atualiza a memória local (LocalStorage)
                     localStorage.setItem("cliente_nome", inpNome.value);
                     localStorage.setItem("cliente_whats", inpWhats.value);
                     localStorage.setItem("cliente_end", inpEnd.value);
                     localStorage.setItem("cliente_bairro", inpBairro.value);
                     localStorage.setItem("cliente_cidade", inpCidade.value);
 
-                    // Atualiza os spans na tela e fecha o formulário
                     atualizarPainelVisual();
                     alert("Informações atualizadas com sucesso na sua conta!");
                     
@@ -122,12 +123,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Evento: Clicar em "Sair da Conta" (Efetua o logout total)
+    // Clicar em "Sair da Conta" (Efetua o logout total)
     if (btnSair) {
         btnSair.addEventListener("click", () => {
-            localStorage.clear(); // Limpa as credenciais do sistema de forma limpa
+            localStorage.clear(); 
             alert("Sessão finalizada. Até logo!");
-            window.location.href = "../index.html"; // Retorna à Home
+            window.location.href = "../index.html"; 
         });
     }
 });

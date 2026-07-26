@@ -2,11 +2,11 @@ if (localStorage.getItem("login_token") !== "funcionario_autenticado") {
     alert("Acesso negado! Esta página é exclusiva para funcionários autorizados.");
     window.location.href = "../index.html"; 
 }
-
 function fazerLogout() {
     localStorage.removeItem("login_token"); 
     window.location.href = "../index.html"; 
 }
+
 
 const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbzVzIuiR3-Lj1Fcyf38d23GtpZ-gTsa0oo9nQVfLaG4HCFYNun-05mkpmOx2R4rSGPd/exec";
 
@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     buscarUsuariosDaPlanilha();
 });
 
+// Busca de usuário
 async function buscarUsuariosDaPlanilha() {
     const conteinerLista = document.getElementById("lista-usuarios-conteiner");
     const elementoCarregando = document.getElementById("carregando");

@@ -1,3 +1,7 @@
+// =======================================
+// ADICIONAR PRODUTO PELO FUNCIONÁRIO
+// =======================================
+
 const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbzVzIuiR3-Lj1Fcyf38d23GtpZ-gTsa0oo9nQVfLaG4HCFYNun-05mkpmOx2R4rSGPd/exec";
 
 window.addEventListener("DOMContentLoaded", () => {

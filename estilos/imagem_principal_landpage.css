@@ -1,4 +1,6 @@
-/* Código da imagem principal da landpage, com o botão "Saiba Mais" e o título e subtítulo centralizados. */
+/* ==================================================== */
+/* IMAGEM INICIAL DA PÁGINA HOME - CLIENTE */
+/* ==================================================== */
 .imagemPrincipal{
     background: linear-gradient(#c7882a55, #5c3a2186),
     url('../imagens/pao_de_queijo_slider.png');
@@ -37,6 +39,9 @@
     font-family: 'Jacques Francois Shadow';
 }
 
+/* ==================================================== */
+/* MOBILE FIRST */
+/* ==================================================== */
 @media (max-width: 768px) {
 .imagemPrincipal{
     background: linear-gradient(#c7882a55, #5c3a2186),

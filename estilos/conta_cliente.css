@@ -1,4 +1,6 @@
-/* Estilização da Página de Conta */
+/* ==================================================== */
+/* PÁGINA DE USUÁRIO - CLIENTE */
+/* ==================================================== */
 .conteudo-conta {
     padding: 40px;
     font-family: Arial, sans-serif;
@@ -47,8 +49,6 @@
     background-color: var(--marrom-ouro);
     color: var(--marrom-escuro);
 }
-
-
 .alterarDadosInput{
     padding: 8px;
     width: 100%;

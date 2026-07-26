@@ -1,3 +1,6 @@
+// =================================================
+// RASTREIO DO PEDIDO
+// =================================================
 document.addEventListener('DOMContentLoaded', () => {
     verificarRastreamento();
     configurarBotaoRastreio();
@@ -10,9 +13,10 @@ const ETAPAS_RASTREIO = [
     "Entregador buzinando no seu endereço! 🏠"
 ];
 
-// TEMPO DE 5 MINUTOS EM MILISEGUNDOS 
+// Tempo de 5 minutos em milisegundos
 const TEMPO_ETAPA_MS = 5 * 60 * 1000; 
 
+// Mostrar e formatar e hora que o pedido foi feito
 function formatarDataHora(timestamp) {
     const d = new Date(timestamp);
     const data = d.toLocaleDateString('pt-BR');
@@ -20,6 +24,7 @@ function formatarDataHora(timestamp) {
     return `${data} às ${hora}`;
 }
 
+// Verificar rastreamento (em qual etapa está o pedido)
 function verificarRastreamento() {
     const pedidoSalvo = localStorage.getItem('ultimoPedidoRastreio');
     const secao = document.getElementById('secao-rastreio');
@@ -72,6 +77,7 @@ function verificarRastreamento() {
     }
 }
 
+// Botão atualizar a verificação do rastreio
 function configurarBotaoRastreio() {
     const btn = document.getElementById('btn-atualizar-rastreio');
     if (!btn) return;
@@ -103,7 +109,7 @@ function configurarBotaoRastreio() {
     };
 }
 
-
+// Salvamento do pedido (código e rastreio)
 function finalizarFluxoTotal() {
     const agora = Date.now();
     const codigoAleatorio = "#" + Math.floor(1000 + Math.random() * 9000); // Cria um código tipo #5482
@@ -117,11 +123,6 @@ function finalizarFluxoTotal() {
         }
     };
 
-    // Salva no localStorage e ativa a tela imediatamente
     localStorage.setItem("ultimoPedidoRastreio", JSON.stringify(novoPedido));
     verificarRastreamento();
-    
-    // Opcional: Rolar a página até a seção de rastreio para o cliente ver
-    const secao = document.getElementById("secao-rastreio");
-    if (secao) secao.scrollIntoView({ behavior: 'smooth' });
 }

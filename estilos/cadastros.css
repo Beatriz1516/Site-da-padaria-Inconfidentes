@@ -1,3 +1,6 @@
+/* ============================================ */
+/* CADASTROS DE CLIENTE - ENTRADA DE FUNCIONÁRIO*/
+/* ============================================ */
 .apresentacaoCadastro{
     text-align: center;
     padding: 20px 0;
@@ -39,7 +42,6 @@
     margin: 10px 0 5px 0;
     font-size: 14px;
     color: var(--marrom-escuro)
-    
 }
 .formularioCadastro {
     width: 100%;
@@ -48,7 +50,6 @@
     border: 1px solid var(--cor-destaque);
     border-radius: 4px;
     box-sizing: border-box;
-    
 }
 #btnAcao {
     width: 100%;

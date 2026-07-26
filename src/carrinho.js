@@ -1,8 +1,10 @@
+// =================================================
+// RENDERIZAR O CARRINHO E OS PRODUTOS ESCOLHIDOS
+// =================================================
 window.onload = function() {
     renderizarCarrinho();
 };
 
-// Renderizar carrinho
 function renderizarCarrinho() {
     let carrinho = JSON.parse(localStorage.getItem('carrinhoTemporario')) || [];
     let container = document.getElementById('lista-carrinho');
@@ -56,6 +58,7 @@ function renderizarCarrinho() {
     atualizarTotais(subtotalGeral);
 }
 
+// Alterar a quantidade dos itens no carrinho
 function alterarQuantidade(id, modificador) {
     let carrinho = JSON.parse(localStorage.getItem('carrinhoTemporario')) || [];
     
@@ -85,7 +88,7 @@ function removerItemCompleto(id) {
     renderizarCarrinho();
 }
 
-// Calcula os valores da entrega e faz a soma final do botão vermelho
+// Calcula os valores da entrega e faz a soma final do botão 
 function atualizarTotais(subtotal) {
     let taxaEntrega = subtotal > 0 ? 5.00 : 0.00; // Cobra 5 reais apenas se houver itens
     let taxaDesconto = 0.00; 

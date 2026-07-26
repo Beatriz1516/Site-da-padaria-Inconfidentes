@@ -1,3 +1,6 @@
+// =================================================
+// LISTA DE PRODUTOS SALVOS 
+// =================================================
 const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbzVzIuiR3-Lj1Fcyf38d23GtpZ-gTsa0oo9nQVfLaG4HCFYNun-05mkpmOx2R4rSGPd/exec";
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -5,6 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
     configurarBotaoSair();
 });
 
+// Lista dos produtos
 async function listarProdutosAdmin() {
     const grid = document.getElementById("listaAdminProdutos");
     if (!grid) return;
@@ -45,6 +49,7 @@ async function listarProdutosAdmin() {
     }
 }
 
+// Excluir produtos do estoque
 function configurarCliquesExcluir() {
     document.querySelectorAll(".btn-excluir-acao").forEach(btn => {
         btn.addEventListener("click", async (e) => {
@@ -71,6 +76,7 @@ function configurarCliquesExcluir() {
     });
 }
 
+// Botão de voltar à página inicial do administrador
 function configurarBotaoSair() {
     const btnSair = document.getElementById("btnSairAdmin");
     if (btnSair) {

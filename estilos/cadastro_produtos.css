@@ -1,3 +1,6 @@
+/* ============================================ */
+/* ABA DE CADASTRO DE PRODUTOS */
+/* ============================================ */
 .painel-admin {
     font-family: Arial, sans-serif;
     max-width: 900px;
@@ -74,7 +77,9 @@
     font-weight: bold;
 }
 
-/* Listagem em Grid */
+/* ============================================ */
+/* LISTAGEM DOS PRODUTOS DA PADARIA */
+/* ============================================ */
 .grid-produtos-admin {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 

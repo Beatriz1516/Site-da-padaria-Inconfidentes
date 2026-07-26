@@ -1,10 +1,6 @@
-body {
-    background-color: var(--bege-fundo);
-    color: var(--marrom-dark);
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+/* ============================================ */
+/* CÓDIGO DA PÁGINA DE PAGAMENTO */
+/* ============================================ */
 .topo-checkout {
     background-color: var(--marrom-escuro);
     color: var(--bege-claro);
@@ -65,7 +61,6 @@ body {
     gap: 5px;
 }
 
-
 /* Alternador Entrega/Retirada */
 .botoes-alternadores { 
     display: flex; 
@@ -87,5 +82,3 @@ body {
     color: var(--branco); 
     border: none; 
 }
-
-

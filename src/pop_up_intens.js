@@ -1,3 +1,6 @@
+// =================================================
+// POP UP DE INFORMAÇÕES GERAIS DO PRODUTO
+// =================================================
 const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbzVzIuiR3-Lj1Fcyf38d23GtpZ-gTsa0oo9nQVfLaG4HCFYNun-05mkpmOx2R4rSGPd/exec";
 
 // Variável global para armazenar temporariamente os produtos vindos da planilha
@@ -10,10 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!popup || !cardapioContainer) return;
 
-    // INICIALIZAÇÃO: Busca os produtos na planilha do Google Sheets assim que a tela abre
     buscarProdutosDaPlanilha();
 
-    // Escuta o clique na grade de produtos da vitrine
     cardapioContainer.addEventListener('click', (evento) => {
         const areaClicavel = evento.target.closest('.paoQClicavel');
         
@@ -23,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // NOVA FUNÇÃO: Faz o download dos dados do Sheets via método GET
     async function buscarProdutosDaPlanilha() {
         try {
             const resposta = await fetch(`${URL_APPS_SCRIPT}?acao=produtos`);
@@ -34,13 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Abrir produto buscando as informações no array atualizado do banco
     function abrirPopup(idDoProduto) {
-        // CORREÇÃO: Procura o item dentro de 'itensDoBanco' que veio da planilha
         const produto = itensDoBanco.find(p => p.id === idDoProduto);
         
         if (produto) {
-            // CORREÇÃO DE PREÇO: Formata o preço numérico do Sheets para padrão de moeda R$
             let precoExibicao = typeof produto.preco === "number" 
                 ? `R$ ${produto.preco.toFixed(2).replace('.', ',')}` 
                 : produto.preco;
@@ -58,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p><strong>Ingredientes:</strong> ${produto.ingredientes || 'Padrão da casa.'}</p>
                 <p><strong>Alérgenos:</strong> ${produto.alergicos || 'Não informado.'}</p>
                 
-                <!-- CORREÇÃO DO BOTÃO: Adiciona o evento de clique inline compatível com a função global window.enviarParaNavegador do seu index.js -->
                 <a class="adiciona1AoCarrinho" onclick="window.enviarParaNavegador(${produto.id}, '${produto.titulo.replace(/'/g, "\\'")}', ${produto.preco}, '${produto.imagem}')">
                     Adicionar ao carrinho
                 </a>`;

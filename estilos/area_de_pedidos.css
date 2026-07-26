@@ -1,3 +1,6 @@
+/* ========================================== */
+/* CÓDIGO DA ÀREA DO CARRINHO  */
+/* ========================================== */
 .rodapePedido{
     background-color: var(--marrom-vermelho);
     padding: 30px;
@@ -93,6 +96,9 @@
     
 }
 
+/* ========================================== */
+/* MOBILE FIRST */
+/* ========================================== */
 @media (max-width: 768px) {
     .adiciona1AoCarrinho, .tempoDePreparo, .direcionaAoProduto {
     background-color: var(--marrom-vermelho);
@@ -100,5 +106,5 @@
     padding: 2px 8px;
     border-radius: 15px;
     color: var(--bege-claro);
-}
+    }
 }
