@@ -10,6 +10,15 @@ window.addEventListener("DOMContentLoaded", () => {
     if (form) {
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
+
+            // --- VALIDAÇÃO DA URL DA IMAGEM ---
+            const urlImagem = document.getElementById("prodImagem").value.trim();
+            
+            if (!urlImagem.startsWith("http://") && !urlImagem.startsWith("https://")) {
+                alert("Por favor, insira uma URL de imagem válida da internet (começando com http:// ou https://). Não utilize caminhos de arquivos locais.");
+                return; 
+            }
+
             const btnSalvar = document.getElementById("btnSalvarProd");
             btnSalvar.disabled = true;
             btnSalvar.textContent = "Processando no Sheets...";
