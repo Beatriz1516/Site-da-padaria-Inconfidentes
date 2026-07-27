@@ -42,18 +42,6 @@ Preços e Destaques Menores: Cores da paleta de tons médios para ser legível, 
 
 FLUXOS DE TELA
 
-TELA INDEX
-Topo: Header fixo com logotipo reduzido e ícone de carrinho de Compras com menu flutuante.
-Barra de pesquisa.
-Banner Hero: Foto imersiva do pão de queijo quentinho com café coado.
-Texto sobreposto: Lema do estabelecimento.
-Botão de Ação: "Saiba mais" (Vermelho).
-Título de apresentação dos produtos e a seção de categorias presentes da Padaria.
-Apresentação em matriz dos produtos: Foto, nome, preço, tempo de produção e botão chamando para adicionar ao carrinho.
-Seção de Propósito (Selos): Três blocos horizontais rápidos: "Produtor Local", "Receita Tradicional de Minas", "Ingredientes Artesanais".
-Prova Social: Carrossel de comentários curtos de clientes com estrelas douradas.
-Rodapé: Horário de funcionamento, endereço e redes sociais.
-
 
 PÁGINA DE CADASTRO
 Inicio na página de cadastro, na qual temos duas opções de escolha: se já tenho cadastro e se não tenho 
@@ -71,27 +59,15 @@ Se estiver com login ativo é mostrada um ícone de usuário na parte inferir do
 estiver sem login ativo o ícone será de "sem conta" e o botão de login.
 
 
-POP UP DE CADA PRODUTO
-Topo: Botão "X" discreto para sair e foto em alta definição ocupando 80% do topo da tela e metade da altura.
-Informações Principais: Nome completo em fonte de destaque, descrição poética do sabor, tempo estimado e preço unitário.
-Ficha Técnica Expansível (Accordion): Informações Nutricionais e Alergênicos ("Contém glúten/lactose").
-Footer de Compra Fixo: Barra inferior colada na tela contendo:
-Botão "Adicionar à Sacola" (Vermelho, ocupando a largura máxima disponível).
 
 
-CARRINHO DE COMPRAS
-Botão de volta para a última página acessada.
-Título do carrinho.
-Lista de Itens: Cards horizontais com foto pequena do item, nome, quantidade (ajustável no próprio carrinho) e botão de carrinho de remoção.
-Resumo de Valores: Subtotal dos produtos + Taxa de entrega ajustável + Campo para cupom de desconto.
-Footer Fixo: Valor Total final em destaque + Botão "Avançar para o Pagamento" (Vermelho).
 
 
-CHECKOUT
-Passo 1: Identificação: Campos simples (Nome, WhatsApp, E-mail).
-Passo 2: Entrega/Retirada: Duas abas selecionáveis: [🏠 Entrega em Casa] ou [🏪 Retirar na Loja]. Se entrega: campo de endereço.
-Passo 3: Pagamento: Seleção por botões (Pix com cópia e cola automatizado, Cartão no App ou Pagar na Entrega).
-Botão Final: "Confirmar e Enviar Pedido" (Gera tela de sucesso com o tempo final estimado e link direto para rastreio no WhatsApp).
+
+
+
+
+
 
 
 VERSÃO MOBILE -
@@ -99,7 +75,7 @@ VERSÃO MOBILE -
 	Na página inicial, o cabeçalho contém a logo da padaria na parte esquerda e o carrinho de pedidos na parte direita.
 	A cor de fundo do cabeçalho é marrom escuro (#2b1405), a cor da logo é marrom ouro (#c7882a) e o carrinho de compras é marrom ouro.
 	Se clicar na logo o site volta à página inicial.
-	O menu fica fixo na parte inferior da tela, com os itens: Home, Sobre e Cadastro (Todos em branco).
+	O menu fica fixo na parte inferior da tela, com os itens: Home, Cadastro, Rastreio e Conta (Todos em branco).
 	Se clicarmos no carrinho o usuário será direcionada para a página de carrinho de produtos.
 	
 	Após o cabeçalho temos uma imagem principal do produto da marca (pão de queijo), um título (Bem-Vindo à Padaria Inconfidentes!), uma mensagem para trazer uma breve explicação (Na nossa padaria, trazemos o coração de Minas Gerais para cada detalhe do nosso espaço.) e um botão de saiba mais. 
@@ -124,14 +100,37 @@ VERSÃO MOBILE -
 
 	CARRINHO DOS PRODUTOS
 	No cabeçalho da página inicial temos o ícone do carrinho, que ao ser clicado leva para a tela do carrinho de produtos, onde o cliente pode escolher quantos de cada produto quer levar, quanto seria o total da compra, a taxa de entrega e para excluir itens que não o agradam mais.
-	Nesse carrinho temos uma pequena foto do produto, o nome do produto, o seu preço unitário, um símbolo de retirar do carrinho em cada item e um quantificador do produto. Também ao fim da página teremos uma lista de quanto será pago ao todo e um botão marrom vermelho de avançar para o pagamento, onde o cliente finaliza o pedido.
+	Logo no topo esquerdo temos um botão de volta para a última página acessada.
+	Nesse carrinho temos uma pequena foto do produto, o nome do produto, o seu preço unitário, um símbolo de retirar do carrinho em cada item e um quantificador do produto. 
+	Também ao fim da página teremos uma lista de quanto será pago ao todo (subtotal, entrega e desconto) e um botão marrom vermelho de avançar para o pagamento, onde o cliente finaliza o pedido.
 
+	PÁGINA DE PAGAMENTO 
+	No cabeçalho será mostrado uma flecha para voltar para o carrinho, o títlo "Check-out", um ícone de carrinho ilustrativo, o preço total da compra e a quantidade de itens que tem na compra.
+	O cabeçalho tem a cor marrom escuro, e os ícones tem a cor marrom dourado, com excessão do valor e da quantidade que tem a cor bege claro.
+	A página de pagamento é dividida em quatro partes, a Identificação, o Formato da Entrega, o Pagamento e o Resumo do pedido com o botão finalizar.
+	IDENTIFICAÇÃO: Contém o nome, o WhatsApp e o E-mail. Se o cliente estiver cadastrado as informações que ele tiver fornecido seram preenchidas aqui automáticamente.
+	FORMATO DE ENTREGA: É dividida em duas partes, a parte da entrega onde é solicitado o endereço, o bairro e a cidade/estado, informando o valor do frete e o tempo que demora para entregar. Já a outra é a de retirada onde nenhuma informação é soliditada, não é cobrado frete e o tempo de entrega é afirmado.
+	PAGAMENTO: Têm três opções, a do pix (que gera um código de chave pix), a do cartão de crédito e a de pagar na entrega.
+	RESUMO DO PEDIDO + CONFIRMAR PEDIDO: É apresentado todos os produtos solicitados, a quantidade de cada produto e o preço total (se tiver entrega o valor fica armazenado também).
 
+	PÁGINA DE CADASTRO 
+	Na página de cadastro temos uma caixa branca, na qual temos duas opões que baseiam o cadastro.
+	JÁ TENHO CADASTRO: Nessa opção de entrada é solicitado seu email e sua senha, que serão procurados na planilha de dados. Caso houver o usuário é direcionado para a página da sua conta pessoal, caso não houver ocorrerá um erro.
+	NÃO TENHO CADASTRO: Nessa opção de cadastro será solicitado seu nome, seu email e sua senha para um cadastro inicial no sistema. Caso não houver contas iguais o usuário é cadastrado e redirecionado para a página de conta pessoal.
+	Nesta página será possível a entrada para a aba de administrador, não sendo possível seu cadastro fora do banco de dados.
+	
+	PÁGINA DA CONTA DO USUÁRIO 
+	Nessa página temos uma saudação ao usuário e as informaçoe do usuário mostradas em formato de tópicos, ao fim da página temos dois botões vermelhos, de alterar informações e sair da conta.
+	Se o usuário não tinha conta antes apenas o nome e o email estarão definidos, o número de WhatsApp, endereço, bairro e cidade/estado não estaram cadastrados, podendo ser alterados na aba de alterar dados. 
+	Porém, se o usuário já tiver uma conta as informações fornecidas apareceram, sendo possível que os dados do pagamento sejem escritos automaticamente.
+	Todas as informações do usuário podem ser alteradas, exceto o email. Não existe forma de apagar a conta pelo site da padaria, nem pela aba do administrador.
+
+	
 
 VERSÃO DESKTOP - 
 	PÁGINA INICIAL
 	Na página inicial, o cabeçalho contém uma barra de menu na parte esquerda, a logo após o menu e o carrinho de pedidos.
-	A cor de fundo do cabeçalho é marrom escuro (#2b1405), a cor do menu é branco (quando o mouse passa por cima fica marrom ouro(#c7882a), a cor da logo é marrom ouro (#c7882a) e o carrinho de compras é marrom ouro.
+	A cor de fundo do cabeçalho é marrom escuro (#2b1405), a cor do menu é branco quando o mouse passa por cima fica marrom ouro(#c7882a), a cor da logo é marrom ouro (#c7882a) e o carrinho de compras é marrom ouro.
 	Se clicar na logo o site volta à página inicial.
 	O menu é composto pelos itens: Home, Sobre e Cadastros.
 	Se clicarmos no carrinho o usuário será direcionada para a página de carrinho de produtos.
@@ -158,4 +157,26 @@ VERSÃO DESKTOP -
 
 	CARRINHO DOS PRODUTOS
 	No cabeçalho da página inicial temos o ícone do carrinho, que ao ser clicado leva para a tela do carrinho de produtos, onde o cliente pode escolher quantos de cada produto quer levar, quanto seria o total da compra, a taxa de entrega e para excluir itens que não o agradam mais.
+	Logo no topo esquerdo temos um botão de volta para a última página acessada.
 	Nesse carrinho temos uma pequena foto do produto, o nome do produto, o seu preço unitário, um símbolo de retirar do carrinho em cada item e um quantificador do produto. Também ao fim da página teremos uma lista de quanto será pago ao todo e um botão marrom vermelho de avançar para o pagamento, onde o cliente finaliza o pedido.
+	Também ao fim da página teremos uma lista de quanto será pago ao todo (subtotal, entrega e desconto) e um botão marrom vermelho de avançar para o pagamento, onde o cliente finaliza o pedido.
+
+	PÁGINA DE PAGAMENTO 
+	No cabeçalho será mostrado uma flecha para voltar para o carrinho, o títlo "Check-out", um ícone de carrinho ilustrativo, o preço total da compra e a quantidade de itens que tem na compra.
+	O cabeçalho tem a cor marrom escuro, e os ícones tem a cor marrom dourado, com excessão do valor e da quantidade que tem a cor bege claro.
+	A página de pagamento é dividida em quatro partes, a Identificação, o Formato da Entrega, o Pagamento e o Resumo do pedido com o botão finalizar.
+	IDENTIFICAÇÃO: Contém o nome, o WhatsApp e o E-mail. Se o cliente estiver cadastrado as informações que ele tiver fornecido seram preenchidas aqui automáticamente.
+	FORMATO DE ENTREGA: É dividida em duas partes, a parte da entrega onde é solicitado o endereço, o bairro e a cidade/estado, informando o valor do frete e o tempo que demora para entregar. Já a outra é a de retirada onde nenhuma informação é soliditada, não é cobrado frete e o tempo de entrega é afirmado.
+	PAGAMENTO: Têm três opções, a do pix (que gera um código de chave pix), a do cartão de crédito e a de pagar na entrega.
+	RESUMO DO PEDIDO + CONFIRMAR PEDIDO: É apresentado todos os produtos solicitados, a quantidade de cada produto e o preço total (se tiver entrega o valor fica armazenado também).
+
+	PÁGINA DE CADASTRO 
+	Na página de cadastro temos uma caixa branca, na qual temos duas opões que baseiam o cadastro.
+	JÁ TENHO CADASTRO: Nessa opção de entrada é solicitado seu email e sua senha, que serão procurados na planilha de dados. Caso houver o usuário é direcionado para a página da sua conta pessoal, caso não houver ocorrerá um erro.
+	NÃO TENHO CADASTRO: Nessa opção de cadastro será solicitado seu nome, seu email e sua senha para um cadastro inicial no sistema. Caso não houver contas iguais o usuário é cadastrado e redirecionado para a página de conta pessoal.
+	Nesta página será possível a entrada para a aba de administrador, não sendo possível seu cadastro fora do banco de dados.
+	
+	PÁGINA DA CONTA DO USUÁRIO 
+	Nessa página temos uma saudação ao usuário e as informaçoe do usuário mostradas em formato de tópicos, ao fim da página temos dois botões vermelhos, de alterar informações e sair da conta.
+	Se o usuário não tinha conta antes apenas o nome e o email estarão definidos, o número de WhatsApp, endereço, bairro e cidade/estado não estaram cadastrados, podendo ser alterados na aba de alterar dados. 
+	Porém, se o usuário já tiver uma conta as informações fornecidas apareceram, sendo possível que os dados do pagamento sejem escritos automaticamente.
