@@ -36,7 +36,7 @@
     </header>
     <main class="painel-admin">
         <div class="topo-fluxo">
-            <h2><img src="../imagens/add.png"> Cadastrar Produto</h2>
+            <h2><img src="../imagens/add.png" alt="Ícone Adicionar"> Cadastrar Produto</h2>
             <a href="./lista_produtos.html" class="link-navegacao">📦 Ver Produtos Cadastrados</a>
         </div>
         <p class="subtitulo-painel">Insira as informações do novo item para enviar direto para a planilha.</p>
@@ -58,8 +58,9 @@
             <p class="rotulo-campo">Preço (Apenas números separados por ponto)</p>
             <input type="number" id="prodPreco" step="0.01" class="alterarDadosInput" required placeholder="5.00">
 
-            <p class="rotulo-campo">Caminho da Imagem</p>
-            <input type="text" id="prodImagem" class="alterarDadosInput" required placeholder="../imagens/pao_de_queijo_tradicional.jfif">
+            <!-- MODIFICADO: Rótulo e placeholder ajustados para URL de internet -->
+            <p class="rotulo-campo">Link (URL) da Imagem na Internet</p>
+            <input type="url" id="prodImagem" class="alterarDadosInput" required placeholder="https://exemplo.com">
 
             <p class="rotulo-campo">Tempo de Preparo</p>
             <input type="text" id="prodTempo" class="alterarDadosInput" placeholder="5 min">
