@@ -50,7 +50,8 @@
     width: 100%;
 }
 .grade-produtos .paoQ {
-    width: calc(25% - 10px); 
+    width: calc(25% - 10px);
+    background-color: var(--fundo-card);
     box-sizing: border-box; 
     box-shadow: 1px 1px 5px var(--marrom-medio);
     margin: 15px 5px;
