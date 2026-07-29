@@ -55,9 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p><strong>Ingredientes:</strong> ${produto.ingredientes || 'Padrão da casa.'}</p>
                 <p><strong>Alérgenos:</strong> ${produto.alergicos || 'Não informado.'}</p>
                 
-                <a class="adiciona1AoCarrinho" onclick="window.enviarParaNavegador(${produto.id}, '${produto.titulo.replace(/'/g, "\\'")}', ${produto.preco}, '${produto.imagem}')">
-                    Adicionar ao carrinho
-                </a>`;
+                `;
             
             const campoIngredientes = document.getElementById('popup-ingredientes');
             const campoAlergicos = document.getElementById('popup-alergicos');
