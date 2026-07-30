@@ -1,6 +1,7 @@
 /* ==================================================== */
 /* CATEGORIA DO CARDÁPIO DE PRODUTOS - CLIENTE */
 /* ==================================================== */
+/* Seção de categorias dos produtos */
 .categoriasDoCatalogo{
     display: flex;
     justify-content: space-between;
@@ -22,15 +23,19 @@
 .secaoCatalogo:hover a {
     color: var(--bege-claro); 
 }
+.paoDeQueijos {
+    width: 100%;
+}
+
+
 .nossosProdutos{
     font-size: 32px;
     padding: 15px;
     font-family: 'times new roman';
     color: var(--marrom-escuro);
 }
-.paoDeQueijos {
-    width: 100%;
-}
+
+/* Cardápio dos produtos - grade e card*/
 .tituloDaSecao {
     color: var(--marrom-escuro);
     text-shadow: 1px 1px 2px var(--marrom-ouro);
@@ -50,16 +55,16 @@
     width: 100%;
 }
 .grade-produtos .paoQ {
-    width: calc(25% - 10px);
+    width: calc(25% - 20px);
     background-color: var(--fundo-card);
     box-sizing: border-box; 
     box-shadow: 1px 1px 5px var(--marrom-medio);
-    margin: 15px 5px;
+    margin: 15px 10px;
     border-radius: 15px;
 }
 .paoQ img {
     width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -79,8 +84,8 @@
 .adiciona1AoCarrinho, .tempoDePreparo {
     background-color: var(--marrom-vermelho);
     border: none;
-    padding: 10px 20px;
-    border-radius: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
     color: var(--bege-claro);
     width: 90px;
 }
@@ -94,14 +99,7 @@
 /* MOBILE FIRST */
 /* ==================================================== */
 @media (max-width: 768px) {
-    .secaoCatalogo {
-        background-color: var(--bege-claro);
-        padding: 3px 7px;
-        border-radius: 15px;
-        transition: all 0.3s ease; 
-        font-size: 11px;
-        margin: 0 3px;
-    }
+    /* Cardápio dos produtos - grade e card*/
     .grade-produtos {
         display: flex;
         flex-wrap: wrap;
@@ -130,35 +128,34 @@
     .complementosCardapio{
         display: flex;
         justify-content: space-between;
-        margin: 3px;
         cursor: pointer;
     }
     .adiciona1AoCarrinho, .tempoDePreparo {
         background-color: var(--marrom-vermelho);
         border: none;
-        padding: 10px 20px;
-        border-radius: 15px;
+        border-radius: 5px;
         color: var(--bege-claro);
+        text-align: center;
     }
     .adiciona1AoCarrinho:hover{
         background-color: var(--marrom-ouro);
         color: var(--marrom-dark);
         border-radius: 5px;
     }
+
+    /* Seção de categorias dos produtos */
     .secaoCatalogo {
         background-color: var(--bege-claro);
-        border: none;
         padding: 2px 5px;
-        border-radius: 15px;
+        border-radius: 5px;
         transition: all 0.3s ease; 
+        font-size: 11px;
+        margin: 0 3px;
+        border: none;
     }
-
     .secaoCatalogo:hover {
         background-color: var(--marrom-vermelho);
         color: var(--bege-claro);
         border-color: var(--marrom-vermelho);
-    }
-    .secaoCatalogo:hover a {
-        color: var(--bege-claro); 
     }
 }

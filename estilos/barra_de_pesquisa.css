@@ -5,10 +5,26 @@
     padding: 15px;
 }
 .search-bar {
-    width: 100%;
-    padding: 8px 15px;
+    width: 900px;
+    padding: 18px 30px;
     border: 0.1px solid var(--marrom-medio);
-    border-radius: 20px;
+    border-radius: 15px;
     background-color: var(--branco);
     font-size: 14px;
+    display: flex;
+    margin: 0 auto;
+}
+
+/* ==================================================== */
+/* MOBILE FIRTS*/
+/* ==================================================== */
+@media (max-width: 768px){
+    .search-bar {
+        width: 100%;
+        padding: 8px 15px;
+        border: 0.1px solid var(--marrom-medio);
+        border-radius: 20px;
+        background-color: var(--branco);
+        font-size: 14px;
+    }
 }

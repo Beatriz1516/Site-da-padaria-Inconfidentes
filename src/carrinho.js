@@ -40,7 +40,7 @@ function renderizarCarrinho() {
                 
                 <div class="cardQuantidadeLixeira">
                     <!-- Botão de Lixeira para remover tudo (Passando o ID limpo sem aspas extras) -->
-                    <button onclick="removerItemCompleto(${item.id})"><img src="/imagens/carrinho_de_remover.png" alt="Remover"></button>
+                    <button onclick="removerItemCompleto(${item.id})"><img src="./imagens/carrinho_de_remover.png" alt="Remover"></button>
                     
                     <!-- Seletor de quantidade (- 1 +) -->
                     <div class="cardQuantidade">
