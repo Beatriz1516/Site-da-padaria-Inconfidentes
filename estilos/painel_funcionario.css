@@ -4,6 +4,7 @@
 .informativoAdm{
     text-align: center;
     margin: 15px 0 ;
+    font-size: 20px;
 }
 .informativoOpr{
     display: flex;
@@ -11,24 +12,29 @@
 }
 .opcoesAdm{
     background-color: var(--branco);
-    width: 180px;
-    margin: 15px 0;
-    padding: 10px;
+    width: 500px;
+    margin: 35px 0;
+    padding: 20px;
     border-radius: 15px;
+    font-size: 20px;
     box-shadow: 0 4px 10px var(--bege-claro);
 }
 .opcoesAdm h2{
-    font-size: 18px;
+    font-size: 24px;
     text-align: center;
 }
 
 /* ============================================ */
 /* ABA DA LISTA DOS USUÁRIOS - FUNCIONÁRIO */
 /* ============================================ */
+.lista-clientes{
+    display: flex;
+    justify-content: center;
+}
 .container-lista {
     background: #ffffff;
-    width: 90%;
-    max-width: 550px;
+    width: 100%;
+    width: 700px;
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -40,7 +46,7 @@
 }
 .topo-lista p {
     margin: 0 0 20px 0;
-    font-size: 14px;
+    font-size: 18px;
     color: var(--marrom-ouro);
 }
 .status-mensagem {
@@ -83,12 +89,111 @@
     color: var(--cor-destaque);
 }
 .logout_adm{
-    padding: 10px;
-    width: 90%;
-    margin: 20px;
+    padding: 20px;
+    width: 95%;
+    margin: 30px;
     color: var(--bege-fundo);
     background-color: var(--marrom-vermelho);
     border: none;
     border-radius: 15px;
     font-weight: bold;
+    font-size: 20px;
+}
+
+/* ============================================ */
+/* MOBILE FIRST*/
+/* ============================================ */
+@media (max-width: 768px){
+    .informativoAdm{
+        text-align: center;
+        margin: 15px 0 ;
+        font-size: 16px;
+    }
+    .informativoOpr{
+        display: flex;
+        justify-content: space-around;
+    }
+    .opcoesAdm{
+        background-color: var(--branco);
+        width: 180px;
+        margin: 15px 0;
+        padding: 10px;
+        border-radius: 15px;
+        font-size: 16px;
+        box-shadow: 0 4px 10px var(--bege-claro);
+    }
+    .opcoesAdm h2{
+        font-size: 18px;
+        text-align: center;
+    }
+
+
+    .container-lista {
+        background: #ffffff;
+        width: 90%;
+        max-width: 550px;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        margin: 25px;
+    }
+    .topo-lista h2 {
+        margin: 0 0 5px 0;
+        color: var(--marrom-ouro);
+    }
+    .topo-lista p {
+        margin: 0 0 20px 0;
+        font-size: 14px;
+        color: var(--marrom-ouro);
+    }
+    .status-mensagem {
+        text-align: center;
+        color: var(--marrom-medio);
+        font-style: italic;
+        padding: 20px 0;
+    }
+    .lista-usuarios {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .item-usuario {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 1px solid var(--cor-destaque);
+        transition: background 0.2s ease;
+    }
+    .item-usuario:last-child {
+        border-bottom: none;
+    }
+    .item-usuario:hover {
+        background-color: #efeeee;
+    }
+    .info-esquerda {
+        display: flex;
+        flex-direction: column;
+    }
+    .usuario-nome {
+        font-weight: bold;
+        color: var(--marrom-medio);
+        font-size: 16px;
+        margin-bottom: 2px;
+    }
+    .usuario-email {
+        font-size: 13px;
+        color: var(--cor-destaque);
+    }
+    .logout_adm{
+        padding: 10px;
+        width: 90%;
+        margin: 20px;
+        color: var(--bege-fundo);
+        background-color: var(--marrom-vermelho);
+        border: none;
+        border-radius: 15px;
+        font-weight: bold;
+        font-size: 16px;
+    }
 }

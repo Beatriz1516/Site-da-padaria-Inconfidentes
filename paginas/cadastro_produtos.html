@@ -43,7 +43,7 @@
 
         <form id="formAdminProduto" class="formulario-produto-admin">
             <p class="rotulo-campo">Título do Produto</p>
-            <input type="text" id="prodTitulo" class="alterarDadosInput" required placeholder="Ex: Pão de Queijo Tradicional - Médio">
+            <input type="text" id="prodTitulo" class="novo-produto" required placeholder="Ex: Pão de Queijo Tradicional - Médio">
             
             <p class="rotulo-campo">Categoria</p>
             <select id="prodCategoria" class="select-produto-admin">
@@ -56,14 +56,14 @@
             </select>
 
             <p class="rotulo-campo">Preço (Apenas números separados por ponto)</p>
-            <input type="number" id="prodPreco" step="0.01" class="alterarDadosInput" required placeholder="5.00">
+            <input type="number" id="prodPreco" step="0.01" class="novo-produto" required placeholder="5.00">
 
             <!-- MODIFICADO: Rótulo e placeholder ajustados para URL de internet -->
             <p class="rotulo-campo">Link (URL) da Imagem na Internet</p>
-            <input type="url" id="prodImagem" class="alterarDadosInput" required placeholder="https://exemplo.com">
+            <input type="url" id="prodImagem" class="novo-produto" required placeholder="https://exemplo.com">
 
             <p class="rotulo-campo">Tempo de Preparo</p>
-            <input type="text" id="prodTempo" class="alterarDadosInput" placeholder="5 min">
+            <input type="text" id="prodTempo" class="novo-produto" placeholder="5 min">
 
             <p class="rotulo-campo">Descrição</p>
             <textarea id="prodDescricao" class="textarea-produto-admin" rows="2" placeholder="O clássico mineiro, crocante por fora..."></textarea>
@@ -72,7 +72,7 @@
             <textarea id="prodIngredientes" class="textarea-produto-admin" rows="2" placeholder="Polvilho azedo, queijo minas curado..."></textarea>
 
             <p class="rotulo-campo">Alérgicos</p>
-            <input type="text" id="prodAlergicos" class="alterarDadosInput" placeholder="Contém derivados de leite.">
+            <input type="text" id="prodAlergicos" class="novo-produto" placeholder="Contém derivados de leite.">
 
             <button type="submit" id="btnSalvarProd" class="botao-sair botao-sucesso-admin">Salvar e Concluir</button>
         </form>
