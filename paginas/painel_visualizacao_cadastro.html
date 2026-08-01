@@ -33,13 +33,21 @@
 
         </nav>
     </header>
-    <main class="lista-clientes">
+    <main>
+    <p class="subtitulo-painel">
+        Apenas o nome, e-mail e dados de cadastro dos clientes são exibidos para controle operacional.<br> 
+        Caso precise de dados confidenciais (como senhas ou endereços), entre em contato com o suporte.
+    </p>
+    <div class="lista-clientes">
         <div class="container-lista">
             <div id="carregando" class="status-mensagem">Carregando usuários da planilha...</div>
-                <ul id="lista-usuarios-conteiner" class="lista-usuarios">
-                </ul>
+            <ul id="lista-usuarios-conteiner" class="lista-usuarios">
+                <!-- Os itens serão injetados aqui pelo JavaScript com a estrutura de data e hora -->
+            </ul>
         </div>
-    </main>
+    </div>
+</main>
+
 
 </body>
 </html>

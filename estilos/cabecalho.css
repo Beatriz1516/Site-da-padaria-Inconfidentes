@@ -21,6 +21,10 @@
     margin-top: 10px;
     text-align: center;
 }
+.carrinho img{
+    width: 35px;
+    height:35px;
+}
 .navbar{
     display: flex;
     justify-content: space-between;
@@ -105,5 +109,9 @@
         font-size: 1rem;
         text-decoration: none;
         padding: 0.5rem 1rem;
+    }
+    .carrinho img{
+        width:30px;
+        height:30px;
     }
 }

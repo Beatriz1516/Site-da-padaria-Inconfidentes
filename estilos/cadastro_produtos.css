@@ -3,14 +3,13 @@
 /* ============================================ */
 .painel-admin {
     font-family: Arial, sans-serif;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 .topo-fluxo {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid var(--bege-claro);
     padding: 20px;
     margin-bottom: 10px;
     background-color: var(--marrom-escuro);
@@ -26,6 +25,7 @@
     background-color: var(--marrom-ouro);
     border-radius: 15px;
     text-align: center;
+    margin-left: 20px;
 }
 .botao-novo-link {
     background: var(--marrom-ouro);
@@ -38,6 +38,7 @@
     margin-bottom: 30px;
     font-size: 14px;
     padding: 0 30px;
+    text-align: center;
 }
 .rotulo-campo {
     margin: 12px 0 5px 0;
@@ -45,10 +46,11 @@
     font-weight: bold;
     color: var(--marrom-escuro);
 }
+
+
 .formulario-produto-admin {
-    margin: 20px;
     background: var(--branco);
-    padding: 20px;
+    padding:  20px 40px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin-bottom: 30px;
@@ -62,7 +64,7 @@
 .select-produto-admin,
 .textarea-produto-admin {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -76,6 +78,9 @@
     font-weight: bold;
     padding: 12px;
     font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 .botao-perigo-admin {
     margin: 40px 5px;
@@ -89,10 +94,10 @@
 /* ============================================ */
 .grid-produtos-admin {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
     margin: 20px;
-    max-width: 500px; 
+    max-width: 1000px; 
 }
 .card-estoque-admin {
     background: var(--branco);
@@ -131,6 +136,9 @@
     padding: 6px 12px;
     font-size: 13px;
     width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
 }
 .botao-voltar-inicio{
     padding: 10px 0;
@@ -157,7 +165,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 2px solid var(--bege-claro);
         padding: 20px;
         margin-bottom: 10px;
         background-color: var(--marrom-escuro);
@@ -171,8 +178,9 @@
         padding: 5px;
         font-size: 15px;
         background-color: var(--marrom-ouro);
-        border-radius: 15px;
+        border-radius: 5px;
         text-align: center;
+        margin-left: 10px;
     }
     .botao-novo-link {
         background: var(--marrom-ouro);
@@ -217,6 +225,9 @@
         font-weight: bold;
         padding: 12px;
         font-size: 16px;
+        border: none;
+        border-radius: 15px;
+        margin-top: 20px;
     }
     .botao-perigo-admin {
         margin: 40px 5px;
@@ -271,6 +282,8 @@
         padding: 6px 12px;
         font-size: 13px;
         width: 100%;
+        border-radius: 5px;
+        border: none;
     }
     .botao-voltar-inicio{
         padding: 10px 0;

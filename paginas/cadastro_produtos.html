@@ -32,13 +32,15 @@
                 <li class="nav-item"><a href="./lista_produtos.html" class="nav-link">Produtos</a></li>
             </ul>
 
+            <div class="topo-fluxo">
+                <h2><img src="../imagens/add.png" alt="Ícone Adicionar"> Cadastrar Produto</h2>
+                <a href="./lista_produtos.html" class="link-navegacao">📦 Ver Produtos Cadastrados</a>
+            </div>
+            
         </nav>
     </header>
+
     <main class="painel-admin">
-        <div class="topo-fluxo">
-            <h2><img src="../imagens/add.png" alt="Ícone Adicionar"> Cadastrar Produto</h2>
-            <a href="./lista_produtos.html" class="link-navegacao">📦 Ver Produtos Cadastrados</a>
-        </div>
         <p class="subtitulo-painel">Insira as informações do novo item para enviar direto para a planilha.</p>
 
         <form id="formAdminProduto" class="formulario-produto-admin">
@@ -74,7 +76,7 @@
             <p class="rotulo-campo">Alérgicos</p>
             <input type="text" id="prodAlergicos" class="novo-produto" placeholder="Contém derivados de leite.">
 
-            <button type="submit" id="btnSalvarProd" class="botao-sair botao-sucesso-admin">Salvar e Concluir</button>
+            <button type="submit" id="btnSalvarProd" class="botao-sucesso-admin">Salvar e Concluir</button>
         </form>
     </main>
 

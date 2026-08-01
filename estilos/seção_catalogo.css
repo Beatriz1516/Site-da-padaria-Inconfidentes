@@ -50,12 +50,14 @@
     width: 100%;
 }
 .grade-produtos {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    justify-content: center;
+    margin: 20px auto;
 }
 .grade-produtos .paoQ {
-    width: calc(25% - 20px);
     background-color: var(--fundo-card);
     box-sizing: border-box; 
     box-shadow: 1px 1px 5px var(--marrom-medio);
@@ -101,15 +103,15 @@
 @media (max-width: 768px) {
     /* Cardápio dos produtos - grade e card*/
     .grade-produtos {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        max-width: 500px;
+        margin: 20px auto;
     }
     .grade-produtos .paoQ {
-        width: calc(50% - 10px); 
         box-sizing: border-box; 
         box-shadow: 1px 1px 5px var(--marrom-medio);
-        margin: 15px 5px;
         border-radius: 15px;
     }
     .paoQ img {

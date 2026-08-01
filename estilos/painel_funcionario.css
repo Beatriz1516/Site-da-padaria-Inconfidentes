@@ -11,7 +11,7 @@
     justify-content: space-around;
 }
 .opcoesAdm{
-    background-color: var(--branco);
+    background-color: var(--fundo-card);
     width: 500px;
     margin: 35px 0;
     padding: 20px;
@@ -114,7 +114,7 @@
         justify-content: space-around;
     }
     .opcoesAdm{
-        background-color: var(--branco);
+        background-color: var(--fundo-card);
         width: 180px;
         margin: 15px 0;
         padding: 10px;
