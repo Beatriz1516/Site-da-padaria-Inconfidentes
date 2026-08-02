@@ -8,7 +8,6 @@
     <script type="module" src="../src/pagamento_controle.js"></script>
 </head>
 <body>
-
     <!-- Topo do Check-out -->
     <header class="topo-checkout">
         <button onclick="window.history.back()"><img src="../imagens/flecha_voltar.png"> Check-out</button>
@@ -16,7 +15,6 @@
     </header>
 
     <main class="container-checkout">
-
         <!-- Identificação -->
         <section class="step">
             <h3>Identificação</h3>
@@ -96,20 +94,20 @@
             </div>
         </section>
 
+        <!-- Botão de confirmação do pedido -->
         <button id="btn-confirmar-pedido" onclick="finalizarCompra()">Confirmar e Enviar Pedido</button>
     </main>
 
-    
-    <!-- Pop-up para o Pagamento via Pix -->
-<div id="meuModalPix" class="modal-pix-overlay" style="display: none;">
-    <div class="modal-pix-box">
-        <h3 class="modal-pix-titulo">💎 Pague com Pix</h3>
-        <p class="modal-pix-sub">Copie o código abaixo e pague no app do seu banco para confirmar o pedido.</p>
-        <textarea class="modal-pix-textarea" id="inputChavePix" readonly></textarea>
-        <button class="modal-pix-btn-copiar" id="btnCopiarPix">Copiar Código</button>
-        <button class="modal-pix-btn-fechar" id="btnFecharPix">Fechar e Concluir</button>
-    </div>
-</div>
 
+    <!-- Pop-up para o Pagamento via Pix -->
+    <div id="meuModalPix" class="modal-pix-overlay" style="display: none;">
+        <div class="modal-pix-box">
+            <h3 class="modal-pix-titulo">Pague com Pix</h3>
+            <p class="modal-pix-sub">Copie o código abaixo e pague no app do seu banco para confirmar o pedido.</p>
+            <textarea class="modal-pix-textarea" id="inputChavePix" readonly></textarea>
+            <button class="modal-pix-btn-copiar" id="btnCopiarPix">Copiar Código</button>
+            <button class="modal-pix-btn-fechar" id="btnFecharPix">Fechar e Concluir</button>
+        </div>
+    </div>
 </body>
 </html>

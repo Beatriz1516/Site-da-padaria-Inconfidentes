@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -32,6 +32,7 @@
                 <li class="nav-item"><a href="./lista_produtos.html" class="nav-link">Produtos</a></li>
             </ul>
 
+            <!-- Logo da aba da página de cadastro de produtos -->
             <div class="topo-fluxo">
                 <h2><img src="../imagens/add.png" alt="Ícone Adicionar"> Cadastrar Produto</h2>
                 <a href="./lista_produtos.html" class="link-navegacao">📦 Ver Produtos Cadastrados</a>
@@ -40,10 +41,12 @@
         </nav>
     </header>
 
+    <!-- Painel de cadastro de produtos -->
     <main class="painel-admin">
         <p class="subtitulo-painel">Insira as informações do novo item para enviar direto para a planilha.</p>
-
+        <!-- Formulário de cadastro de produtos -->
         <form id="formAdminProduto" class="formulario-produto-admin">
+
             <p class="rotulo-campo">Título do Produto</p>
             <input type="text" id="prodTitulo" class="novo-produto" required placeholder="Ex: Pão de Queijo Tradicional - Médio">
             
@@ -60,7 +63,6 @@
             <p class="rotulo-campo">Preço (Apenas números separados por ponto)</p>
             <input type="number" id="prodPreco" step="0.01" class="novo-produto" required placeholder="5.00">
 
-            <!-- MODIFICADO: Rótulo e placeholder ajustados para URL de internet -->
             <p class="rotulo-campo">Link (URL) da Imagem na Internet</p>
             <input type="url" id="prodImagem" class="novo-produto" required placeholder="https://exemplo.com">
 

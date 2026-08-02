@@ -26,6 +26,7 @@
                 <li class="nav-item"><a href="./lista_produtos.html" class="nav-link">Produtos</a></li>
             </ul>
 
+            <!-- Logo da aba da página de lista de clientes -->
             <div class="topo-lista">
                 <h2><img src="../imagens/conta.png"> Clientes Cadastrados</h2>
                 <p>Lista em tempo real dos usuários que criaram conta.</p>
@@ -34,20 +35,20 @@
         </nav>
     </header>
     <main>
-    <p class="subtitulo-painel">
-        Apenas o nome, e-mail e dados de cadastro dos clientes são exibidos para controle operacional.<br> 
-        Caso precise de dados confidenciais (como senhas ou endereços), entre em contato com o suporte.
-    </p>
-    <div class="lista-clientes">
-        <div class="container-lista">
-            <div id="carregando" class="status-mensagem">Carregando usuários da planilha...</div>
-            <ul id="lista-usuarios-conteiner" class="lista-usuarios">
-                <!-- Os itens serão injetados aqui pelo JavaScript com a estrutura de data e hora -->
-            </ul>
+        <!-- Instrução da visualização de clientes cadastrados -->
+        <p class="subtitulo-painel">
+            Apenas o nome, e-mail e dados de cadastro dos clientes são exibidos para controle operacional.<br> 
+            Caso precise de dados confidenciais (como senhas ou endereços), entre em contato com o suporte.
+        </p>
+
+        <!-- Visualização da lista de clientes via JavaScript -->
+        <div class="lista-clientes">
+            <div class="container-lista">
+                <div id="carregando" class="status-mensagem">Carregando usuários da planilha...</div>
+                <ul id="lista-usuarios-conteiner" class="lista-usuarios">
+                </ul>
+            </div>
         </div>
-    </div>
-</main>
-
-
+    </main>
 </body>
 </html>

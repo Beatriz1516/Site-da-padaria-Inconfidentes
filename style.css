@@ -84,10 +84,10 @@ a{
   border-radius: 10px;  
   font-size: 20px;      
 }
-
 #btnTopo:hover {
   background-color: var(--marrom-ouro); 
 }
+
 
 /* ================================================= */
 /* MOBILE FIRTS */

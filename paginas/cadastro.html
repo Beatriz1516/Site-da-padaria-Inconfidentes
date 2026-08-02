@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Cadastro do Cliente</title>
     <link rel="stylesheet" href="../style.css">
     <script type="module" src="../src/menu.js"></script>
     <script type="module" src="../src/cadastro_cliente.js" defer></script>
@@ -37,18 +37,22 @@
                 <a href="./paginas/pedidos.html"><img src="../imagens/carrinho.png"></a>
             </div>
         </nav>
-
+    </header>
+    <main>
+        <!-- Apresentação do formulário -->
         <div class="apresentacaoCadastro">
             <h3>Bem-vindo à Padaria Inconfidentes!</h3>
             <p>É um prazer sua presença novamente</p>
         </div>
 
+        <!-- Formulário de cadastro do cliente -->
         <form id="meuFormulario">
             <div class="contaDeUsuario">
                 <p id="btnJaTenho" class="aba-opcao">Já tenho cadastro</p>
                 <p id="btnNaoTenho" class="aba-opcao ativa">Não tenho cadastro</p>
             </div>
 
+            <!-- Inputs de informações do cliente -->
             <div id="grupoNome">
                 <p class="instrucaoFormulario">Nome</p>
                 <input type="text" id="nome" class="formularioCadastro" placeholder="Digite seu nome" required>
@@ -62,11 +66,6 @@
 
             <button type="submit" id="btnAcao">Criar conta</button>
         </form>
-
-        
-    </header>
-    <main>
-
     </main>
 </body>
 </html>
